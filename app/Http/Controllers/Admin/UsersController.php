@@ -40,22 +40,17 @@ class UsersController extends Controller
 
     public function update(UserRequest $request, User $user)
     {
-        // dd($request->all());
-        // $data = $user->fill($request->all());
-        // $user->update();
-
         $user->update($request->all());
+
         return redirect()->route('admin.users.index')->with('success', '更新成功');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+        // 判断是否软删除成功
+        if ($user->trashed()) {
+            return redirect()->route('admin.users.index')->with('success', '删除成功');;
+        }
     }
 }
