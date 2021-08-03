@@ -24,3 +24,13 @@ function dda($model)
         dd($model);
     }
 }
+
+function active_navbar_class($condition, $activeClass = 'navbar-active', $inactiveClass = '')
+{
+    return app('active')->getClassIf($condition, $activeClass, $inactiveClass);
+}
+
+function active_admin_class($condition, $activeClass = 'active', $inactiveClass = '')
+{
+    return app('active')->getClassIf($condition, $activeClass, $inactiveClass);
+}
