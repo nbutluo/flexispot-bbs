@@ -1,5 +1,9 @@
 <td>{{ $topic->id }}</td>
-<td>{{ $topic->title }}</td>
+<td>
+  <a href="{{ route('topics.show',$topic->id) }}" target="_blank" rel="noopener noreferrer">
+    {{ $topic->title }}
+  </a>
+</td>
 <td>
   <img src="{{ $topic->user->avatar }}" style="height:30px;width:30px"> {{ $topic->user->name  }}
 </td>

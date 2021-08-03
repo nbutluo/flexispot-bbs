@@ -1,9 +1,12 @@
 <td>{{ $user->id }}</td>
 <td>
   <a href="{{ $user->avatar }}" target="_blank" rel="noopener noreferrer">
-    <img src="{{ $user->avatar }}" class="user-avatar" style="width: 50px;"></a>
+    <img src="{{ $user->avatar }}" class="user-avatar" style="width: 50px;">
+  </a>
 </td>
-<td>{{ $user->name }}</td>
+<td>
+  <a href="{{ route('users.show',$user->id) }}" target="_blank" rel="noopener noreferrer">{{ $user->name }}</a>
+</td>
 <td>{{ $user->email }}</td>
 <td>{{ $user->created_at }}</td>
 <td class="actions">

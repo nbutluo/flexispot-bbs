@@ -15,8 +15,14 @@
             </li>
             <li class="{{ active_admin_class(if_route('admin.topics.index'))}}">
               <a href="{{ route('admin.topics.index') }}">
-                <i class="icon mdi mdi-comment-text"></i>
+                <i class="icon mdi mdi-comment-outline"></i>
                 <span>话题列表</span>
+              </a>
+            </li>
+            <li class="{{ active_admin_class(if_route('admin.replies.index'))}}">
+              <a href="{{ route('admin.replies.index') }}">
+                <i class="icon mdi mdi-comment-text"></i>
+                <span>回复列表</span>
               </a>
             </li>
           </ul>
