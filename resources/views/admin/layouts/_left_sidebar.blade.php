@@ -25,6 +25,12 @@
                 <span>回复列表</span>
               </a>
             </li>
+            <li class="{{ active_admin_class(if_route('admin.categories.index'))}}">
+              <a href="{{ route('admin.categories.index') }}">
+                <i class="icon mdi mdi-label"></i>
+                <span>分类管理</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>

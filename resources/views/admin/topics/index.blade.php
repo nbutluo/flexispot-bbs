@@ -4,8 +4,7 @@
 <div class="row">
   <div class="col-lg-12">
     <div class="card card-table">
-      <div class="card-header">
-      </div>
+      <div class="card-header">话题列表</div>
       <div class="card-body">
         <table class="table table-hover">
           <thead>
