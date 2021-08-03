@@ -40,5 +40,6 @@ Route::get('admin', 'AdminController@index')->name('admin.index');
 Route::prefix('admin')->group(function () {
     Route::name('admin.')->group(function () {
         Route::resource('users', 'Admin\UsersController', ['except' => ['create', 'store', 'show']]);
+        Route::resource('topics', 'Admin\TopicsController', ['except' => ['create', 'store', 'show']]);
     });
 });
