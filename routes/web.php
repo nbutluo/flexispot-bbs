@@ -37,6 +37,8 @@ Route::resource('notifications', 'NotificationsController', ['only' => ['index']
 
 Route::get('admin', 'AdminController@index')->name('admin.index');
 
+Route::get('announcements', 'AnnouncementController@show')->name('announcements.show');
+
 Route::prefix('admin')->group(function () {
     Route::name('admin.')->group(function () {
         Route::resource('users', 'Admin\UsersController', ['except' => ['create', 'store', 'show']]);
@@ -44,5 +46,6 @@ Route::prefix('admin')->group(function () {
         Route::resource('replies', 'Admin\RepliesController', ['except' => ['create', 'store', 'show']]);
         Route::resource('categories', 'Admin\CategoriesController', ['except' => ['show', 'destroy']]);
         Route::resource('advertises', 'Admin\AdvertisesController', ['except' => ['show', 'create', 'store', 'destroy']]);
+        Route::resource('announcements', 'AnnouncementController', ['except' => ['show', 'create', 'store', 'destroy']]);
     });
 });

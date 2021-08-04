@@ -34,8 +34,14 @@
             <li class="divider">Marking</li>
             <li class="{{ active_admin_class(if_route('admin.advertises.index'))}}">
               <a href="{{ route('admin.advertises.index') }}">
-                <i class="icon mdi mdi-label"></i>
+                <i class="icon mdi mdi-folder-outline"></i>
                 <span>广告位管理</span>
+              </a>
+            </li>
+            <li class="{{ active_admin_class(if_route('admin.announcements.index'))}}">
+              <a href="{{ route('admin.announcements.index') }}">
+                <i class="icon mdi mdi-notifications"></i>
+                <span>首页公告</span>
               </a>
             </li>
           </ul>
