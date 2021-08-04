@@ -10,6 +10,11 @@ use Illuminate\Http\Request;
 
 class TopicsController extends Controller
 {
+    public function __construct()
+    {
+        return $this->middleware('verify.admin.login');
+    }
+
     public function index()
     {
         $topics = Topic::paginate(10);

@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class RepliesController extends Controller
 {
+    public function __construct()
+    {
+        return $this->middleware('verify.admin.login');
+    }
+
     public function index()
     {
         $replies = Reply::paginate(10);

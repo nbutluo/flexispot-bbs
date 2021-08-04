@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
 {
+    public function __construct()
+    {
+        return $this->middleware('verify.admin.login');
+    }
+
     public function index()
     {
         $categories = Category::paginate(10);

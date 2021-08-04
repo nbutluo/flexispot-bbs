@@ -9,6 +9,11 @@ use App\Models\User;
 
 class UsersController extends Controller
 {
+    public function __construct()
+    {
+        return $this->middleware('verify.admin.login');
+    }
+
     public function index()
     {
         $users = User::paginate(10);

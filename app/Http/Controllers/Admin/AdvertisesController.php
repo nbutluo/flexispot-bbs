@@ -10,6 +10,11 @@ use Illuminate\Http\Request;
 
 class AdvertisesController extends Controller
 {
+    public function __construct()
+    {
+        return $this->middleware('verify.admin.login');
+    }
+
     public function index()
     {
         $advertises = Advertise::paginate(10);
