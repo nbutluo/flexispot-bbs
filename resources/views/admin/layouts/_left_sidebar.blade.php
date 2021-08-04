@@ -5,7 +5,7 @@
       <div class="left-sidebar-scroll">
         <div class="left-sidebar-content">
           <ul class="sidebar-elements">
-            <li class="divider">Menu</li>
+            <li class="divider">Content Menu</li>
             {{-- <li><ahref="#"><iclass="iconmdimdi-home"></i><span>Dashboard</span></a></li> --}}
             <li class="{{ active_admin_class(if_route('admin.users.index'))}}">
               <a href="{{ route('admin.users.index') }}">
@@ -29,6 +29,13 @@
               <a href="{{ route('admin.categories.index') }}">
                 <i class="icon mdi mdi-label"></i>
                 <span>分类管理</span>
+              </a>
+            </li>
+            <li class="divider">Marking</li>
+            <li class="{{ active_admin_class(if_route('admin.advertises.index'))}}">
+              <a href="{{ route('admin.advertises.index') }}">
+                <i class="icon mdi mdi-label"></i>
+                <span>广告位管理</span>
               </a>
             </li>
           </ul>

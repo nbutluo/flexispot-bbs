@@ -46,7 +46,8 @@
   <script src="/beagle/static/js/countup.min.js" type="text/javascript"></script>
   <script src="/beagle/static/js/jquery-ui.min.js" type="text/javascript"></script>
   <script src="/beagle/static/js/jquery.vmap.min.js" type="text/javascript"></script>
-  <script src="/beagle/static/js/jquery.vmap.world.js" type="text/javascript"></script>
+  <script src="{{ asset('beagle/static/js/jquery.vmap.world.js') }}" type="text/javascript"></script>
+  <script src=" {{ asset('js/cupload.js') }}"></script>
   <script type="text/javascript">
     $(document).ready(function() {
       //-initialize the javascript

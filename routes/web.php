@@ -43,5 +43,6 @@ Route::prefix('admin')->group(function () {
         Route::resource('topics', 'Admin\TopicsController', ['except' => ['create', 'store', 'show']]);
         Route::resource('replies', 'Admin\RepliesController', ['except' => ['create', 'store', 'show']]);
         Route::resource('categories', 'Admin\CategoriesController', ['except' => ['show', 'destroy']]);
+        Route::resource('advertises', 'Admin\AdvertisesController', ['except' => ['show', 'create', 'store', 'destroy']]);
     });
 });

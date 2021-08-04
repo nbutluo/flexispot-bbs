@@ -1,46 +1,47 @@
 @extends('admin.layouts.index')
-@section('title','分类管理')
+@section('title','广告位管理')
 @section('content')
 <div class="row">
   <div class="col-lg-12">
     <div class="card card-table">
       <div class="card-header">
-        分类列表
-        <a href="{{ route('admin.categories.create') }}" target="_blank">
-          <div class="icon icon-add" style="float: right;"><span class="mdi mdi-brush"> 分类新增</span></div>
-        </a>
+        广告位列表
       </div>
       <div class="card-body">
         <table class="table table-hover">
           <thead>
             <tr>
               <th style="width:5%;">ID</th>
-              <th>名称</th>
-              <th>描述</th>
+              <th>标题描述</th>
+              <th>链接</th>
+              <th>图片</th>
               <th>显示/隐藏</th>
-              <th style="text-align: center;">管理</th>
+              <th style="width:20%;text-align: center;">操作</th>
             </tr>
           </thead>
           <tbody>
-            @if (count($categories)>0)
-            @foreach ($categories as $key => $category)
+            @if (count($advertises)>0)
+            @foreach ($advertises as $key => $advertise)
             <tr>
-              <td>{{ $category->id }}</td>
+              <td>{{ $advertise->id }}</td>
+              <td>{{ $advertise->title }}</td>
               <td>
-                <a href="{{ route('categories.show',$category->id) }}" target="_blank" rel="noopener noreferrer">
-                  {{ $category->name }}
+                <a href="{{ $advertise->link }}" target="_blank">{{ $advertise->link }}</a>
+              </td>
+              <td>
+                <a href="{{ $advertise->cover }}" target="_blank" rel="noopener noreferrer">
+                  <img src="{{ $advertise->cover }}" alt="{{ $advertise->title }}" class="advertise-cover" style="width: 50px;">
                 </a>
               </td>
-              <td>{{ $category->description }}</td>
               <td>
-                @if ($category->is_show)
+                @if ($advertise->is_show)
                 <span class="badge badge-pill badge-success">显示</span>
                 @else
                 <span class="badge badge-pill badge-warning">隐藏</span>
                 @endif
               </td>
               <td class="actions">
-                <a class="icon" href="{{ route('admin.categories.edit',$category->id) }}">
+                <a class="icon" href="{{ route('admin.advertises.edit',$advertise->id) }}">
                   <button class="btn btn-space btn-primary btn-sm">
                     <i class="mdi mdi-edit"></i>
                     编辑
@@ -63,12 +64,12 @@
 </div>
 <div class="row be-datatable-footer">
   <div class="col-sm-5">
-    <div class="dataTables_info" id="table6_info" role="status" aria-live="polite">分类总数：{{$categories->total()}}</div>
+    <div class="dataTables_info" id="table6_info" role="status" aria-live="polite">广告位总数：{{$advertises->total()}}</div>
   </div>
   <div class="col-sm-7">
     <div class="dataTables_paginate paging_simple_numbers" id="table6_paginate">
       <ul class="pagination">
-        {{ $categories->render() }}
+        {{ $advertises->render() }}
       </ul>
     </div>
   </div>
