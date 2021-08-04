@@ -3,7 +3,7 @@
     <div class="be-navbar-header"><a class="navbar-brand" href="#" target="_blank"></a>
     </div>
     <div class="be-right-navbar">
-      <form action="#" method="post" onsubmit="return confirm('确认退出吗？')">
+      <form action="{{ route('admin.logout') }}" method="post" onsubmit="return confirm('确认退出吗？')">
         @csrf
         @method('DELETE')
 
@@ -14,7 +14,7 @@
             </a>
             <div class="dropdown-menu" role="menu">
               <a class="dropdown-item" href="#">
-                <span class="icon mdi mdi-face"></span>
+                <span class="icon mdi mdi-face"></span>{{ Session::get('admin.user')}}
               </a>
               <button class="dropdown-item" type="submit" href="#" style="cursor: pointer;">
                 <span class="icon mdi mdi-power"></span>退出
