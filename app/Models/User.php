@@ -71,4 +71,10 @@ class User extends Authenticatable implements MustVerifyEmailContract
         $this->save();
         $this->unreadNotifications->markAsRead();
     }
+
+    // 一个用户可以收藏多个帖子
+    public function collectedTopics()
+    {
+        return $this->hasMany(CollectedTopic::class);
+    }
 }

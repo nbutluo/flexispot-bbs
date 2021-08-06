@@ -64,4 +64,10 @@ class Topic extends Model
         $this->reply_count = $this->replies->count();
         $this->save();
     }
+
+    // 一条帖子可以被多次收藏
+    public function collects()
+    {
+        return $this->hasMany(CollectedTopic::class);
+    }
 }

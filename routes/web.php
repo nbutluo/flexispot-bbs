@@ -39,6 +39,13 @@ Route::get('admin', 'Admin\AdminController@index')->name('admin.index');
 
 Route::get('announcements', 'AnnouncementController@show')->name('announcements.show');
 
+// Route::prefix('user')->group(function () {
+//     Route::resource('collects', 'CollectedTopicController');
+//     Route::get('/user')
+// });
+// 用户收藏的话题
+Route::get('/user/collects/{user}', 'CollectedTopicController@collects')->name('user.collects');
+
 Route::prefix('admin')->group(function () {
     Route::name('admin.')->group(function () {
         Route::resource('users', 'Admin\UsersController', ['except' => ['create', 'store', 'show']]);
