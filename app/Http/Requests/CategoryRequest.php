@@ -13,11 +13,10 @@ class CategoryRequest extends FormRequest
 
     public function rules()
     {
-        $category = $this->route('category');
+        $id = $this->route('category') ? $this->route('category')->id : false;
 
         return [
-            'name' => 'required|min:2|unique:categories,name,' . $category->id,
-            'description' => 'required|min:2',
+            'name' => 'required|min:2|unique:categories,name,' . $id,
         ];
     }
 
@@ -26,7 +25,7 @@ class CategoryRequest extends FormRequest
         return [
             'name.min' => '分类名称不能少于2个字',
             'name.required' => '分类名称不能为空',
-            'description.required' => '描述不能为空',
+            'name.unique' => '与已有分类名称重复',
         ];
     }
 }

@@ -8,6 +8,7 @@
         新增分类
         <span class="card-subtitle">
           <li class="mb-1 mt-1">分类字数不少于2个</li>
+          <li class="mb-1 mt-1">新增分类时请注意层级</li>
         </span>
       </div>
       <div class="card-body">
@@ -16,16 +17,28 @@
           @include('admin.shared._error')
 
           <div class="form-group row">
+            <label class="col-12 col-sm-3 col-form-label text-sm-right">所属分类</label>
+            <div class="col-12 col-sm-8 col-lg-6">
+              <select class="form-control" name="pid">
+                <option value="0">顶级分类</option>
+                @foreach ($categories as $category)
+                <option value="{{ $category['id'] }}">{!! $category['_name'] !!}</option>
+                @endforeach
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
             <label class="col-12 col-sm-3 col-form-label text-sm-right">分类名称</label>
             <div class="col-12 col-sm-8 col-lg-6">
-              <input class="form-control" type="text" name="name" value="{{ old('name')}}">
+              <input class="form-control" type="text" name="name" placeholder="必填" value="{{ old('name')}}">
             </div>
           </div>
 
           <div class="form-group row">
             <label class="col-12 col-sm-3 col-form-label text-sm-right">描述</label>
             <div class="col-12 col-sm-8 col-lg-6">
-              <input class="form-control" type="text" name="description" value="{{ old('description')}}">
+              <input class="form-control" type="text" name="description" placeholder="非必填项" value="{{ old('description')}}">
             </div>
           </div>
 

@@ -17,6 +17,18 @@
           @include('admin.shared._error')
 
           <div class="form-group row">
+            <label class="col-12 col-sm-3 col-form-label text-sm-right">父级分类</label>
+            <div class="col-12 col-sm-8 col-lg-6">
+              <select class="form-control" name="pid">
+                <option value="0">顶级分类</option>
+                @foreach ($categories as $class)
+                <option value="{{ $class['id'] }}" {{ $class['_selected'] ?'selected':'' }} {{  $class['_disabled'] ?'disabled':'' }}>{!! $class['_name'] !!}</option>
+                @endforeach
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
             <label class="col-12 col-sm-3 col-form-label text-sm-right">分类名称</label>
             <div class="col-12 col-sm-8 col-lg-6">
               <input class="form-control" type="text" name="name" value="{{ old('name',$category->name)}}">
@@ -45,9 +57,7 @@
             <div class="col-sm-6 pl-0">
               <p class="text-right">
                 <button class="btn btn-space btn-primary" type="submit">提交</button>
-                <a href="{{ url()->previous() }}" class="btn btn-space btn-secondary">
-                  返回
-                </a>
+                <a href="{{ route('admin.categories.index') }}" class="btn btn-space btn-secondary">返回</a>
               </p>
             </div>
           </div>
