@@ -13,8 +13,10 @@ class CategoryRequest extends FormRequest
 
     public function rules()
     {
+        $category = $this->route('category');
+
         return [
-            'name' => 'required|min:2',
+            'name' => 'required|min:2|unique:categories,name,' . $category->id,
             'description' => 'required|min:2',
         ];
     }
