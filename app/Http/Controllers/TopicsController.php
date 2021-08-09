@@ -20,28 +20,30 @@ class TopicsController extends Controller
     public function index(Request $request, Topic $topic)
     {
         $topics = $topic->withOrder($request->order)
-                        ->with('user', 'category')  // 预加载防止 N+1 问题
-                        ->paginate(20);
+            ->with('user', 'category')  // 预加载防止 N+1 问题
+            ->paginate(20);
         return view('topics.index', compact('topics'));
     }
 
     public function show(Request $request, Topic $topic)
     {
         // URL 矫正
-        if ( ! empty($topic->slug) && $topic->slug != $request->slug) {
+        if (!empty($topic->slug) && $topic->slug != $request->slug) {
             return redirect($topic->link(), 301);
         }
+
+        $topic->increment('view_count');
 
         return view('topics.show', compact('topic'));
     }
 
-	public function create(Topic $topic)
+    public function create(Topic $topic)
     {
         $categories = Category::all();
         return view('topics.create_and_edit', compact('topic', 'categories'));
     }
 
-	public function store(TopicRequest $request, Topic $topic)
+    public function store(TopicRequest $request, Topic $topic)
     {
         $topic->fill($request->all());
         $topic->user_id = Auth::id();
@@ -50,7 +52,7 @@ class TopicsController extends Controller
         return redirect()->to($topic->link())->with('success', '帖子创建成功！');
     }
 
-	public function edit(Topic $topic)
+    public function edit(Topic $topic)
     {
         $this->authorize('update', $topic);
         $categories = Category::all();
@@ -65,7 +67,7 @@ class TopicsController extends Controller
         return redirect()->to($topic->link())->with('success', '更新成功！');
     }
 
-	public function destroy(Topic $topic)
+    public function destroy(Topic $topic)
     {
         $this->authorize('destroy', $topic);
         $topic->delete();
