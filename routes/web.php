@@ -60,3 +60,7 @@ Route::prefix('admin')->group(function () {
         Route::delete('logout', 'Admin\AdminController@logout')->name('logout');
     });
 });
+
+Route::prefix('user')->group(function () {
+    Route::get('like/{reply}', 'LikesController@toggleLike')->name('user.like');
+});

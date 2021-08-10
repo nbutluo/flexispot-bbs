@@ -9,11 +9,13 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 use Auth;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Overtrue\LaravelLike\Traits\Liker;
 
 class User extends Authenticatable implements MustVerifyEmailContract
 {
     use HasFactory, MustVerifyEmailTrait;
     use SoftDeletes;
+    use Liker;
 
     use Notifiable {
         notify as protected laravelNotify;
