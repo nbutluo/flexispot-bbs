@@ -3,10 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Overtrue\LaravelFavorite\Traits\Favoriteable;
 
 class Topic extends Model
 {
     use HasFactory;
+    use Favoriteable;
 
     protected $fillable = [
         'title', 'body', 'category_id', 'excerpt', 'slug', 'view_count'

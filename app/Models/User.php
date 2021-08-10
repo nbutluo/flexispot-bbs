@@ -10,12 +10,14 @@ use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 use Auth;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Overtrue\LaravelLike\Traits\Liker;
+use Overtrue\LaravelFavorite\Traits\Favoriter;
 
 class User extends Authenticatable implements MustVerifyEmailContract
 {
     use HasFactory, MustVerifyEmailTrait;
     use SoftDeletes;
     use Liker;
+    use Favoriter;
 
     use Notifiable {
         notify as protected laravelNotify;
