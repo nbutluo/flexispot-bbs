@@ -9,39 +9,33 @@
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>@yield('title', 'LaraBBS') - Laravel 进阶教程</title>
-  <meta name="description" content="@yield('description', 'LaraBBS 爱好者社区')" />
+  <title>@yield('title', 'loctek forum') </title>
+  <meta name="description" content="@yield('description', 'FlexispotBBS')" />
 
   <!-- Styles -->
-  <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+  <link href="{{ mix('css/footer.css') }}" rel="stylesheet">
+  <link href="{{ mix('css/header.css') }}" rel="stylesheet">
 
   @yield('styles')
 
 </head>
 
 <body>
-  <div id="app" class="{{ route_class() }}-page">
+  @include('layouts._header')
+  <div class="app" id="app" class="{{ route_class() }}-page">
+    @include('shared._messages')
 
-    @include('layouts._header')
-
-    <div class="container">
-
-      @include('shared._messages')
-
-      @yield('content')
-
-    </div>
-
-    @include('layouts._footer')
+    @yield('content')
   </div>
+  @include('layouts._footer')
+
 
   @if (app()->isLocal())
   @include('sudosu::user-selector')
   @endif
 
-  <!-- Scripts -->
   <script src="{{ mix('js/app.js') }}"></script>
-
+  <!-- Scripts -->
   @yield('scripts')
 
 </body>

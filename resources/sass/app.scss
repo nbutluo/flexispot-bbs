@@ -1,14 +1,15 @@
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+@import "~jquery/dist/jquery.min.js";
 
 // Fontawesome
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import '~@fortawesome/fontawesome-free/scss/regular';
-@import '~@fortawesome/fontawesome-free/scss/solid';
-@import '~@fortawesome/fontawesome-free/scss/brands';
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
 
 /* universal */
 
@@ -74,9 +75,10 @@ body {
 }
 
 /* Topic Index Page */
-.topics-index-page, .categories-show-page {
+.topics-index-page,
+.categories-show-page {
   .topic-list {
-    .nav>li>a {
+    .nav > li > a {
       position: relative;
       display: block;
       padding: 5px 14px;
@@ -115,38 +117,36 @@ body {
 }
 
 .simditor-body img {
-  max-width:100%;
+  max-width: 100%;
 }
-
 
 /* Topic Show Page */
 
 @import "topic_body";
 
 .topics-show-page {
+  .card {
+    padding: 15px;
 
-    .card {
-        padding: 15px;
-
-        h1 {
-            margin: 0.4em auto 0.6em;
-            font-size: 28px;
-            line-height: 38px;
-        }
+    h1 {
+      margin: 0.4em auto 0.6em;
+      font-size: 28px;
+      line-height: 38px;
     }
+  }
 }
 
 /* 回复列表 */
 
 .topic-reply {
-    a {
-        color: inherit;
-    }
+  a {
+    color: inherit;
+  }
 
-    .meta {
-        font-size: .9em;
-        color: #b3b3b3;
-    }
+  .meta {
+    font-size: 0.9em;
+    color: #b3b3b3;
+  }
 }
 
 /* 消息通知 */
@@ -157,7 +157,7 @@ body {
   }
 
   .badge-secondary {
-    background-color: #EBE8E8;
+    background-color: #ebe8e8;
   }
 
   .badge-hint {

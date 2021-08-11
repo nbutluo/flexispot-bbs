@@ -1,0 +1,192 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  width: 1020px;
+  margin: 48px auto;
+  color: #2f3541;
+
+  .login-title {
+    h1 {
+      margin-bottom: 36px;
+    }
+  }
+
+  .login-form {
+    display: flex;
+    justify-content: space-around;
+
+    .login-part {
+      margin-right: 32px;
+    }
+
+    .text-box {
+      width: 478px;
+
+      .mid-title {
+        font-size: 1.8rem;
+        border-bottom: 1px solid #e8e8e8;
+        margin-bottom: 15px;
+        padding-bottom: 12px;
+      }
+
+      .info {
+        margin: 0 0 24px;
+      }
+    }
+
+    .form-item {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 24px;
+
+      .title {
+        color: #333;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 6px;
+      }
+
+      input {
+        height: 40px;
+        outline: 0;
+        padding: 0 14px;
+        border: 1px solid #eaf5fa;
+        color: #2f3541;
+        font-size: 15px;
+      }
+    }
+
+    .forget-pass {
+      display: flex;
+      justify-content: space-between;
+
+      .loctek-link {
+        color: #1b76de;
+        text-decoration: none;
+
+        &:hover {
+          color: #8f929a;
+        }
+      }
+
+      .action-btn {
+        cursor: pointer;
+        color: #fff;
+        background-color: #1b76de;
+        padding: 6px 8px;
+        border-radius: 4px;
+      }
+    }
+
+    .create-part {
+      .action-btn {
+        color: #fff;
+        background-color: #1b76de;
+        padding: 6px 8px;
+        border-radius: 4px;
+        float: right;
+      }
+    }
+  }
+}
+
+@media (max-width: 1080px) {
+  .header {
+    padding: 14px 12px;
+
+    .type {
+      display: none;
+      width: auto;
+      height: auto;
+      position: absolute;
+      top: 56px;
+      right: 16px;
+      flex-direction: column;
+      background: #fff;
+      box-shadow: 0px 1px 8px 0px rgba(69, 69, 69, 0.22);
+      border-radius: 4px;
+
+      div {
+        padding: 12px 24px;
+      }
+
+      &-active {
+        color: #333;
+        border-bottom: none;
+      }
+    }
+
+    .login-not {
+      .hamburg-menu {
+        display: flex;
+      }
+    }
+  }
+
+  .app {
+    width: 100%;
+    padding: 24px 16px;
+    overflow: hidden;
+
+    .login-form {
+      flex-direction: column;
+      max-width: 100%;
+      margin: 24px auto;
+
+      .login-part {
+        margin-bottom: 32px;
+        margin-right: 0;
+
+        .text-box {
+          width: auto;
+        }
+      }
+
+      .text-box {
+        .info {
+          width: 96%;
+          font-size: 13px;
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+
+// 忘记密码页面
+
+.form-row {
+  display: flex;
+  margin-bottom: 28px;
+  align-items: center;
+}
+
+.captcha {
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  background: #cfc;
+}
+
+.action-btn {
+  color: #fff;
+  background-color: #1b76de;
+  padding: 12px 10px;
+  margin-left: 8px;
+  box-shadow: 0 3px 10px 0 rgb(28 80 162 / 15%);
+  border-radius: 6px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.link {
+  color: #1b76de;
+}
+
+.link:hover {
+  color: #8f929a;
+}

@@ -1,0 +1,470 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  width: 100%;
+  height: 71px;
+  padding: 0 15%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  box-shadow: 0px 1px 10px 0px rgba(69, 69, 69, 0.16);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .type {
+  width: 380px;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header .type div {
+  cursor: pointer;
+}
+
+.header .type-active {
+  font-size: 18px;
+  font-family: Roboto;
+  font-weight: 400;
+  color: #1774dc;
+  border-bottom: 2px solid #1774dc;
+}
+
+.header .type-active span {
+  height: 25px;
+}
+
+.header .login {
+  height: 57px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.header .login-search {
+  display: flex;
+  align-items: center;
+}
+
+.header .login-search img {
+  margin: 0 8px 0 0;
+  width: 17px;
+  height: 17px;
+}
+
+.header .login-yes {
+  display: flex;
+  align-items: center;
+}
+
+.header .login-yes .message {
+  width: 27px;
+  height: 18px;
+  background: #cccccc;
+  border-radius: 9px;
+  text-align: center;
+  color: #fff;
+  margin: 0 11px;
+  font-size: 14px;
+}
+
+.header .login-yes img {
+  width: 57px;
+  height: 57px;
+}
+
+.header .login .plus-img {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/assets/grey_plus.png");
+  background-size: contain;
+  cursor: pointer;
+  margin-bottom: -3px;
+}
+
+.header .login-not {
+  display: flex;
+  align-items: center;
+  color: #8c8c8c;
+}
+
+.header .login-not .login-box {
+  margin: 0 0 0 8px;
+  width: 70px;
+  height: 28px;
+  background: #1774dc;
+  border-radius: 4px;
+  color: #fff;
+  text-align: center;
+  line-height: 28px;
+  font-size: 14px;
+  position: relative;
+}
+
+.header .login-not .login-box::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 14px;
+  margin: 0 4px -2px 0;
+  background-image: url("/assets/user.png");
+  background-size: contain;
+}
+
+.header .login-not .hamburg-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 18px;
+  margin-left: 8px;
+  margin-bottom: -4px;
+}
+
+.header .login-not .hamburg-menu span {
+  display: inline-block;
+  width: 18px;
+  border-bottom: 3px solid #999999;
+  margin-bottom: 4px;
+}
+
+.header .login-not .hamburg-menu.active span {
+  border-bottom: 3px solid #1774dc;
+}
+
+.header .login #news {
+  display: none;
+  position: absolute;
+  top: 64px;
+  right: 0;
+  width: 137px;
+  height: 151px;
+  background: #ffffff;
+  box-shadow: 0px 1px 8px 0px rgba(69, 69, 69, 0.22);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #333333;
+}
+
+.header .login #news .news-title {
+  width: 137px;
+  height: 108px;
+  border-bottom: 1px solid #454545;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.header .login #news .news-title-line {
+  font-family: Roboto;
+  font-weight: 300;
+  color: #333333;
+  cursor: pointer;
+}
+
+.header .login #news .news-title-line img {
+  margin: 0 10px 0 14px;
+  width: 12px;
+  height: 12px;
+}
+
+.header .login #news .news-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+}
+
+.header .login #news .news-bottom button {
+  width: 77px;
+  height: 25px;
+  background: #f3654f;
+  border-radius: 4px;
+  border: 0;
+  font-family: Roboto;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.main {
+  width: 1000px;
+  height: 863px;
+  margin: 63px auto;
+  padding: 15px 30px 26px;
+  border: 1px solid rgba(69, 69, 69, 0.16);
+}
+
+.main-input {
+  height: 76px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.main-input input {
+  border: 0;
+  border-bottom: 1px solid rgba(69, 69, 69, 0.16);
+  width: 100%;
+  outline: none;
+  font-size: 22px;
+  padding: 17px 0;
+  color: #1774dc;
+}
+
+.main-title {
+  height: 76px;
+  line-height: 76px;
+  font-size: 22px;
+  font-family: Roboto;
+  font-weight: 300;
+  color: #666666;
+}
+
+.main-textarea textarea {
+  width: 100%;
+  height: 130px;
+  resize: none;
+  padding: 23px 0 0 21px;
+  font-size: 18px;
+  box-sizing: border-box;
+  border: 1px solid rgba(69, 69, 69, 0.16);
+}
+
+.main-textarea textarea::-moz-placeholder {
+  color: #cccccc;
+  font-size: 18px;
+}
+
+.main-textarea textarea:-ms-input-placeholder {
+  color: #cccccc;
+  font-size: 18px;
+}
+
+.main-textarea textarea::placeholder {
+  color: #cccccc;
+  font-size: 18px;
+}
+
+.main-textarea div {
+  width: 216px;
+  height: 243px;
+  background: #333333;
+  opacity: 0.6;
+}
+
+.main-button {
+  width: 275px;
+  margin: 107px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-button button {
+  width: 121px;
+  height: 61px;
+  border: 0;
+  border-radius: 4px;
+  font-size: 22px;
+  font-family: Roboto;
+  font-weight: 500;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.main-button .preserve {
+  background-color: #1774dc;
+}
+
+.main-button .cancel {
+  background-color: #cccccc;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .header {
+    padding: 0 14px;
+    height: 56px;
+  }
+
+  .header .type {
+    display: none;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 56px;
+    right: 16px;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 0px 1px 8px 0px rgba(69, 69, 69, 0.22);
+    border-radius: 4px;
+  }
+
+  .header .type div {
+    cursor: pointer;
+    padding: 12px 24px;
+  }
+
+  .header .type-active {
+    font-size: 18px;
+    font-family: Roboto;
+    font-weight: 400;
+    color: #1774dc;
+    border-bottom: 2px solid #1774dc;
+  }
+
+  .header .type-active span {
+    height: 25px;
+  }
+
+  .header .login {
+    height: 57px;
+    display: flex;
+    align-items: center;
+  }
+
+  .header .login-search {
+    display: flex;
+    align-items: center;
+  }
+
+  .header .login-search img {
+    margin: 0 8px 0 0;
+    width: 17px;
+    height: 17px;
+  }
+
+  .header .login .new_post {
+    display: none;
+  }
+
+  .header .login-yes img {
+    width: 46px;
+    height: 46px;
+  }
+
+  .header .login-not {
+    display: flex;
+    align-items: center;
+  }
+
+  .header .login-not .login-box {
+    width: 70px;
+    height: 27px;
+    background: #1774dc;
+    border-radius: 4px;
+    color: #fff;
+    text-align: center;
+    line-height: 27px;
+    font-size: 14px;
+  }
+
+  .header .login-not .hamburg-menu {
+    display: flex;
+  }
+
+  .header .login #news {
+    width: 137px;
+    height: 151px;
+    background: #ffffff;
+    box-shadow: 0px 1px 8px 0px rgba(69, 69, 69, 0.22);
+    border-radius: 4px;
+  }
+
+  .header .login #news .news-title {
+    display: flex;
+  }
+
+  .header .login #news .line-active {
+    background-color: #1774dc;
+  }
+
+  .main {
+    width: 100%;
+    height: 100%;
+    margin: 15px auto;
+    border: 0;
+    padding: 0 14px;
+    box-sizing: border-box;
+  }
+
+  .main-input {
+    height: 40px;
+  }
+
+  .main-input input {
+    padding: 0 0 10px;
+    color: #1774dc;
+    font-size: 16px;
+  }
+
+  .main-input input::-moz-placeholder {
+    font-size: 16px;
+  }
+
+  .main-input input:-ms-input-placeholder {
+    font-size: 16px;
+  }
+
+  .main-input input::placeholder {
+    font-size: 16px;
+  }
+
+  .main-title {
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .main-textarea textarea {
+    height: 66px;
+    font-size: 14px;
+    padding: 15px 0 0 13px;
+  }
+
+  .main-textarea textarea::-moz-placeholder {
+    color: #cccccc;
+    font-size: 14px;
+  }
+
+  .main-textarea textarea:-ms-input-placeholder {
+    color: #cccccc;
+    font-size: 14px;
+  }
+
+  .main-textarea textarea::placeholder {
+    color: #cccccc;
+    font-size: 14px;
+  }
+
+  .main-textarea div {
+    width: 144px;
+    height: 162px;
+  }
+
+  .main-button {
+    width: 160px;
+    margin: 49px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .main-button button {
+    width: 72px;
+    height: 31px;
+    font-size: 14px;
+  }
+
+  .main-button .preserve {
+    background-color: #1774dc;
+  }
+
+  .main-button .cancel {
+    background-color: #cccccc;
+  }
+}
+

@@ -1,0 +1,407 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+//头部css
+
+.header {
+  width: 100%;
+  height: 71px;
+  padding: 0 15%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  box-shadow: 0px 1px 10px 0px rgba(69, 69, 69, 0.16);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .type {
+    width: 380px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    div {
+      cursor: pointer;
+    }
+    &-active {
+      font-size: 18px;
+      font-family: Roboto;
+      font-weight: 400;
+      color: #1774dc;
+      border-bottom: 2px solid #1774dc;
+      span {
+        height: 25px;
+      }
+    }
+  }
+  .login {
+    height: 57px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    &-search {
+      display: flex;
+      align-items: center;
+      img {
+        margin: 0 8px 0 0;
+        width: 17px;
+        height: 17px;
+      }
+    }
+    &-yes {
+      img {
+        width: 57px;
+        height: 57px;
+      }
+    }
+    &-not {
+      display: flex;
+      align-items: center;
+      color: #8c8c8c;
+
+      .login-box {
+        margin: 0 0 0 8px;
+        width: 70px;
+        height: 28px;
+        background: #1774dc;
+        border-radius: 4px;
+        color: #fff;
+        text-align: center;
+        line-height: 28px;
+        font-size: 14px;
+        position: relative;
+
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 12px;
+          height: 14px;
+          margin: 0 4px -2px 0;
+          background-image: url("/assets/user.png");
+          background-size: contain;
+        }
+      }
+
+      .hamburg-menu {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        width: 18px;
+        margin-left: 8px;
+        margin-bottom: -4px;
+
+        span {
+          display: inline-block;
+          width: 18px;
+          border-bottom: 3px solid #999999;
+          margin-bottom: 4px;
+        }
+
+        &.active {
+          span {
+            border-bottom: 3px solid #1774dc;
+          }
+        }
+      }
+    }
+    #news {
+      display: none;
+      position: absolute;
+      // display: block;
+      top: 64px;
+      right: 0;
+      width: 137px;
+      height: 151px;
+      background: #ffffff;
+      box-shadow: 0px 1px 8px 0px rgba(69, 69, 69, 0.22);
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 300;
+      color: #333333;
+      .news-title {
+        width: 137px;
+        height: 108px;
+        border-bottom: 1px solid #454545;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        &-line {
+          font-family: Roboto;
+          font-weight: 300;
+          color: #333333;
+          img {
+            margin: 0 10px 0 14px;
+            width: 12px;
+            height: 12px;
+          }
+        }
+      }
+      .news-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 42px;
+        button {
+          width: 77px;
+          height: 25px;
+          background: #f3654f;
+          border-radius: 4px;
+          border: 0;
+          font-family: Roboto;
+          font-weight: 500;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+//主要内容
+.main {
+  width: 70%;
+  margin: 0 auto;
+  &-content {
+    margin: 63px 0 30px;
+    border: 1px solid #1b1c1e;
+    .every-column {
+      margin: 0 30px;
+      height: 110px;
+      border-bottom: 1px solid #cccccc;
+      display: flex;
+      align-items: center;
+      .bell-img {
+        margin: 0 23px 0 0;
+      }
+      .message-span {
+        font-size: 32px;
+        font-family: Roboto;
+        font-weight: 500;
+        color: #333333;
+        line-height: 123px;
+      }
+      &-image {
+        width: 100px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 59px;
+          height: 59px;
+        }
+      }
+      &-content {
+        height: 45px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .title {
+          font-size: 18px;
+          font-family: Roboto;
+          font-weight: 400;
+          color: #1774dc;
+          span {
+            color: #999999;
+          }
+        }
+        .content {
+          font-size: 14px;
+          font-family: Roboto;
+          color: #333333;
+          margin: 15px 0 0;
+        }
+      }
+      &-data {
+        flex: 1;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        img {
+          width: 17px;
+          height: 17px;
+        }
+        &-news {
+          margin: 0 0 0 22px;
+        }
+      }
+    }
+  }
+  &-paging {
+    width: 100%;
+    margin: 30px 0;
+    height: 40px;
+    .num-btns {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 10px;
+        height: 20px;
+        margin-right: 18px;
+        cursor: pointer;
+      }
+
+      .num {
+        padding: 7px 14px;
+        margin-right: 18px;
+        border-radius: 2px;
+        cursor: pointer;
+
+        &.active {
+          background: #1774dc;
+          color: #fff;
+        }
+      }
+    }
+
+    .share-btns {
+      position: absolute;
+      right: 0;
+
+      img {
+        width: 90px;
+        height: 30px;
+        margin-right: 8px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .header {
+    padding: 0 14px;
+    height: 56px;
+    .type {
+      display: none;
+      width: auto;
+      height: auto;
+      position: absolute;
+      top: 56px;
+      right: 16px;
+      flex-direction: column;
+      background: #fff;
+      box-shadow: 0px 1px 8px 0px rgba(69, 69, 69, 0.22);
+      border-radius: 4px;
+      div {
+        cursor: pointer;
+        padding: 12px 24px;
+      }
+      &-active {
+        font-size: 18px;
+        font-family: Roboto;
+        font-weight: 400;
+        color: #1774dc;
+        border-bottom: 2px solid #1774dc;
+        span {
+          height: 25px;
+        }
+      }
+    }
+    .login {
+      height: 57px;
+      display: flex;
+      align-items: center;
+      &-search {
+        display: flex;
+        align-items: center;
+        img {
+          margin: 0 8px 0 0;
+          width: 17px;
+          height: 17px;
+        }
+      }
+      &-yes {
+        img {
+          width: 46px;
+          height: 46px;
+        }
+      }
+      &-not {
+        display: flex;
+        align-items: center;
+        .login-box {
+          width: 70px;
+          height: 27px;
+          background: #1774dc;
+          border-radius: 4px;
+          color: #fff;
+          text-align: center;
+          line-height: 27px;
+          font-size: 14px;
+        }
+        .hamburg-menu {
+          display: flex;
+        }
+      }
+      #news {
+        width: 137px;
+        height: 151px;
+        background: #ffffff;
+        box-shadow: 0px 1px 8px 0px rgba(69, 69, 69, 0.22);
+        border-radius: 4px;
+        .news-title {
+          display: flex;
+        }
+        .line-active {
+          background-color: #1774dc;
+        }
+      }
+    }
+  }
+  .main {
+    width: 100%;
+    &-content {
+      margin: 0 0 30px;
+      border: 0;
+      .every-column {
+        margin: 0 14px;
+        height: 62px;
+        border-bottom: 1px solid #cccccc;
+        display: flex;
+        align-items: center;
+        .bell-img {
+          margin: 0 18px 0 0;
+        }
+        .message-span {
+          font-size: 24px;
+          font-family: Roboto;
+          font-weight: 500;
+        }
+        &-image {
+          width: 50px;
+          img {
+            width: 27px;
+            height: 27px;
+          }
+        }
+        &-content {
+          width: 185px;
+          height: 45px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          .title {
+            font-size: 14px;
+            font-weight: 400;
+          }
+          .content {
+            display: none;
+          }
+        }
+        &-data {
+          flex: 1;
+          height: 45px;
+          font-size: 12px;
+          justify-content: flex-end;
+          color: #999999;
+        }
+      }
+    }
+    &-paging {
+      display: none;
+    }
+  }
+}
