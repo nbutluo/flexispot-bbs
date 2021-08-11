@@ -1,7 +1,7 @@
 const mix = require("laravel-mix");
 
 mix
-  // .sass("resources/sass/app.scss", "public/css")
+  .sass("resources/sass/app.scss", "public/css")
   .js("resources/js/app.js", "public/js")
   .js("resources/cupload/js/cupload.js", "public/js")
   .sass("resources/sass/index.scss", "public/css")

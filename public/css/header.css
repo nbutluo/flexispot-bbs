@@ -76,6 +76,7 @@
   width: 57px;
   height: 57px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .header .login .plus-img {
@@ -190,5 +191,6 @@
   font-family: Roboto;
   font-weight: 500;
   color: #ffffff;
+  cursor: pointer;
 }
 

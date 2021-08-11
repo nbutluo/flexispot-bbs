@@ -37,12 +37,6 @@
       <div class="message">{{ Auth::user()->notification_count }}</div>
       <img src="{{ Auth::user()->avatar }}" alt="" id="avatars">
     </div>
-    <div class="login-not">
-      <!-- <div class="login-box">Log in</div> -->
-      <span class="hamburg-menu" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
-      </span>
-    </div>
     <div id="news">
       <div class="news-title">
         <div class="news-title-line"><a href="#"><img src="/assets/login.png" alt="">
@@ -51,7 +45,10 @@
         <div class="news-title-line"><img src="/assets/pen.png" alt=""> Edit</div>
       </div>
       <div class="news-bottom">
-        <button>QUit</button>
+        <form action="{{ route('logout') }}" method="POST" onsubmit="return confirm('您确定要退出吗？');">
+          @csrf
+          <button type="submit">QUit</button>
+        </form>
       </div>
     </div>
   </div>

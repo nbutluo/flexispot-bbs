@@ -37332,6 +37332,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/app.scss":
+/*!*********************************!*\
+  !*** ./resources/sass/app.scss ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/footer.scss":
 /*!************************************!*\
   !*** ./resources/sass/footer.scss ***!
@@ -37410,13 +37421,14 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ }),
 
 /***/ 0:
-/*!***************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/index.scss ./resources/sass/Individual.scss ./resources/sass/login.scss ./resources/sass/message.scss ./resources/sass/new.scss ./resources/sass/person.scss ./resources/sass/header.scss ./resources/sass/footer.scss ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/index.scss ./resources/sass/Individual.scss ./resources/sass/login.scss ./resources/sass/message.scss ./resources/sass/new.scss ./resources/sass/person.scss ./resources/sass/header.scss ./resources/sass/footer.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /home/vagrant/Code/flexispot-bbs/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /home/vagrant/Code/flexispot-bbs/resources/sass/app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! /home/vagrant/Code/flexispot-bbs/resources/sass/index.scss */"./resources/sass/index.scss");
 __webpack_require__(/*! /home/vagrant/Code/flexispot-bbs/resources/sass/Individual.scss */"./resources/sass/Individual.scss");
 __webpack_require__(/*! /home/vagrant/Code/flexispot-bbs/resources/sass/login.scss */"./resources/sass/login.scss");

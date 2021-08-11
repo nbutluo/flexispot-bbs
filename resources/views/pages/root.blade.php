@@ -1,11 +1,15 @@
 @extends('layouts.app')
-@section('title', '首页')
+
+@section('styles')
 <link href="{{ mix('css/index.css') }}" rel="stylesheet">
+@endsection
+
 @section('content')
 <div class="banner-box">
   <img src="assets/banner.png" alt="" class="banner" />
 </div>
 <div class="forum-content">
+
   <div class="left-panel">
     <div class="card">
       <p class="title">Sort by Category</p>
@@ -65,6 +69,7 @@
       </div>
     </div>
   </div>
+
   <div class="right-panel">
     <div class="tabs-box">
       <span class="tab active_tab all_tab">All categories</span>
@@ -215,6 +220,7 @@
       </div>
     </div>
   </div>
+
 </div>
 <div class="category_box">
   <div class="category_cover"></div>
@@ -240,6 +246,7 @@
     </p>
   </div>
 </div>
+
 <div class="control-btns">
   <img src="/assets/arrow.png" alt="" onClick="goTop()" />
   <a href="/new.html">

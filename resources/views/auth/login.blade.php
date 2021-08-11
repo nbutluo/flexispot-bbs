@@ -11,7 +11,7 @@
 </div>
 <div class="login-form">
   <div class="login-part">
-    <form method="POST" action="{{ route('login') }}">
+    <form method="POST" action="{{ route('login') }}" name="login-form">
       @csrf
       <div class="text-box">
         <p class="mid-title">Registered Customers</p>
@@ -19,21 +19,34 @@
           If you have an account, sign in with your email address.
         </p>
       </div>
+
       <div class="form-item">
-        <label for="" class="title">Email</label>
-        <input type="text" />
+        <label for="" class="title">{{ _('Email') }}</label>
+        <input type="email" class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autofocus />
+        @error('email')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+        @enderror
       </div>
+
       <div class="form-item">
-        <label for="" class="title">Password</label>
-        <input type="text" />
+        <label for="" class="title">{{ __('Password') }}</label>
+        <input type="password" class="@error('password') is-invalid @enderror" name="password" required />
+        @error('password')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+        @enderror
       </div>
+
       <div class="forget-pass">
         @if (Route::has('password.request'))
         <a class="loctek-link" href="{{ route('password.request') }}">
           Forget Your Pasword
         </a>
         @endif
-        <span class="action-btn">Sign In</span>
+        <span class="action-btn" onclick="document.forms['login-form'].submit();">Sign In</span>
       </div>
     </form>
   </div>
