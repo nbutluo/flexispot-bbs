@@ -194,3 +194,45 @@
   cursor: pointer;
 }
 
+.email-box {
+  margin: 48px auto;
+  border: 1px solid #dfdfdf;
+  border-radius: 4px;
+  width: 80%;
+}
+
+.email-box .verify-email-message {
+  margin: 16px 20px;
+  padding: 10px 18px;
+  border-radius: 6px;
+}
+
+.email-box .title {
+  padding: 12px 18px;
+  background: #f7f7f7;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.email-box .status {
+  margin: 16px 20px;
+  padding: 20px 18px;
+  background: #d1e7dd;
+  border: 1px solid #badbcc;
+  border-radius: 6px;
+  color: #0f5132;
+}
+
+.email-box .info {
+  margin: 16px 20px;
+}
+
+.info button {
+  color: #0d6efd;
+  text-decoration: underline;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #fff;
+  font-size: 18px;
+}
+
