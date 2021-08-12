@@ -37332,6 +37332,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/ant-message.scss":
+/*!*****************************************!*\
+  !*** ./resources/sass/ant-message.scss ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -37421,9 +37432,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ }),
 
 /***/ 0:
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/index.scss ./resources/sass/Individual.scss ./resources/sass/login.scss ./resources/sass/message.scss ./resources/sass/new.scss ./resources/sass/person.scss ./resources/sass/header.scss ./resources/sass/footer.scss ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/index.scss ./resources/sass/Individual.scss ./resources/sass/login.scss ./resources/sass/message.scss ./resources/sass/new.scss ./resources/sass/person.scss ./resources/sass/header.scss ./resources/sass/footer.scss ./resources/sass/ant-message.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -37436,7 +37447,8 @@ __webpack_require__(/*! /home/vagrant/Code/flexispot-bbs/resources/sass/message.
 __webpack_require__(/*! /home/vagrant/Code/flexispot-bbs/resources/sass/new.scss */"./resources/sass/new.scss");
 __webpack_require__(/*! /home/vagrant/Code/flexispot-bbs/resources/sass/person.scss */"./resources/sass/person.scss");
 __webpack_require__(/*! /home/vagrant/Code/flexispot-bbs/resources/sass/header.scss */"./resources/sass/header.scss");
-module.exports = __webpack_require__(/*! /home/vagrant/Code/flexispot-bbs/resources/sass/footer.scss */"./resources/sass/footer.scss");
+__webpack_require__(/*! /home/vagrant/Code/flexispot-bbs/resources/sass/footer.scss */"./resources/sass/footer.scss");
+module.exports = __webpack_require__(/*! /home/vagrant/Code/flexispot-bbs/resources/sass/ant-message.scss */"./resources/sass/ant-message.scss");
 
 
 /***/ })

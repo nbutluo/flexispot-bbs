@@ -15,6 +15,7 @@
   <!-- Styles -->
   <link href="{{ mix('css/footer.css') }}" rel="stylesheet">
   <link href="{{ mix('css/header.css') }}" rel="stylesheet">
+  <link href="{{ mix('css/ant-message.css') }}" rel="stylesheet">
 
   @yield('styles')
 

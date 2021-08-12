@@ -12,6 +12,7 @@ mix
   .sass("resources/sass/person.scss", "public/css")
   .sass("resources/sass/header.scss", "public/css")
   .sass("resources/sass/footer.scss", "public/css")
+  .sass("resources/sass/ant-message.scss", "public/css")
   .version()
   .copyDirectory("resources/editor/js", "public/js")
   .copyDirectory("resources/editor/css", "public/css")
