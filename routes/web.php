@@ -61,7 +61,7 @@ Route::prefix('user')->group(function () {
 
 // 收藏
 Route::prefix('collect')->group(function () {
-
+    // 用户对话题和评论点赞
     Route::get('topic/{topic}', 'CollectsController@toggleFavorite')->name('collect.topic');
     // 用户收藏的话题
     Route::get('user/{user}', 'CollectsController@userCollectedTopics')->name('user.collects');

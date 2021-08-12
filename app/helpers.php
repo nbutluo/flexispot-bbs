@@ -34,3 +34,8 @@ function active_admin_class($condition, $activeClass = 'active', $inactiveClass 
 {
     return app('active')->getClassIf($condition, $activeClass, $inactiveClass);
 }
+
+function active_categories_class($category_id)
+{
+    return ($category_id % 2) == 0 ? 'DGtype' : 'QAtype';
+}

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Requests\UserRequest;
 use App\Handlers\ImageUploadHandler;
+use App\Models\Topic;
 
 class UsersController extends Controller
 {
@@ -22,6 +23,8 @@ class UsersController extends Controller
 
     public function show(User $user)
     {
+        // dda($user->getFavoriteItems(Topic::class)->get());
+        // dda($user->collects());
         return view('users.show', compact('user'));
     }
 

@@ -39,9 +39,16 @@
     </div>
     <div id="news">
       <div class="news-title">
-        <div class="news-title-line"><a href="#"><img src="/assets/login.png" alt="">
-            Individual</a></div>
-        <div class="news-title-line"><img src="/assets/collect.png" alt=""> Collect</div>
+        <div class="news-title-line">
+          <a href="{{ route('users.show', Auth::id()) }}">
+            <img src="{{ asset('assets/login.png')}}" alt="">
+            Individual
+          </a>
+        </div>
+        <div class="news-title-line">
+          <img src="/assets/collect.png" alt="">
+          <a href="{{ route('users.show',[Auth::id(), 'tab' => 'collects'])}}">Collect</a>
+        </div>
         <div class="news-title-line"><img src="/assets/pen.png" alt=""> Edit</div>
       </div>
       <div class="news-bottom">

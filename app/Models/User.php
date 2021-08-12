@@ -11,6 +11,7 @@ use Auth;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Overtrue\LaravelLike\Traits\Liker;
 use Overtrue\LaravelFavorite\Traits\Favoriter;
+use App\Models\Topic;
 
 class User extends Authenticatable implements MustVerifyEmailContract
 {
@@ -80,5 +81,10 @@ class User extends Authenticatable implements MustVerifyEmailContract
     public function collectedTopics()
     {
         return $this->hasMany(CollectedTopic::class);
+    }
+
+    public function collects()
+    {
+        return $this->getFavoriteItems(Topic::class)->paginate(5);
     }
 }
