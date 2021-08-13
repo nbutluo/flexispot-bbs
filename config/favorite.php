@@ -14,7 +14,7 @@ return [
     /*
      * Table name for favorites records.
      */
-    'favorites_table' => 'favorites',
+    'favorites_table' => 'collects',
 
     /*
      * Model name for favorite record.
