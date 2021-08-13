@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Http\Requests\UserRequest;
 use App\Handlers\ImageUploadHandler;
 use App\Models\Topic;
+use App\Handlers\Base64ImageHandler;
 
 class UsersController extends Controller
 {
@@ -23,8 +24,6 @@ class UsersController extends Controller
 
     public function show(User $user)
     {
-        // dda($user->getFavoriteItems(Topic::class)->get());
-        // dda($user->collects());
         return view('users.show', compact('user'));
     }
 
@@ -34,19 +33,23 @@ class UsersController extends Controller
         return view('users.edit', compact('user'));
     }
 
-    public function update(UserRequest $request, ImageUploadHandler $uploader, User $user)
+    public function update(UserRequest $request, ImageUploadHandler $uploader, User $user, Base64ImageHandler $base64handler)
     {
         $this->authorize('update', $user);
-        $data = $request->all();
 
+        $data = $user->fill($request->all());
+
+        // dda($data);
         if ($request->avatar) {
-            $result = $uploader->save($request->avatar, 'avatars', $user->id, 416);
-            if ($result) {
-                $data['avatar'] = $result['path'];
+            if (preg_match('/^(data:\s*image\/(\w+);base64,)/', $data['avatar'][0], $result)) {
+                $res = $base64handler->base64_image_content($request->avatar, 'avatar');
+                $data['avatar'] = $res;
+            } else {
+                $data['avatar'] = $data['avatar'][0];
             }
         }
 
-        $user->update($data);
+        $user->save();
         return redirect()->route('users.show', $user->id)->with('success', '个人资料更新成功！');
     }
 }
