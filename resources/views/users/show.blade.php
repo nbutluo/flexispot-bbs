@@ -29,7 +29,7 @@
       </a>
 
       @can('update',$user)
-      <a href=""> <img src="{{ asset('/assets/xinfeng.png') }}" alt=""> <span> Message</span></a>
+      <a href="{{ route('notifications.index') }}" target="_blank"> <img src="{{ asset('/assets/xinfeng.png') }}" alt=""> <span> Message</span></a>
       @endcan
     </div>
 

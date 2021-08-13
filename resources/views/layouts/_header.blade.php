@@ -35,8 +35,8 @@
     </div>
 
     <div class="login-yes">
-      <div class="message">{{ Auth::user()->notification_count }}</div>
-      <img src="{{ Auth::user()->avatar }}" alt="" id="avatars">
+      <a href="{{ route('notifications.index') }}" class="message">{{ Auth::user()->notification_count }}</a>
+      <img src="{{ Auth::user()->avatar }}" alt="{{ Auth::user()->name }}" id="avatars">
     </div>
 
     <div id="news">
