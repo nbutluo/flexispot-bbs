@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Topic;
-use App\Models\User;
 use Illuminate\Http\Request;
-use Auth;
 
 class CollectsController extends Controller
 {
