@@ -200,6 +200,7 @@
   margin-right: 18px;
   border-radius: 2px;
   cursor: pointer;
+  color: #000;
 }
 
 .main .pagi-box .num-btns .num.active {

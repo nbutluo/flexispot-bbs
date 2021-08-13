@@ -25,15 +25,7 @@
 </div>
 @endforeach
 <div class="pagi-box">
-  <div class="num-btns">
-    <img src="/assets/grey_arrow.png" class="left-btn">
-    <span class="num active">1</span>
-    <span class="num">2</span>
-    <span class="num">3</span>
-    <span class="num">4</span>
-    <span class="num">5</span>
-    <img src="/assets/blue_arrow.png" class="right-btn">
-  </div>
+  {!! $posts->links('pagination::page') !!}
 </div>
 @else
 <span style="color: red;">暂无发帖数据</span>

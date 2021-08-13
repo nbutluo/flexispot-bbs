@@ -25,7 +25,7 @@
       </a>
       <a href="{{ route('users.show',[$user->id, 'tab' => 'collects'])}}" class="{{ active_navbar_class(if_query('tab', 'collects')) }}">
         <img src="{{ asset('/assets/collect.png') }}">
-        <span>Collect {{ count($user->collects()) ? count($user->collects()) : 0}}</span>
+        <span>Collect {{ $user->collects()->total() ? $user->collects()->total() : 0}}</span>
       </a>
 
       @can('update',$user)
