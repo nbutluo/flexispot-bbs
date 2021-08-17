@@ -240,3 +240,7 @@
   color: #1774dc !important;
 }
 
+.simditor .simditor-body img {
+  max-width: 100%;
+}
+
