@@ -87,4 +87,15 @@ class User extends Authenticatable implements MustVerifyEmailContract
     {
         return $this->getFavoriteItems(Topic::class)->paginate(5);
     }
+
+    public function posts()
+    {
+        return count($this->topics()->get()) ? count($this->topics()->get()) : 0;
+    }
+
+    // TODO::用户收到的赞
+    public function likes()
+    {
+        return $this->likes()->count();
+    }
 }

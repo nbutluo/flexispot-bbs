@@ -1,7 +1,7 @@
 {
-    "/js/app.js": "/js/app.js?id=d858869c7725b492d47c",
+    "/js/app.js": "/js/app.js?id=16c31caebdd12f0c6baf",
     "/css/app.css": "/css/app.css?id=decd2674b1147b593b09",
-    "/css/index.css": "/css/index.css?id=9a4f9bfda8fc57d41913",
+    "/css/index.css": "/css/index.css?id=fd6512cc6bc69b53c740",
     "/css/Individual.css": "/css/Individual.css?id=cd57a728638f4131d552",
     "/css/login.css": "/css/login.css?id=477cc3a235a283be1f49",
     "/css/message.css": "/css/message.css?id=8115f9aaf54592ec4d01",
@@ -9,6 +9,7 @@
     "/css/person.css": "/css/person.css?id=b8ef3a195a5124969c7e",
     "/css/header.css": "/css/header.css?id=a66c814924a2fe61946d",
     "/css/footer.css": "/css/footer.css?id=a8eefd9aa2e586bdc91e",
+    "/css/_variables.css": "/css/_variables.css?id=d41d8cd98f00b204e980",
     "/css/ant-message.css": "/css/ant-message.css?id=12abf977b8f5b2ecc9e8",
     "/js/cupload.js": "/js/cupload.js?id=82d41c3338026e3c7e53"
 }

@@ -39,3 +39,8 @@ function active_categories_class($category_id)
 {
     return ($category_id % 2) == 0 ? 'DGtype' : 'QAtype';
 }
+
+function active_tab_class($condition, $activeClass = 'active_tab', $inactiveClass = '')
+{
+    return app('active')->getClassIf($condition, $activeClass, $inactiveClass);
+}
