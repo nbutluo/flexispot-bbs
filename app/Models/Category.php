@@ -37,4 +37,12 @@ class Category extends Model
 
         return (new HdArr)->hasChild($categories, $this->id);
     }
+
+    // 获得多级目录列表（多维数组）
+    public function getCategoryLevel()
+    {
+        $categories = $this->get()->toArray();
+
+        return (new HdArr)->channelLevel($categories, 0, "&nbsp;", 'id');
+    }
 }

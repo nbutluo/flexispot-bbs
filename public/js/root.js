@@ -76,6 +76,6 @@ var modal = document.querySelector(".category_box"),
 //     }
 // });
 
-modal.addEventListener("click", () => {
-    modal.style.display = "none";
-});
+// modal.addEventListener("click", () => {
+//     modal.style.display = "none";
+// });

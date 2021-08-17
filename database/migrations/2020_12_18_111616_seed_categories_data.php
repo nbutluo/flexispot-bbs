@@ -10,20 +10,69 @@ class SeedCategoriesData extends Migration
     {
         $categories = [
             [
-                'name'        => '分享',
-                'description' => '分享创造，分享发现',
+                'name'        => 'News & Announcements',
+                'description' => '新闻与公告',
+                'pid' => 0
             ],
             [
-                'name'        => '教程',
-                'description' => '开发技巧、推荐扩展包等',
+                'name'        => 'Deals & Giveaways',
+                'description' => '优惠与赠品',
+                'pid' => 0
             ],
             [
-                'name'        => '问答',
-                'description' => '请保持友善，互帮互助',
+                'name'        => 'General & Product Discussion',
+                'description' => '产品讨论',
+                'pid' => 0
             ],
             [
-                'name'        => '公告',
-                'description' => '站点公告',
+                'name'        => 'Questions & Answers',
+                'description' => '问题与答案',
+                'pid' => 0
+            ],
+            [
+                'name'        => 'Product Reviews',
+                'description' => '产品评论',
+                'pid' => 0
+            ],
+            [
+                'name'        => 'Ideas & Suggestions',
+                'description' => '想法与建议',
+                'pid' => 0
+            ],
+            [
+                'name' =>  'Serie 1',
+                'description' => '产品讨论',
+                'pid' => 3
+            ],
+            [
+                'name' =>  'Serie 2',
+                'description' => '产品讨论',
+                'pid' => 3
+            ],
+            [
+                'name' =>  'Standing desks',
+                'description' => '想法与建议',
+                'pid' => 6
+            ],
+            [
+                'name' =>  'Desk bikes',
+                'description' => '想法与建议',
+                'pid' => 6
+            ],
+            [
+                'name' =>  'Desk converters',
+                'description' => '想法与建议',
+                'pid' => 6
+            ],
+            [
+                'name' =>  'Services',
+                'description' => '想法与建议',
+                'pid' => 6
+            ],
+            [
+                'name' =>  'Others',
+                'description' => '想法与建议',
+                'pid' => 6
             ],
         ];
 

@@ -8,50 +8,43 @@
 <div class="banner-box">
     <img src="assets/banner.png" alt="" class="banner">
 </div>
+
 <div class="forum-content">
     <div class="left-panel">
         <div class="card">
             <p class="title">Sort by Category</p>
             <div class="content">
-                <p class="category-tab" onclick="setActive(this)">
-                    <img src="./assets/horn.png" alt="" class="icon">
-                    <span class="text">News &amp; Announcements</span>
-                </p>
-                <p class="category-tab" onclick="setActive(this)">
-                    <img src="./assets/flag.png" alt="" class="icon">
-                    <span class="text">Deals &amp; Giveaways</span>
-                </p>
+                @foreach ($categories as $category)
+
+                @if($category['_data'])
                 <p class="category-tab" onclick="setHeight(this,'100px')">
-                    <img src="./assets/discuss.png" alt="" class="icon">
-                    <span class="text">General &amp; Product Discussion</span>
+                    <img src="{{ asset('/assets/discuss.png') }}" alt="{{ $category['name'] }}" class="icon {{ $category['id'] ==3 ? 'show' : 'hidden'}}">
+                    <img src="{{ asset('/assets/bulb.png') }}" alt="{{ $category['name'] }}" class="icon {{ $category['id'] ==6 ? 'show' : 'hidden'}}">
+                    <span class="text">
+                        {{ $category['name'] }}
+                    </span>
                     <span class="arrow-btn"></span>
                 </p>
                 <div class="more-menus">
-                    <span>Serie 1</span>
-                    <span>Serie 1</span>
-                    <span>Serie 1</span>
-                    <span>Serie 1</span>
+                    @foreach ($category['_data'] as $childCategory)
+                    <span><a href="{{ route('categories.show',$category['id']) }}">{{ $childCategory['name']}}</a></span>
+                    @endforeach
                 </div>
+
+                @else
                 <p class="category-tab" onclick="setActive(this)">
-                    <img src="./assets/note.png" alt="" class="icon">
-                    <span class="text">Questions &amp; Answers</span>
+                    <img src="{{ asset('/assets/horn.png') }}" alt="{{ $category['name'] }}" class="icon {{ $category['id'] ==1 ? 'show' : 'hidden'}}">
+                    <img src="{{ asset('/assets/flag.png') }}" alt="{{ $category['name'] }}" class="icon {{ $category['id'] ==2 ? 'show' : 'hidden'}}">
+                    <img src="{{ asset('/assets/note.png') }}" alt="{{ $category['name'] }}" class="icon {{ $category['id'] ==4 ? 'show' : 'hidden'}}">
+                    <img src="{{ asset('/assets/message2.png') }}" alt="{{ $category['name'] }}" class="icon {{ $category['id'] ==5 ? 'show' : 'hidden'}}">
+                    <span class="text">
+                        <a href="{{ route('categories.show',$category['id']) }}">{{ $category['name'] }}</a>
+                    </span>
                 </p>
-                <p class="category-tab" onclick="setActive(this)">
-                    <img src="./assets/message2.png" alt="" class="icon">
-                    <span class="text">Product Reviews</span>
-                </p>
-                <p class="category-tab" onclick="setHeight(this,'100px')">
-                    <img src="./assets/bulb.png" alt="" class="icon">
-                    <span class="text">Ideas &amp; Suggestions</span>
-                    <span class="arrow-btn"></span>
-                </p>
-                <div class="more-menus">
-                    <span>Standing desks</span>
-                    <span>Desk bikes</span>
-                    <span>Desk converters</span>
-                    <span>Services</span>
-                    <span>Others</span>
-                </div>
+                @endif
+
+                @endforeach
+
             </div>
         </div>
         @if ($announcements->is_show)
@@ -68,7 +61,6 @@
         <div class="card">
             <p class="title">Community Highlight</p>
             <div class="content">
-
                 @if (count($advertises))
 
                 @foreach ($advertises as $advertise)
@@ -80,12 +72,14 @@
             </div>
         </div>
     </div>
+
     <div class="right-panel">
         <div class="tabs-box">
             <!-- <span class="tab active_tab all_tab">All categories</span> -->
             <a href="{{ route('root') }}"><span class="tab {{ active_tab_class (if_query('tab',null))}}">Latest</span></a>
             <a href="?tab=top"><span class="tab {{ active_tab_class (if_query('tab','top'))}}">Top</span></a>
         </div>
+
         <div class="discuss-list">
 
             @if (count($topics))
@@ -141,30 +135,6 @@
             @endif
         </div>
     </div>
-    <div class="category_box">
-        <div class="category_cover"></div>
-        <div class="category_list">
-            <p class="cate_title">News &amp; Announcements</p>
-            <p class="cate_title">Deals &amp; Giveaways</p>
-            <p class="cate_title">
-                General &amp; Producr Discussion
-                <span>Serie 1</span>
-                <span>Serie 1</span>
-                <span>Serie 1</span>
-                <span>Serie 1</span>
-            </p>
-            <p class="cate_title">Questions &amp; Answers</p>
-            <p class="cate_title">Producr Rexiews</p>
-            <p class="cate_title">
-                Ideas &amp; Suggestions
-                <span>Standing desks</span>
-                <span>Desk bikes</span>
-                <span>Desk converters</span>
-                <span>Services</span>
-                <span>Others</span>
-            </p>
-        </div>
-    </div>
 
     <div class="control-btns">
         <img src="/assets/arrow.png" alt="" onClick="goTop()" />
@@ -172,8 +142,9 @@
             <img src="/assets/plus.png" alt="" />
         </a>
     </div>
-    @stop
+</div>
+@endsection
 
-    @section('scripts')
-    <script src="{{ asset('js/root.js')}}"></script>
-    @endsection
+@section('scripts')
+<script src="{{ asset('js/root.js')}}"></script>
+@endsection

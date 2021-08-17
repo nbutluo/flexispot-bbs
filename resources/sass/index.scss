@@ -52,6 +52,13 @@
                         .icon {
                             width: 20px;
                             margin-right: 12px;
+                            &.hidden {
+                                display: none;
+                            }
+
+                            &.show {
+                                display: block;
+                            }
                         }
 
                         .arrow-btn {
