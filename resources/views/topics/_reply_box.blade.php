@@ -1,13 +1,19 @@
 @include('shared._error')
 
-<div class="reply-box">
-  <form action="{{ route('replies.store') }}" method="POST" accept-charset="UTF-8">
-    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-    <input type="hidden" name="topic_id" value="{{ $topic->id }}">
-    <div class="form-group">
-      <textarea class="form-control" rows="3" placeholder="分享你的见解~" name="content"></textarea>
+<div class="reply-modal">
+    <div class="title-box" onclick="resetModal()">
+        <div><img src="/assets/share_btn.png" alt="">
+            <span>AAAAAAAAAAAAA</span>
+        </div>
+        <div>
+            <img src="/assets/-.png" alt="" style="margin-bottom:7px;" onclick="foldModal(event)">
+            <img src="/assets/x.png" alt="" onclick="hideModal()">
+        </div>
     </div>
-    <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-share mr-1"></i> 回复</button>
-  </form>
+    <div class="content">
+        this is post content
+    </div>
+    <div class="btn-box">
+        <span class="btn">Post Reply</span>
+    </div>
 </div>
-<hr>

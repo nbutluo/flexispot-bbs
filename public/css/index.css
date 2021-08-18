@@ -63,6 +63,14 @@
   margin-right: 12px;
 }
 
+.app .forum-content .left-panel .card .content .category-tab .icon.hidden {
+  display: none;
+}
+
+.app .forum-content .left-panel .card .content .category-tab .icon.show {
+  display: block;
+}
+
 .app .forum-content .left-panel .card .content .category-tab .arrow-btn {
   width: 10px;
   height: 6px;

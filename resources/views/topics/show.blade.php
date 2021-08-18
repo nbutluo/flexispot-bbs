@@ -2,76 +2,101 @@
 
 @section('title', $topic->title)
 @section('description', $topic->excerpt)
+@section('styles')
+<link rel="stylesheet" href="{{ mix('css/detail.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/simditor.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/new.css') }}">
+@endsection
 
 @section('content')
-
-<div class="row">
-
-  <div class="col-lg-3 col-md-3 hidden-sm hidden-xs author-info">
-    <div class="card ">
-      <div class="card-body">
-        <div class="text-center">
-          作者：{{ $topic->user->name }}
+@include('shared._error')
+<div class="head-box">
+    <div class="post_title">
+        <span class="title_text">
+            {{ $topic->title }}
+            <span class="share_btn" onclick="openAlert()"></span>
+            <span class="share_txt">share</span>
+        </span>
+        <div class="copy_box">
+            <span class="title">post #1</span>
+            <span class="link">{{ Request::url() }}</span>
+            <span class="icons">
+                <img src="/assets/bird.png" alt="">
+                <img src="/assets/face.png" alt="">
+                <img src="/assets/ins@2x.png" alt="">
+                <img src="/assets/x.png" onclick="closeAlert()" alt="">
+            </span>
         </div>
-        <hr>
-        <div class="media">
-          <div align="center">
-            <a href="{{ route('users.show', $topic->user->id) }}">
-              <img class="thumbnail img-fluid" src="{{ $topic->user->avatar }}" width="300px" height="300px">
-            </a>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-
-  <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 topic-content">
-    <div class="card">
-      <div class="card-body">
-        <h1 class="text-center mt-3 mb-3">
-          {{ $topic->title }}
-        </h1>
-
-        <div class="article-meta text-center text-secondary">
-          {{ $topic->created_at->diffForHumans() }}
-          ⋅
-          <i class="far fa-comment"></i>
-          {{ $topic->reply_count }}
-          ⋅
-          {{ $topic->view_count }} 阅读
-        </div>
-
-        <div class="topic-body mt-4 mb-4">
-          {!! $topic->body !!}
-        </div>
-
-        @can('update', $topic)
-        <div class="operate">
-          <hr>
-          <a href="{{ route('topics.edit', $topic->id) }}" class="btn btn-outline-secondary btn-sm" role="button">
-            <i class="far fa-edit"></i> 编辑
-          </a>
-          <form action="{{ route('topics.destroy', $topic->id) }}" method="post" style="display: inline-block;" onsubmit="return confirm('您确定要删除吗？');">
-            {{ csrf_field() }}
-            {{ method_field('DELETE') }}
-            <button type="submit" class="btn btn-outline-secondary btn-sm">
-              <i class="far fa-trash-alt"></i> 删除
-            </button>
-          </form>
-        </div>
-        @endcan
-
-      </div>
-    </div>
-
-    {{-- 用户回复列表 --}}
-    <div class="card topic-reply mt-4">
-      <div class="card-body">
-        @includeWhen(Auth::check(), 'topics._reply_box', ['topic' => $topic])
-        @include('topics._reply_list', ['replies' => $topic->replies()->with('user')->get()])
-      </div>
-    </div>
-
-  </div>
+    <p class="tags">
+        <span class="tag">{{ $topic->category->name }}</span><span class="tag">Topic</span>
+    </p>
 </div>
-@stop
+
+<div class="comments-list">
+    <div class="comment-box topic-box">
+        @include('topics._topic_box')
+    </div>
+
+    <div class="reply-list">
+        @include('topics._reply_list', ['replies' => $topic->replies()->with('user')->paginate()])
+    </div>
+</div>
+
+<div class="topic-list">
+    @include('topics._suggest_topics_list')
+</div>
+
+<div class="reply-modal">
+    <div class="title-box" onclick="resetModal()">
+        <div>
+            <img src="/assets/share_btn.png" alt="">
+            <span class="reply-topic-title" style="color: #1774dc;">AAAAAAAAAAAAA</span>
+        </div>
+        <div>
+            <img src="/assets/-.png" alt="" style="margin-bottom:7px;" onclick="foldModal(event)">
+            <img src="/assets/x.png" alt="" onclick="hideModal()">
+        </div>
+    </div>
+    <form action="{{ route('replies.store') }}" method="POST" accept-charset="UTF-8" name="replies-store" onsubmit="return confirm('确认提交吗？')">
+        @csrf
+        <input type="hidden" name="topic_id" value="{{ $topic->id }}">
+        <div class="content"><textarea name="content" id="editor"></textarea></div>
+        <div class="btn-box"><span class="btn" onclick="document.forms['replies-store'].submit()">Post Reply</span></div>
+    </form>
+</div>
+@endsection
+
+@section('scripts')
+<script>
+    $(function() {
+        $('.reply-topic').click(function() {
+            $('.reply-topic-title').text("{{ $topic->title }}")
+        });
+    })
+</script>
+
+<script>
+    $(document).ready(function() {
+        var editor = new Simditor({
+            textarea: $('#editor'),
+            upload: {
+                url: "{{ route('topics.upload_image') }}",
+                params: {
+                    _token: '{{ csrf_token() }}'
+                },
+                fileKey: 'upload_file',
+                connectionCount: 3,
+                leaveConfirm: '文件上传中，关闭此页面将取消上传。'
+            },
+            pasteImage: true,
+        });
+    });
+</script>
+<script src="{{ asset('js/detail.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/module.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/hotkeys.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/uploader.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/simditor.js') }}"></script>
+
+@endsection
