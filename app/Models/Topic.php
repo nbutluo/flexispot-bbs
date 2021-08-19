@@ -72,4 +72,14 @@ class Topic extends Model
     {
         return $this->hasMany(CollectedTopic::class);
     }
+
+    public function suggests()
+    {
+        $topics = Topic::where('category_id', $this->category_id)
+            ->orderBy('reply_count', 'desc')
+            ->orderBy('view_count', 'desc')
+            ->orderBy('created_at', 'desc')
+            ->limit(5)->get();
+        return $topics;
+    }
 }

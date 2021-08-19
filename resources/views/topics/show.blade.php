@@ -44,7 +44,7 @@
 </div>
 
 <div class="topic-list">
-    @include('topics._suggest_topics_list')
+    @include('topics._suggest_topics_list',['suggests'=>$topic->suggests()])
 </div>
 
 <div class="reply-modal">

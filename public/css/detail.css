@@ -260,6 +260,10 @@
   flex: 1;
 }
 
+.app .topic-list .topic .title a {
+  color: #000;
+}
+
 .app .topic-list .topic .num {
   margin-right: 72px;
   color: #888;

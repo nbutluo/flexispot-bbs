@@ -6,31 +6,18 @@
         <span class="num view_num">Views</span>
         <span class="num">Activity</span>
     </p>
+
+    @foreach ($suggests as $topic)
     <p class="topic">
-        <span class="title">
-            Because we are getting such an excluse, small family here
-        </span>
-        <span class="num">8</span><span class="num view_num">68</span><span class="num">Apr24</span>
+        <span class="title"><a href="{{ route('topics.show',$topic) }}" target="_blank">{{ $topic->title }}</a></span>
+        <span class="num">{{ $topic->reply_count }}</span>
+        <span class="num view_num">{{ $topic->view_count }}</span>
+        <span class="num">{{ $topic->created_at->formatLocalized('%B %d') }}</span>
     </p>
-    <p class="topic">
-        <span class="title">
-            Because we are getting such an excluse, small family here
-        </span>
-        <span class="num">8</span><span class="num view_num">68</span><span class="num">Apr24</span>
-    </p>
-    <p class="topic">
-        <span class="title">
-            Because we are getting such an excluse, small family here
-        </span>
-        <span class="num">8</span><span class="num view_num">68</span><span class="num">Apr24</span>
-    </p>
-    <p class="topic">
-        <span class="title">
-            Because we are getting such an excluse, small family here
-        </span>
-        <span class="num">8</span><span class="num view_num">68</span><span class="num">Apr24</span>
-    </p>
+    @endforeach
+
 </div>
 <p class="more-topic">
-    <span>Want to read more? Browse other topics in or </span><span class="more-link">views latest topics</span>
+    <span>Want to read more? Browse other topics in or </span>
+    <span class="more-link" target="_blank" onclick="location.href=`{{ route('root') }}`">views latest topics</span>
 </p>
