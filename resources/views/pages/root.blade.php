@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="banner-box">
-    <img src="assets/banner.png" alt="" class="banner">
+    <img src="{{ asset('assets/banner.png') }}" alt="" class="banner">
 </div>
 
 <div class="forum-content">
@@ -76,7 +76,7 @@
     <div class="right-panel">
         <div class="tabs-box">
             <!-- <span class="tab active_tab all_tab">All categories</span> -->
-            <a href="{{ route('root') }}"><span class="tab {{ active_tab_class (if_query('tab',null))}}">Latest</span></a>
+            <a href="{{ Request::url() }}"><span class="tab {{ active_tab_class (if_query('tab',null))}}">Latest</span></a>
             <a href="?tab=top"><span class="tab {{ active_tab_class (if_query('tab','top'))}}">Top</span></a>
         </div>
 
@@ -103,7 +103,7 @@
                             <img src="{{ asset($topic->user->avatar) }}" alt="{{ $topic->user->name }}">
                             <span>
                                 <span>{{ $topic->user->name }}</span>
-                                <span>Lv.6</span>
+                                {{--<span>Lv.6</span>--}}
                             </span>
                         </div>
                         <p class="row">
@@ -127,7 +127,11 @@
             @endforeach
 
             <div class="pagi-box">
+                @if (if_query('tab', 'top'))
+                {!! $topics->appends(Request::except('page'))->links('pagination::page') !!}
+                @else
                 {!! $topics->links('pagination::page') !!}
+                @endif
             </div>
 
             @else

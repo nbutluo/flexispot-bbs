@@ -29,30 +29,28 @@ class Topic extends Model
         return $this->hasMany(Reply::class);
     }
 
-    public function scopeWithOrder($query, $order)
+    public function scopeWithTab($query, $tab)
     {
         // 不同的排序，使用不同的数据读取逻辑
-        switch ($order) {
-            case 'recent':
-                $query->recent();
+        switch ($tab) {
+            case 'top':
+                $query->topReplied();
                 break;
 
             default:
-                $query->recentReplied();
+                $query->recent();
                 break;
         }
     }
 
-    public function scopeRecentReplied($query)
+    public function scopeTopReplied($query)
     {
-        // 当话题有新回复时，我们将编写逻辑来更新话题模型的 reply_count 属性，
-        // 此时会自动触发框架对数据模型 updated_at 时间戳的更新
-        return $query->orderBy('updated_at', 'desc');
+        return $query->orderBy('reply_count', 'desc')->orderBy('view_count', 'desc');
     }
 
     public function scopeRecent($query)
     {
-        // 按照创建时间排序
+        // 按照创建时间排序,默认排序
         return $query->orderBy('created_at', 'desc');
     }
 
@@ -84,5 +82,15 @@ class Topic extends Model
             ->get();
 
         return $suggest_topics;
+    }
+
+    public function top()
+    {
+        $top_topics = Topic::orderBy('reply_count', 'desc')
+            ->orderBy('view_count', 'desc')
+            ->orderBy('created_at', 'desc')
+            ->paginate();
+
+        return $top_topics;
     }
 }
