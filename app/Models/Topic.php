@@ -75,11 +75,14 @@ class Topic extends Model
 
     public function suggests()
     {
-        $topics = Topic::where('category_id', $this->category_id)
+        $suggest_topics = Topic::where('category_id', $this->category_id)
+            ->whereNotIn('id', [$this->id])
             ->orderBy('reply_count', 'desc')
             ->orderBy('view_count', 'desc')
             ->orderBy('created_at', 'desc')
-            ->limit(5)->get();
-        return $topics;
+            ->limit(5)
+            ->get();
+
+        return $suggest_topics;
     }
 }

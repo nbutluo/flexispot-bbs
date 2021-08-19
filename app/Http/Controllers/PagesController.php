@@ -21,34 +21,6 @@ class PagesController extends Controller
             ->OrderBy('updated_at', 'desc')
             ->paginate();
 
-        // foreach ($categories as $category) {
-
-        //     dd($category->getCategoryLevel());
-
-        //     // dda($category);
-        //     // if (condition) {
-        //     //     # code...
-        //     // }
-        //     // dd($category->isChildCategory());
-        //     // foreach ($category_level = $category->getCategoryLevel() as $value) {
-        //     //     if ($value['_data']) {
-        //     //         $value['children'] = $value['_data'];
-        //     //     }
-        //     //     var_dump($value);
-        //     // }
-        //     // // dd($category->getCategoryLevel());
-        //     // if ($category->hasChildCategory()) {
-        //     //     dd($list);
-        //     //     // foreach ($level = $category->getCategoryLevel() as $value) {
-        //     //     //     dd($level);
-        //     //     //     $category['child_category'] = $value['_data'];
-        //     //     // }
-        //     // }
-        //     // // $category['child_category'] = $category->getCategoryLevel()['_data'];
-        // }
-        // dd($categories);
-        // return;
-
         return view('pages.root', compact('announcements', 'advertises', 'topics', 'categories'));
     }
 }
