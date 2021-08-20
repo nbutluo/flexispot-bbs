@@ -76,6 +76,9 @@
 </div>
 @endforeach
 <!-- 分页 -->
+<!-- TODO::分页数据分配 -->
+@if ($replies->total()>5)
 <div class="pagi-box">
     {!! $replies->links('pagination::page') !!}
 </div>
+@endif

@@ -11,26 +11,7 @@
 @section('content')
 @include('shared._error')
 <div class="head-box">
-    <div class="post_title">
-        <span class="title_text">
-            {{ $topic->title }}
-            <span class="share_btn" onclick="openAlert()"></span>
-            <span class="share_txt">share</span>
-        </span>
-        <div class="copy_box">
-            <span class="title">post #1</span>
-            <span class="link">{{ Request::url() }}</span>
-            <span class="icons">
-                <img src="/assets/bird.png" alt="">
-                <img src="/assets/face.png" alt="">
-                <img src="/assets/ins@2x.png" alt="">
-                <img src="/assets/x.png" onclick="closeAlert()" alt="">
-            </span>
-        </div>
-    </div>
-    <p class="tags">
-        <span class="tag">{{ $topic->category->name }}</span><span class="tag">Topic</span>
-    </p>
+    @include('topics._head_box')
 </div>
 
 <div class="comments-list">
@@ -38,8 +19,9 @@
         @include('topics._topic_box')
     </div>
 
+    <!-- TODO::分页数据分配 -->
     <div class="reply-list">
-        @include('topics._reply_list', ['replies' => $topic->replies()->with('user')->paginate()])
+        @include('topics._reply_list', ['replies' => $topic->replies()->with('user')->paginate(5)])
     </div>
 </div>
 
@@ -48,22 +30,7 @@
 </div>
 
 <div class="reply-modal">
-    <div class="title-box" onclick="resetModal()">
-        <div>
-            <img src="/assets/share_btn.png" alt="">
-            <span class="reply-topic-title" style="color: #1774dc;">AAAAAAAAAAAAA</span>
-        </div>
-        <div>
-            <img src="/assets/-.png" alt="" style="margin-bottom:7px;" onclick="foldModal(event)">
-            <img src="/assets/x.png" alt="" onclick="hideModal()">
-        </div>
-    </div>
-    <form action="{{ route('replies.store') }}" method="POST" accept-charset="UTF-8" name="replies-store" onsubmit="return confirm('确认提交吗？')">
-        @csrf
-        <input type="hidden" name="topic_id" value="{{ $topic->id }}">
-        <div class="content"><textarea name="content" id="editor"></textarea></div>
-        <div class="btn-box"><span class="btn" onclick="document.forms['replies-store'].submit()">Post Reply</span></div>
-    </form>
+    @include('topics._reply_modal')
 </div>
 @endsection
 
