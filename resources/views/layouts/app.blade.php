@@ -35,7 +35,7 @@
     @include('sudosu::user-selector')
     @endif
 
-    <!-- <script src="{{ mix('js/app.js') }}"></script> -->
+    {{-- <script src="{{ mix('js/app.js') }}"></script> --}}
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/checkbrower.js') }}"></script>
     <!-- Scripts -->

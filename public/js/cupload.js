@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -788,14 +788,146 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 /***/ }),
 
-/***/ 1:
-/*!***********************************************!*\
-  !*** multi ./resources/cupload/js/cupload.js ***!
-  \***********************************************/
+/***/ "./resources/sass/Individual.scss":
+/*!****************************************!*\
+  !*** ./resources/sass/Individual.scss ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/ant-message.scss":
+/*!*****************************************!*\
+  !*** ./resources/sass/ant-message.scss ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/app.scss":
+/*!*********************************!*\
+  !*** ./resources/sass/app.scss ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/detail.scss":
+/*!************************************!*\
+  !*** ./resources/sass/detail.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/footer.scss":
+/*!************************************!*\
+  !*** ./resources/sass/footer.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/header.scss":
+/*!************************************!*\
+  !*** ./resources/sass/header.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/index.scss":
+/*!***********************************!*\
+  !*** ./resources/sass/index.scss ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/login.scss":
+/*!***********************************!*\
+  !*** ./resources/sass/login.scss ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/message.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/message.scss ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/new.scss":
+/*!*********************************!*\
+  !*** ./resources/sass/new.scss ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/person.scss":
+/*!************************************!*\
+  !*** ./resources/sass/person.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 0:
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/cupload/js/cupload.js ./resources/sass/app.scss ./resources/sass/index.scss ./resources/sass/Individual.scss ./resources/sass/login.scss ./resources/sass/message.scss ./resources/sass/new.scss ./resources/sass/detail.scss ./resources/sass/person.scss ./resources/sass/header.scss ./resources/sass/footer.scss ./resources/sass/ant-message.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/vagrant/Code/flexispot-bbs/resources/cupload/js/cupload.js */"./resources/cupload/js/cupload.js");
+__webpack_require__(/*! /home/vagrant/Code/flexispot-bbs/resources/cupload/js/cupload.js */"./resources/cupload/js/cupload.js");
+__webpack_require__(/*! /home/vagrant/Code/flexispot-bbs/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/vagrant/Code/flexispot-bbs/resources/sass/index.scss */"./resources/sass/index.scss");
+__webpack_require__(/*! /home/vagrant/Code/flexispot-bbs/resources/sass/Individual.scss */"./resources/sass/Individual.scss");
+__webpack_require__(/*! /home/vagrant/Code/flexispot-bbs/resources/sass/login.scss */"./resources/sass/login.scss");
+__webpack_require__(/*! /home/vagrant/Code/flexispot-bbs/resources/sass/message.scss */"./resources/sass/message.scss");
+__webpack_require__(/*! /home/vagrant/Code/flexispot-bbs/resources/sass/new.scss */"./resources/sass/new.scss");
+__webpack_require__(/*! /home/vagrant/Code/flexispot-bbs/resources/sass/detail.scss */"./resources/sass/detail.scss");
+__webpack_require__(/*! /home/vagrant/Code/flexispot-bbs/resources/sass/person.scss */"./resources/sass/person.scss");
+__webpack_require__(/*! /home/vagrant/Code/flexispot-bbs/resources/sass/header.scss */"./resources/sass/header.scss");
+__webpack_require__(/*! /home/vagrant/Code/flexispot-bbs/resources/sass/footer.scss */"./resources/sass/footer.scss");
+module.exports = __webpack_require__(/*! /home/vagrant/Code/flexispot-bbs/resources/sass/ant-message.scss */"./resources/sass/ant-message.scss");
 
 
 /***/ })
