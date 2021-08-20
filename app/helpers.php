@@ -7,7 +7,7 @@ function route_class()
 
 function category_nav_active($category_id)
 {
-    return active_class((if_route('categories.show') && if_route_param('category', $category_id)));
+    return active_category_tab((if_route('categories.show') && if_route_param('category', $category_id)));
 }
 
 function make_excerpt($value, $length = 200)
@@ -41,6 +41,11 @@ function active_categories_class($category_id)
 }
 
 function active_tab_class($condition, $activeClass = 'active_tab', $inactiveClass = '')
+{
+    return app('active')->getClassIf($condition, $activeClass, $inactiveClass);
+}
+
+function active_category_tab($condition, $activeClass = 'active-category-tab', $inactiveClass = '')
 {
     return app('active')->getClassIf($condition, $activeClass, $inactiveClass);
 }

@@ -12,40 +12,7 @@
 <div class="forum-content">
     <div class="left-panel">
         <div class="card">
-            <p class="title">Sort by Category</p>
-            <div class="content">
-                @foreach ($categories as $category)
-
-                @if($category['_data'])
-                <p class="category-tab" onclick="setHeight(this,'100px')">
-                    <img src="{{ asset('/assets/discuss.png') }}" alt="{{ $category['name'] }}" class="icon {{ $category['id'] ==3 ? 'show' : 'hidden'}}">
-                    <img src="{{ asset('/assets/bulb.png') }}" alt="{{ $category['name'] }}" class="icon {{ $category['id'] ==6 ? 'show' : 'hidden'}}">
-                    <span class="text">
-                        {{ $category['name'] }}
-                    </span>
-                    <span class="arrow-btn"></span>
-                </p>
-                <div class="more-menus">
-                    @foreach ($category['_data'] as $childCategory)
-                    <span><a href="{{ route('categories.show',$category['id']) }}">{{ $childCategory['name']}}</a></span>
-                    @endforeach
-                </div>
-
-                @else
-                <p class="category-tab" onclick="setActive(this)">
-                    <img src="{{ asset('/assets/horn.png') }}" alt="{{ $category['name'] }}" class="icon {{ $category['id'] ==1 ? 'show' : 'hidden'}}">
-                    <img src="{{ asset('/assets/flag.png') }}" alt="{{ $category['name'] }}" class="icon {{ $category['id'] ==2 ? 'show' : 'hidden'}}">
-                    <img src="{{ asset('/assets/note.png') }}" alt="{{ $category['name'] }}" class="icon {{ $category['id'] ==4 ? 'show' : 'hidden'}}">
-                    <img src="{{ asset('/assets/message2.png') }}" alt="{{ $category['name'] }}" class="icon {{ $category['id'] ==5 ? 'show' : 'hidden'}}">
-                    <span class="text">
-                        <a href="{{ route('categories.show',$category['id']) }}">{{ $category['name'] }}</a>
-                    </span>
-                </p>
-                @endif
-
-                @endforeach
-
-            </div>
+            @include('pages._categories')
         </div>
         @if ($announcements->is_show)
         <div class="card">
@@ -68,6 +35,7 @@
                 @endforeach
                 @else
                 <img src="https://picsum.photos/334/278" alt="" class="discuss">
+
                 @endif
             </div>
         </div>
