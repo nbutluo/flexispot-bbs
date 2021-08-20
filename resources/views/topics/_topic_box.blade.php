@@ -13,7 +13,13 @@
         <span class="text">{!! $topic->body !!}</span>
     </p>
 </div>
+
+
+
 <div class="btns">
-    <span class="btn"><img src="/assets/red_heart.png" alt="">1</span>
-    <span class="btn reply-topic" onclick="openModal()"><img src="/assets/share_btn.png" alt="">Reply</span>
+    <span class="btn">编辑</span>
+    <span class="btn">删除</span>
+    <span class="btn" onclick="toggleLike(this)"><img src="/assets/liked.png" alt=""> 2</span>
+    <span class="btn reply-topic" onclick="openModal()"><img src="/assets/share_btn.png" alt="">Reply </span>
+    <span class="btn" onclick="toggleCollect(this)"><img src="/assets/yellow_collect.png" alt=""></span>
 </div>

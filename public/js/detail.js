@@ -11,10 +11,8 @@ function toggleMenu() {
 var activeIdx = 0;
 function removeActive() {
     let active = document.querySelector(".active");
-    console.log(active);
     active.classList.remove("active");
 }
-
 // let left_btn = document.querySelector(".left-btn"),
 //     right_btn = document.querySelector(".right-btn"),
 //     nums = document.querySelectorAll(".num");
@@ -62,4 +60,33 @@ function foldModal(e) {
 function resetModal() {
     let reply = document.querySelector(".reply-modal");
     reply.style.height = "auto";
+}
+// 切换喜欢帖子
+function toggleLike(el) {
+    let img = el.firstChild;
+    let src = img.getAttribute("src");
+    img.src =
+        src === "/assets/like.png" ? "/assets/liked.png" : "/assets/like.png";
+}
+// 切换收藏帖子
+function toggleCollect(el) {
+    let img = el.firstChild;
+    let src = img.getAttribute("src");
+    // console.log(src);
+    img.src =
+        src === "/assets/collect.png"
+            ? "/assets/yellow_collect.png"
+            : "/assets/collect.png";
+}
+// 评论输入框
+function addComment(el) {
+    let parent = el.parentNode.parentNode;
+
+    let form = parent.querySelector(".add-form");
+    let cur = form.style.display;
+    if (cur === "none" || cur === "") {
+        form.style.display = "flex";
+    } else {
+        form.style.display = "none";
+    }
 }

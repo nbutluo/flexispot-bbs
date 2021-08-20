@@ -18,10 +18,60 @@
         </p>
     </div>
     <div class="btns">
-        <span class="btn"><img src="/assets/heart.png" alt=""> 2</span>
-        <span class="btn" onclick="openModal()">
-            <img src="/assets/share_btn.png" alt="">Reply
-        </span>
+        <span class="btn">编辑</span>
+        <span class="btn">删除</span>
+        <span class="btn" onclick="toggleLike(this)"><img src="/assets/like.png" alt=""> 2</span>
+        <span class="btn" onclick="addComment(this)"><img src="/assets/share_btn.png" alt="">Reply</span>
+    </div>
+    <div class="add-form">
+        <textarea name="" id="" cols="86" rows="2" class="comment-area"></textarea>
+        <span class="save-btn">SAVE</span>
+    </div>
+    <div class="sub-comments">
+        <div class="sub-comment">
+            <img src="/assets/avatar.png" alt="" class="left">
+            <div class="right">
+                <div class="comment">
+                    <span class="name">Care</span>
+                    <p class="content">AAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+                </div>
+                <div class="sub-info">
+                    <span class="date">Jun 2, 2021 8:32 pm</span>
+                    <div class="icons">
+                        <span class="btn">删除</span>
+                        <span onclick="addComment(this)"><img src="/assets/message.png" alt=""></span>
+                        <span onclick="toggleLike(this)"><img src="/assets/liked.png" alt="">
+                        </span>
+                    </div>
+                    <div class="add-form">
+                        <textarea name="" id="" cols="86" rows="2" class="comment-area"></textarea>
+                        <span class="save-btn">SAVE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sub-comment">
+            <img src="/assets/avatar.png" alt="" class="left">
+            <div class="right">
+                <div class="comment">
+                    <span class="name">Care</span>
+                    <p class="content">AAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+                </div>
+                <div class="sub-info">
+                    <span class="date">Jun 2, 2021 8:32 pm</span>
+                    <div class="icons">
+                        <span class="btn">删除</span>
+                        <span onclick="addComment(this)"><img src="/assets/message.png" alt=""></span>
+                        <span onclick="toggleLike(this)"><img src="/assets/liked.png" alt="">
+                        </span>
+                    </div>
+                    <div class="add-form">
+                        <textarea name="" id="" cols="86" rows="2" class="comment-area"></textarea>
+                        <span class="save-btn">SAVE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 @endforeach

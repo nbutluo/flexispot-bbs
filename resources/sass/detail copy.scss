@@ -5,7 +5,7 @@
 }
 
 .app {
-    width: 1064px;
+    width: 964px;
     margin: 64px auto;
 
     .head-box {
@@ -91,7 +91,6 @@
     .comments-list {
         .comment-box {
             display: flex;
-            flex-wrap: wrap;
             padding-bottom: 36px;
             margin-bottom: 8px;
             border-bottom: 1px solid #ededed;
@@ -111,7 +110,7 @@
 
                 .name {
                     color: #858585;
-                    font-size: 12px;
+                    font-size: 14px;
                     a {
                         color: #858585;
                     }
@@ -120,7 +119,7 @@
 
             .info {
                 max-width: 668px;
-                margin-right: 48px;
+                margin-right: 80px;
                 flex-shrink: 1;
                 width: 70%;
 
@@ -159,97 +158,16 @@
             .btns {
                 flex-shrink: 0;
                 align-self: flex-end;
-                user-select: none;
 
                 .btn {
                     color: #888;
-                    margin-right: 8px;
+                    margin-right: 16px;
                     cursor: pointer;
 
                     img {
                         width: 18px;
                         height: 16px;
                         margin-right: 6px;
-                    }
-                }
-            }
-
-            .add-form {
-                padding: 4px;
-                width: 82%;
-                margin: 14px auto;
-                display: none;
-
-                .comment-area {
-                    outline: none;
-                    border: 1px solid #ccc;
-                    padding: 8px 6px;
-                    font-size: 16px;
-                    color: #666;
-                }
-
-                .save-btn {
-                    cursor: pointer;
-                    padding: 6px 14px;
-                    background: #1774dc;
-                    border-radius: 4px;
-                    color: #fff;
-                    margin-left: 18px;
-                    align-self: flex-end;
-                }
-            }
-
-            .sub-comments {
-                flex-basis: 100%;
-                background: #edfaed;
-                margin-left: 100px;
-                margin-top: 14px;
-                border-radius: 6px;
-                padding: 16px 36px 8px 24px;
-
-                img {
-                    width: 30px;
-                    height: 30px;
-                    margin-right: 6px;
-                }
-
-                .sub-comment {
-                    display: flex;
-                    margin-bottom: 20px;
-
-                    .right {
-                        flex: 1;
-
-                        .comment {
-                            margin-bottom: 8px;
-
-                            .name {
-                                color: #1774dc;
-                                margin-right: 6px;
-                            }
-
-                            .content {
-                                display: inline-block;
-                                word-break: break-all;
-                            }
-                        }
-
-                        .sub-info {
-                            display: flex;
-                            justify-content: space-between;
-                            flex-wrap: wrap;
-
-                            .date {
-                                color: #858585;
-                            }
-
-                            .icons img {
-                                cursor: pointer;
-                                width: 18px;
-                                height: 18px;
-                                margin-right: 14px;
-                            }
-                        }
                     }
                 }
             }
@@ -373,7 +291,7 @@
         height: auto;
         padding: 16px 32px;
         transform: translateX(-50%);
-        box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.4);
+        box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.1);
         border-radius: 4px;
         background: #fff;
 
@@ -512,18 +430,8 @@
                     margin-bottom: 16px;
 
                     .btn {
-                        margin-right: 8px;
+                        margin-right: 12px;
                     }
-                }
-                .add-form {
-                    width: 100%;
-                    display: none;
-                }
-                .sub-comments {
-                    margin-top: 0;
-                    margin-bottom: 12px;
-                    margin-left: 0;
-                    padding: 4px;
                 }
             }
         }
@@ -562,7 +470,6 @@
                 }
             }
         }
-
         .reply-modal {
             width: 94vw;
             padding: 12px 16px;

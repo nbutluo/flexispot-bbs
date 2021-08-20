@@ -5,7 +5,7 @@
 }
 
 .app {
-  width: 964px;
+  width: 1064px;
   margin: 64px auto;
 }
 
@@ -89,6 +89,7 @@
 
 .app .comments-list .comment-box {
   display: flex;
+  flex-wrap: wrap;
   padding-bottom: 36px;
   margin-bottom: 8px;
   border-bottom: 1px solid #ededed;
@@ -111,7 +112,7 @@
 
 .app .comments-list .comment-box .user-box .name {
   color: #858585;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .app .comments-list .comment-box .user-box .name a {
@@ -120,7 +121,7 @@
 
 .app .comments-list .comment-box .info {
   max-width: 668px;
-  margin-right: 80px;
+  margin-right: 48px;
   flex-shrink: 1;
   width: 70%;
 }
@@ -159,11 +160,15 @@
 .app .comments-list .comment-box .btns {
   flex-shrink: 0;
   align-self: flex-end;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .app .comments-list .comment-box .btns .btn {
   color: #888;
-  margin-right: 16px;
+  margin-right: 8px;
   cursor: pointer;
 }
 
@@ -171,6 +176,86 @@
   width: 18px;
   height: 16px;
   margin-right: 6px;
+}
+
+.app .comments-list .comment-box .add-form {
+  padding: 4px;
+  width: 82%;
+  margin: 14px auto;
+  display: none;
+}
+
+.app .comments-list .comment-box .add-form .comment-area {
+  outline: none;
+  border: 1px solid #ccc;
+  padding: 8px 6px;
+  font-size: 16px;
+  color: #666;
+}
+
+.app .comments-list .comment-box .add-form .save-btn {
+  cursor: pointer;
+  padding: 6px 14px;
+  background: #1774dc;
+  border-radius: 4px;
+  color: #fff;
+  margin-left: 18px;
+  align-self: flex-end;
+}
+
+.app .comments-list .comment-box .sub-comments {
+  flex-basis: 100%;
+  background: #edfaed;
+  margin-left: 100px;
+  margin-top: 14px;
+  border-radius: 6px;
+  padding: 16px 36px 8px 24px;
+}
+
+.app .comments-list .comment-box .sub-comments img {
+  width: 30px;
+  height: 30px;
+  margin-right: 6px;
+}
+
+.app .comments-list .comment-box .sub-comments .sub-comment {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.app .comments-list .comment-box .sub-comments .sub-comment .right {
+  flex: 1;
+}
+
+.app .comments-list .comment-box .sub-comments .sub-comment .right .comment {
+  margin-bottom: 8px;
+}
+
+.app .comments-list .comment-box .sub-comments .sub-comment .right .comment .name {
+  color: #1774dc;
+  margin-right: 6px;
+}
+
+.app .comments-list .comment-box .sub-comments .sub-comment .right .comment .content {
+  display: inline-block;
+  word-break: break-all;
+}
+
+.app .comments-list .comment-box .sub-comments .sub-comment .right .sub-info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.app .comments-list .comment-box .sub-comments .sub-comment .right .sub-info .date {
+  color: #858585;
+}
+
+.app .comments-list .comment-box .sub-comments .sub-comment .right .sub-info .icons img {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  margin-right: 14px;
 }
 
 .app .pagi-box {
@@ -292,7 +377,7 @@
   height: auto;
   padding: 16px 32px;
   transform: translateX(-50%);
-  box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 18px 0px rgba(0, 0, 0, 0.4);
   border-radius: 4px;
   background: #fff;
 }
@@ -423,7 +508,19 @@
   }
 
   .app .comments-list .comment-box .btns .btn {
-    margin-right: 12px;
+    margin-right: 8px;
+  }
+
+  .app .comments-list .comment-box .add-form {
+    width: 100%;
+    display: none;
+  }
+
+  .app .comments-list .comment-box .sub-comments {
+    margin-top: 0;
+    margin-bottom: 12px;
+    margin-left: 0;
+    padding: 4px;
   }
 
   .app .pagi-box {
