@@ -6,9 +6,7 @@
     <p class="category-tab" onclick="setHeight(this,'100px')">
         <img src="{{ asset('/assets/discuss.png') }}" alt="{{ $category['name'] }}" class="icon {{ $category['id'] ==3 ? 'show' : 'hidden'}}">
         <img src="{{ asset('/assets/bulb.png') }}" alt="{{ $category['name'] }}" class="icon {{ $category['id'] ==6 ? 'show' : 'hidden'}}">
-        <span class="text">
-            {{ $category['name'] }}
-        </span>
+        <span class="text">{{ $category['name'] }}</span>
         <span class="arrow-btn"></span>
     </p>
     <div class="more-menus">
@@ -23,9 +21,7 @@
     <p class="category-tab" onclick="setActive(this)">
         <img src="{{ asset('/assets/horn.png') }}" alt="{{ $category['name'] }}" class="icon">
         <span class="text">
-            <a href="{{ route('categories.show',$category['id']) }}" class="{{ category_nav_active(1) }}">
-                {{ $category['name'] }}
-            </a>
+            <a href="{{ route('categories.show',$category['id']) }}" class="{{ category_nav_active(1) }}">{{ $category['name'] }}</a>
         </span>
     </p>
     @elseif ($category['id'] ==2)

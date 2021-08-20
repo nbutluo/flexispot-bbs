@@ -43,8 +43,8 @@
     </div>
 </div>
 
-<div class="topic-list">
-    @include('topics._suggest_topics_list',['suggests'=>$topic->suggests()])
+<div class="suggest-topics">
+    @includeWhen(count($topic->suggests()),'topics._suggest_topics_list',['suggests'=>$topic->suggests()])
 </div>
 
 <div class="reply-modal">
@@ -98,5 +98,4 @@
 <script type="text/javascript" src="{{ asset('js/hotkeys.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/uploader.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/simditor.js') }}"></script>
-
 @endsection
