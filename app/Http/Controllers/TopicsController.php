@@ -96,4 +96,9 @@ class TopicsController extends Controller
         }
         return $data;
     }
+
+    public function toggleLike(Topic $topic)
+    {
+        return Auth::user()->toggleLike($topic);
+    }
 }

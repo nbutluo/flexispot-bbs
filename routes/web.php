@@ -59,6 +59,8 @@ Route::prefix('user')->group(function () {
     Route::get('like/{reply}', 'LikesController@toggleLike')->name('user.like');
 });
 
+Route::get('topic/like/{topic}', 'TopicsController@toggleLike')->name('topic.togglelike');
+
 // 收藏
 Route::prefix('collect')->group(function () {
     // 用户对话题和评论点赞

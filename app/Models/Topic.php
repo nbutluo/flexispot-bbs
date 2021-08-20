@@ -4,11 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Overtrue\LaravelFavorite\Traits\Favoriteable;
+use Overtrue\LaravelLike\Traits\Likeable;
 
 class Topic extends Model
 {
     use HasFactory;
     use Favoriteable;
+    use Likeable;
 
     protected $fillable = [
         'title', 'body', 'category_id', 'excerpt', 'slug', 'view_count'
@@ -92,5 +94,10 @@ class Topic extends Model
             ->paginate();
 
         return $top_topics;
+    }
+
+    public function likerCount()
+    {
+        return $this->likers()->count();
     }
 }

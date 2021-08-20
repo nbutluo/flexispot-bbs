@@ -94,8 +94,8 @@ class User extends Authenticatable implements MustVerifyEmailContract
     }
 
     // TODO::用户收到的赞
-    public function likes()
-    {
-        return $this->likes()->count();
-    }
+    // public function likes()
+    // {
+    //     return $this->likes()->count();
+    // }
 }

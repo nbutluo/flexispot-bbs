@@ -40,6 +40,19 @@
         $('.reply-topic').click(function() {
             $('.reply-topic-title').text("{{ $topic->title }}")
         });
+        var num = Number($('.like-count').text());
+        console.log(num);
+        $('.like-btn').click(function() {
+            $.ajax({
+                type: "get",
+                url: "{{ route('topic.togglelike',$topic->id) }}",
+                dataType: "json",
+                success: function(response) {
+                    console.log(response);
+                    response == 1 ? $('.like-count').text(--num) : $('.like-count').text(++num);
+                }
+            });
+        })
     })
 </script>
 
