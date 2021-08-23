@@ -20,7 +20,7 @@
     <div class="btns">
         <span class="btn">编辑</span>
         <span class="btn">删除</span>
-        <span class="btn" onclick="toggleLike(this)"><img src="/assets/like.png" alt=""> 2</span>
+        <span class="btn"><img src="/assets/like.png" onclick="toggleLike(this)"> 2</span>
         <span class="btn" onclick="addComment(this)"><img src="/assets/share_btn.png" alt="">Reply</span>
     </div>
     <div class="add-form">

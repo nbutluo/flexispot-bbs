@@ -54,20 +54,7 @@ Route::prefix('admin')->group(function () {
     });
 });
 
-// 点赞
-Route::prefix('user')->group(function () {
-    Route::get('like/{reply}', 'LikesController@toggleLike')->name('user.like');
-});
-
-// 点赞话题切换
+// 话题点赞
 Route::get('topic/like/{topic}', 'TopicsController@toggleLike')->name('topic.togglelike');
-// 用户是否收藏了该话题
-Route::get('topic/haslike/{topic}', 'LikesController@hasliked')->name('user.hasliked');
-
-// 收藏
-Route::prefix('collect')->group(function () {
-    // 用户对话题和评论点赞
-    Route::get('topic/{topic}', 'CollectsController@toggleFavorite')->name('collect.topic');
-    // 用户收藏的话题
-    Route::get('user/{user}', 'CollectsController@userCollectedTopics')->name('user.collects');
-});
+// 话题收藏
+Route::get('topic/collect/{topic}', 'TopicsController@toggleCollect')->name('topic.togglecollect');

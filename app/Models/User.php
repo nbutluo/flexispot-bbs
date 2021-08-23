@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
-use Auth;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Overtrue\LaravelLike\Traits\Liker;
 use Overtrue\LaravelFavorite\Traits\Favoriter;
 use App\Models\Topic;
+use Auth;
 
 class User extends Authenticatable implements MustVerifyEmailContract
 {

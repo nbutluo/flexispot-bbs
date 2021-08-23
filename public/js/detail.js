@@ -63,17 +63,15 @@ function resetModal() {
 }
 // 切换喜欢帖子
 function toggleLike(el) {
-    let img = el.firstChild;
-    let src = img.getAttribute("src");
-    img.src =
+    let src = el.getAttribute("src");
+    el.src =
         src === "/assets/like.png" ? "/assets/liked.png" : "/assets/like.png";
 }
 // 切换收藏帖子
 function toggleCollect(el) {
-    let img = el.firstChild;
-    let src = img.getAttribute("src");
-    // console.log(src);
-    img.src =
+    let src = el.getAttribute("src");
+
+    el.src =
         src === "/assets/collect.png"
             ? "/assets/yellow_collect.png"
             : "/assets/collect.png";

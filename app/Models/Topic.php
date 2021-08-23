@@ -108,4 +108,10 @@ class Topic extends Model
     {
         return Auth::user()->hasLiked($this);
     }
+
+    // 判断当前登录用户是否点赞过该话题
+    public function hasCollected()
+    {
+        return Auth::user()->hasFavorited($this);
+    }
 }

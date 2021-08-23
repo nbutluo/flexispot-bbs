@@ -27,13 +27,20 @@
         <span class="like-count">{{ $topic->likerCount()}}</span>
     </span>
     <span class="btn reply-topic" onclick="openModal()"><img src="/assets/share_btn.png">Reply </span>
-    <span class="btn" onclick="toggleCollect(this)"><img src="/assets/yellow_collect.png"></span>
+    <span class="btn collect-topic">
+        @guest
+        <img src="/assets/collect.png" class="collect-img">
+        @else
+        <img src="{{$topic->hasCollected() ? '/assets/yellow_collect.png' : '/assets/collect.png'}}" class="collect-img" onclick="toggleCollect(this)">
+        @endguest
+
+    </span>
 </div>
 
 @section('reply_script')
 <script>
     var num = Number($('.like-count').text());
-    console.log(num);
+    // console.log(num);
 
     // 话题点赞
     $('.like-btn').click(function() {
@@ -60,5 +67,22 @@
             }
         });
     })
+</script>
+
+<script>
+    $('.collect-topic').click(function() {
+        $.ajax({
+            type: "get",
+            url: "{{ route('topic.togglecollect',$topic->id) }}",
+            dataType: "json",
+            success: function(response) {
+                // 判断是否登录
+                if (response.code == 0) {
+                    window.location.href = '/login';
+                    return false;
+                }
+            }
+        });
+    });
 </script>
 @endsection
