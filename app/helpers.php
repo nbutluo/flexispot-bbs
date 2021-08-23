@@ -49,3 +49,9 @@ function active_category_tab($condition, $activeClass = 'active-category-tab', $
 {
     return app('active')->getClassIf($condition, $activeClass, $inactiveClass);
 }
+
+function is_json($string)
+{
+    json_decode($string);
+    return (json_last_error() == JSON_ERROR_NONE);
+}

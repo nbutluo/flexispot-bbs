@@ -11,6 +11,12 @@ use Auth;
 use App\Handlers\ImageUploadHandler;
 use App\Notifications\TopicLiked;
 
+use function PHPUnit\Framework\isFalse;
+use function PHPUnit\Framework\isJson;
+use function PHPUnit\Framework\isTrue;
+use Illuminate\Support\Arr;
+use PHPUnit\Framework\Constraint\IsJson;
+
 class TopicsController extends Controller
 {
     public function __construct()
@@ -105,9 +111,9 @@ class TopicsController extends Controller
         } else {
             $data['code'] = 1;
             $data['res'] = Auth::user()->toggleLike($topic);
-            // if ($data['res'] !== 1) {
-            //     $topic->user->notify(new TopicLiked($topic));
-            // }
+            if ($data['res'] !== 'true') {
+                $topic->user->notify(new TopicLiked($topic));
+            }
         }
 
         echo json_encode($data);

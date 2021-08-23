@@ -7,6 +7,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Auth;
 
 class TopicLiked extends Notification
 {
@@ -31,9 +32,9 @@ class TopicLiked extends Notification
             'topic_id' => $this->topic->id,
             'topic_link' => route('topics.show', $this->topic->id),
             'topic_title' => $this->topic->title,
-            'user_id' => $this->topic->user->id,
-            'user_name' => $this->topic->user->name,
-            'user_avatar' => $this->topic->user->avatar,
+            'user_id' => Auth::id(),
+            'user_name' => Auth::user()->name,
+            'user_avatar' => Auth::user()->avatar,
         ];
     }
 }
