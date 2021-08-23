@@ -59,7 +59,10 @@ Route::prefix('user')->group(function () {
     Route::get('like/{reply}', 'LikesController@toggleLike')->name('user.like');
 });
 
+// 点赞话题切换
 Route::get('topic/like/{topic}', 'TopicsController@toggleLike')->name('topic.togglelike');
+// 用户是否收藏了该话题
+Route::get('topic/haslike/{topic}', 'LikesController@hasliked')->name('user.hasliked');
 
 // 收藏
 Route::prefix('collect')->group(function () {

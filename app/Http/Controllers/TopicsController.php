@@ -14,7 +14,7 @@ class TopicsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['index', 'show']]);
+        $this->middleware('auth', ['except' => ['index', 'show', 'toggleLike']]);
     }
 
     public function index(Request $request, Topic $topic)
@@ -99,6 +99,14 @@ class TopicsController extends Controller
 
     public function toggleLike(Topic $topic)
     {
-        return Auth::user()->toggleLike($topic);
+        if (!Auth::check()) {
+            $data['code'] = 0;
+        } else {
+            $data['code'] = 1;
+            $data['res'] = Auth::user()->toggleLike($topic);
+        }
+
+
+        echo json_encode($data);
     }
 }

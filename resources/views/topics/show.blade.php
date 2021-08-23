@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="{{ mix('css/detail.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/simditor.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/new.css') }}">
+<script src="https://cloud.yofoto.cn/Themes/jquery-1.11.1.min.js"></script>
 @endsection
 
 @section('content')
@@ -31,51 +32,6 @@
 
 <div class="reply-modal">
     @include('topics._reply_modal')
+    @yield('reply_script')
 </div>
-@endsection
-
-@section('scripts')
-<script>
-    $(function() {
-        $('.reply-topic').click(function() {
-            $('.reply-topic-title').text("{{ $topic->title }}")
-        });
-        var num = Number($('.like-count').text());
-        console.log(num);
-        $('.like-btn').click(function() {
-            $.ajax({
-                type: "get",
-                url: "{{ route('topic.togglelike',$topic->id) }}",
-                dataType: "json",
-                success: function(response) {
-                    console.log(response);
-                    response == 1 ? $('.like-count').text(--num) : $('.like-count').text(++num);
-                }
-            });
-        })
-    })
-</script>
-
-<script>
-    $(document).ready(function() {
-        var editor = new Simditor({
-            textarea: $('#editor'),
-            upload: {
-                url: "{{ route('topics.upload_image') }}",
-                params: {
-                    _token: '{{ csrf_token() }}'
-                },
-                fileKey: 'upload_file',
-                connectionCount: 3,
-                leaveConfirm: '文件上传中，关闭此页面将取消上传。'
-            },
-            pasteImage: true,
-        });
-    });
-</script>
-<script src="{{ asset('js/detail.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/module.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/hotkeys.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/uploader.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/simditor.js') }}"></script>
 @endsection

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Overtrue\LaravelFavorite\Traits\Favoriteable;
 use Overtrue\LaravelLike\Traits\Likeable;
+use Auth;
 
 class Topic extends Model
 {
@@ -96,8 +97,15 @@ class Topic extends Model
         return $top_topics;
     }
 
+    // 话该题的收藏总数
     public function likerCount()
     {
         return $this->likers()->count();
+    }
+
+    // 判断当前登录用户是否点赞过该话题
+    public function hasLiked()
+    {
+        return Auth::user()->hasLiked($this);
     }
 }
