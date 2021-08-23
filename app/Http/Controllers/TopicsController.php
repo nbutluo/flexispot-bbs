@@ -9,6 +9,7 @@ use App\Http\Requests\TopicRequest;
 use App\Models\Category;
 use Auth;
 use App\Handlers\ImageUploadHandler;
+use App\Notifications\TopicLiked;
 
 class TopicsController extends Controller
 {
@@ -104,6 +105,9 @@ class TopicsController extends Controller
         } else {
             $data['code'] = 1;
             $data['res'] = Auth::user()->toggleLike($topic);
+            // if ($data['res'] !== 1) {
+            //     $topic->user->notify(new TopicLiked($topic));
+            // }
         }
 
         echo json_encode($data);
