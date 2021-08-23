@@ -23,6 +23,7 @@
     <!-- TODO::分页数据分配 -->
     <div class="reply-list">
         @include('topics._reply_list', ['replies' => $topic->replies()->with('user')->paginate(5)])
+        @yield('reply-list-scripts')
     </div>
 </div>
 

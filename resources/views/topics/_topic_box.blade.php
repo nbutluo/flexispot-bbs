@@ -33,7 +33,6 @@
         @else
         <img src="{{$topic->hasCollected() ? '/assets/yellow_collect.png' : '/assets/collect.png'}}" class="collect-img" onclick="toggleCollect(this)">
         @endguest
-
     </span>
 </div>
 

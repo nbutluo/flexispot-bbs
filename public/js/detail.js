@@ -64,6 +64,7 @@ function resetModal() {
 // 切换喜欢帖子
 function toggleLike(el) {
     let src = el.getAttribute("src");
+    // console.log(src);
     el.src =
         src === "/assets/like.png" ? "/assets/liked.png" : "/assets/like.png";
 }

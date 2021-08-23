@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Overtrue\LaravelLike\Traits\Likeable;
+use Auth;
 
 class Reply extends Model
 {
@@ -22,10 +23,15 @@ class Reply extends Model
         return $this->belongsTo(User::class);
     }
 
-    // 帖子的点赞数
-    public function updateReplyLikeCount()
+    // 评论的点赞数
+    public function likerCount()
     {
-        $this->like_count = $this->likers()->count();
-        $this->save();
+        return $this->likers()->count();
+    }
+
+    public function hasLiked()
+    {
+        // return Auth::user()->hasLiked($this);
+        return $this->isLikedBy(Auth::user());
     }
 }

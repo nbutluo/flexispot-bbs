@@ -12,7 +12,7 @@ class RepliesController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth', ['except' => ['toggleLike']]);
     }
 
     public function store(ReplyRequest $request, Reply $reply)
@@ -31,5 +31,17 @@ class RepliesController extends Controller
         $reply->delete();
 
         return redirect()->to($reply->topic->link())->with('success', '评论删除成功！');
+    }
+
+    public function toggleLike(Reply $reply)
+    {
+        if (!Auth::check()) {
+            $data['code'] = 0;
+        } else {
+            $data['code'] = 1;
+            $data['res'] = Auth::user()->toggleLike($reply);
+        }
+
+        echo json_encode($data);
     }
 }

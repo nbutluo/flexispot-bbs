@@ -20,14 +20,21 @@
     <div class="btns">
         <span class="btn">编辑</span>
         <span class="btn">删除</span>
-        <span class="btn"><img src="/assets/like.png" onclick="toggleLike(this)"> 2</span>
+        <span class="btn reply-like-btn" replyId="{{ $reply->id }}" data-val="{{ $reply->id }}">
+            @guest
+            <img src="/assets/like.png" class="reply-like-img">
+            @else
+            <img src="{{$reply->hasLiked() ? '/assets/liked.png' : '/assets/like.png'}}" class="reply-like-img">
+            @endguest
+            <span class="reply-like-count">{{ $reply->likerCount() }}</span>
+        </span>
         <span class="btn" onclick="addComment(this)"><img src="/assets/share_btn.png" alt="">Reply</span>
     </div>
     <div class="add-form">
         <textarea name="" id="" cols="86" rows="2" class="comment-area"></textarea>
         <span class="save-btn">SAVE</span>
     </div>
-    <div class="sub-comments">
+    <!-- <div class="sub-comments">
         <div class="sub-comment">
             <img src="/assets/avatar.png" alt="" class="left">
             <div class="right">
@@ -72,7 +79,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 @endforeach
 <!-- 分页 -->
@@ -82,3 +89,38 @@
     {!! $replies->links('pagination::page') !!}
 </div>
 @endif
+
+@section('reply-list-scripts')
+<script>
+    $('.reply-like-btn').on('click', function() {
+
+        const _this = this
+        var num = Number($(_this).find('.reply-like-count').text());
+        var replyId = $(_this).attr('replyId');
+
+        $.ajax({
+            type: "get",
+            url: "/reply/like/" + replyId,
+            dataType: "json",
+            success: (response) => {
+                // console.log(response);
+                // 判断是否登录
+                if (response.code == 0) {
+                    window.location.href = '/login';
+                    return false;
+                }
+
+                // // 切换点赞
+                if (response.res == 1) {
+                    console.log(_this);
+                    $(_this).find('.reply-like-count').text(--num);
+                    $(_this).find('.reply-like-img').attr('src', '/assets/like.png');
+                } else {
+                    $(_this).find('.reply-like-count').text(++num);
+                    $(_this).find('.reply-like-img').attr('src', '/assets/liked.png');
+                }
+            }
+        });
+    });
+</script>
+@endsection

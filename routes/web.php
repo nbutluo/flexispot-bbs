@@ -58,3 +58,5 @@ Route::prefix('admin')->group(function () {
 Route::get('topic/like/{topic}', 'TopicsController@toggleLike')->name('topic.togglelike');
 // 话题收藏
 Route::get('topic/collect/{topic}', 'TopicsController@toggleCollect')->name('topic.togglecollect');
+// 话题点赞
+Route::get('reply/like/{reply}', 'RepliesController@toggleLike')->name('reply.togglelike');
