@@ -9,6 +9,7 @@ use App\Http\Requests\TopicRequest;
 use App\Models\Category;
 use Auth;
 use App\Handlers\ImageUploadHandler;
+use App\Notifications\TopicCollected;
 use App\Notifications\TopicLiked;
 
 class TopicsController extends Controller
@@ -107,10 +108,6 @@ class TopicsController extends Controller
             $data['res'] = Auth::user()->toggleLike($topic);
 
             $topic->updateLikeCount();
-            // 发送通知
-            if ($data['res'] !== 1) {
-                $topic->user->notify(new TopicLiked($topic));
-            }
         }
 
         echo json_encode($data);
@@ -125,6 +122,7 @@ class TopicsController extends Controller
             $data['code'] = 1;
             $data['success'] = true;
             $data['res'] = Auth::user()->toggleFavorite($topic);
+            $topic->updateCollectCount();
         }
 
         echo json_encode($data);

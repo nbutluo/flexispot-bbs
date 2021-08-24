@@ -122,4 +122,10 @@ class Topic extends Model
         $this->like_count = $this->likers()->count();
         $this->save();
     }
+
+    public function updateCollectCount()
+    {
+        $this->collect_count = $this->favoriters()->count();
+        $this->save();
+    }
 }

@@ -98,4 +98,13 @@ class User extends Authenticatable implements MustVerifyEmailContract
     // {
     //     return $this->likes()->count();
     // }
+    public function hasFavorited(Topic $topic)
+    {
+        return $topic->hasBeenFavoritedBy($this);
+    }
+
+    public function hasLiked(Topic $topic)
+    {
+        return $topic->isLikedBy($this);
+    }
 }
