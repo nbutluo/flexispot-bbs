@@ -23,6 +23,7 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.1",
-        "cross-env": "^7.0.3"
+        "cross-env": "^7.0.3",
+        "jquery-pjax": "^2.0.1"
     }
 }

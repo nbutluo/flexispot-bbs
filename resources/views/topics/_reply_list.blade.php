@@ -18,8 +18,8 @@
         </p>
     </div>
     <div class="btns">
-        <span class="btn">编辑</span>
-        <span class="btn">删除</span>
+        <span class="btn" style="color: #fff; cursor: auto;">编辑</span>
+        <span class="btn" style="color: #fff; cursor: auto;">删除</span>
         <span class="btn reply-like-btn" replyId="{{ $reply->id }}" data-val="{{ $reply->id }}">
             @guest
             <img src="/assets/like.png" class="reply-like-img">

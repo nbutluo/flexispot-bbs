@@ -2,6 +2,7 @@
 
 @section('styles')
 <link href="{{ mix('css/index.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('css/nprogress.css') }}">
 @endsection
 
 @section('content')
@@ -9,7 +10,7 @@
     <img src="{{ asset('assets/banner.png') }}" alt="" class="banner">
 </div>
 
-<div class="forum-content">
+<div class="forum-content" id="pjax-container">
     <div class="left-panel">
         <div class="card">
             @include('pages._categories')
@@ -121,4 +122,55 @@
 
 @section('scripts')
 <script src="{{ asset('js/root.js')}}"></script>
+
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="{{ asset('js/jquery.pjax.js') }}"></script>
+<script src="{{ asset('js/nprogress.js') }}"></script>
+
+<script>
+    // $(document).ready(function() {
+    //     //定义加载区域
+    //     $(document).pjax('a', '#pjax-container');
+    //     //定义pjax有效时间，超过这个时间会整页刷新
+    //     // $.pjax.defaults.timeout = 1200;
+
+    //     $(document).on('pjax:start', function() {
+    //         NProgress.start();
+    //     });
+    //     $(document).on('pjax:end', function() {
+    //         NProgress.done();
+    //     });
+    // });
+
+    (function($) {
+        var LearnKu = {
+            init: function() {
+                var self = this;
+
+                // Pjax 页面准备就绪的事件
+                $(document).on('pjax:end', function() {
+                    // 每一次 Pjax 请求完成后执行
+                    NProgress.done();
+                    self.siteBootUp();
+                });
+
+                // 第一次正常页面加载完成后执行
+                self.siteBootUp();
+            },
+
+            siteBootUp: function() {
+                var self = this;
+                $(document).pjax('a', '#pjax-container');
+                $(document).on('pjax:start', function() {
+                    NProgress.start();
+                });
+            },
+        };
+        window.LearnKu = LearnKu;
+    })(jQuery);
+
+    $(document).ready(function() {
+        LearnKu.init();
+    });
+</script>
 @endsection

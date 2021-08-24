@@ -16,8 +16,8 @@
 </div>
 
 <div class="btns">
-    <span class="btn">编辑</span>
-    <span class="btn">删除</span>
+    <span class="btn" style="color: #fff; cursor: none;">编辑</span>
+    <span class="btn" style="color: #fff; cursor: none;">删除</span>
     <span class="btn like-btn">
         @guest
         <img src="/assets/like.png" class="like-img">

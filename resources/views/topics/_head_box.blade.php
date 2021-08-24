@@ -16,5 +16,8 @@
     </div>
 </div>
 <p class="tags">
-    <span class="tag">{{ $topic->category->name }}</span><span class="tag">Topic</span>
+    <a href="{{ route('categories.show',$topic->category) }}">
+        <span class="tag">{{ $topic->category->name }}</span>
+    </a>
+    <span class="tag">Topic</span>
 </p>
