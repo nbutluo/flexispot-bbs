@@ -81,11 +81,13 @@
                             <span>Posts:</span>
                             <span>{{ $topic->user->posts()}}</span>
                         </p>
+                        {{--
                         <p class="row">
                             <span>Likes received: </span>
                             <span>36</span>
                         </p>
                         <p class="last-row">This user's public profile is hidden.</p>
+                        --}}
                     </div>
                 </div>
                 <div class="nums">

@@ -37,7 +37,7 @@
             @if (if_query('tab', 'collects'))
             @include('users._collects',['collects'=> $user->collects()])
             @else
-            @include('users._posts',['posts'=> $user->topics()->recent()->paginate(5)])
+            @include('users._posts',['posts'=> $user->topics()->recent()->with('user','category')->paginate(5)])
             @endif
         </div>
 
