@@ -128,20 +128,6 @@
 <script src="{{ asset('js/nprogress.js') }}"></script>
 
 <script>
-    // $(document).ready(function() {
-    //     //定义加载区域
-    //     $(document).pjax('a', '#pjax-container');
-    //     //定义pjax有效时间，超过这个时间会整页刷新
-    //     // $.pjax.defaults.timeout = 1200;
-
-    //     $(document).on('pjax:start', function() {
-    //         NProgress.start();
-    //     });
-    //     $(document).on('pjax:end', function() {
-    //         NProgress.done();
-    //     });
-    // });
-
     (function($) {
         var LearnKu = {
             init: function() {
@@ -161,6 +147,8 @@
             siteBootUp: function() {
                 var self = this;
                 $(document).pjax('a', '#pjax-container');
+                //定义pjax有效时间，超过这个时间会整页刷新
+                $.pjax.defaults.timeout = 1200;
                 $(document).on('pjax:start', function() {
                     NProgress.start();
                 });

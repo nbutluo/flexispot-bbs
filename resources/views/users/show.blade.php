@@ -3,7 +3,7 @@
 @section('title', $user->name . ' Individual')
 
 @section('content')
-<div class="main">
+<div class="main" id="main-container">
     <div class="main-header">
         <div class="main-header-left">
             <div class="image">
@@ -46,4 +46,26 @@
 @stop
 @section('styles')
 <link rel="stylesheet" href="{{mix('css/person.css')}}">
+@endsection
+
+@section('scripts')
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="{{ asset('js/jquery.pjax.js') }}"></script>
+<script src="{{ asset('js/nprogress.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('css/nprogress.css') }}">
+
+<script>
+    $(document).ready(function() {
+        $(document).pjax('a', '#main-container');
+        //定义pjax有效时间，超过这个时间会整页刷新
+        $.pjax.defaults.timeout = 1200;
+
+        $(document).on('pjax:start', function() {
+            NProgress.start();
+        });
+        $(document).on('pjax:end', function() {
+            NProgress.done();
+        });
+    });
+</script>
 @endsection
