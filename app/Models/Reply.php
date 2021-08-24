@@ -34,4 +34,10 @@ class Reply extends Model
         // return Auth::user()->hasLiked($this);
         return $this->isLikedBy(Auth::user());
     }
+
+    public function updateLikeCount()
+    {
+        $this->like_count = $this->likers()->count();
+        $this->save();
+    }
 }

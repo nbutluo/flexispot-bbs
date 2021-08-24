@@ -26,7 +26,7 @@
             @else
             <img src="{{$reply->hasLiked() ? '/assets/liked.png' : '/assets/like.png'}}" class="reply-like-img">
             @endguest
-            <span class="reply-like-count">{{ $reply->likerCount() }}</span>
+            <span class="reply-like-count">{{ $reply->like_count }}</span>
         </span>
         <span class="btn" onclick="addComment(this)"><img src="/assets/share_btn.png" alt="">Reply</span>
     </div>

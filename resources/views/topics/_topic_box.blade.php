@@ -24,7 +24,7 @@
         @else
         <img src="{{ $topic->hasLiked() ? '/assets/liked.png': '/assets/like.png'}}" class="like-img">
         @endguest
-        <span class="like-count">{{ $topic->likerCount()}}</span>
+        <span class="like-count">{{ $topic->like_count }}</span>
     </span>
     <span class="btn reply-topic" onclick="openModal()"><img src="/assets/share_btn.png">Reply </span>
     <span class="btn collect-topic">

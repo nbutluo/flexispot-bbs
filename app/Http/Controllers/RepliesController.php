@@ -40,6 +40,7 @@ class RepliesController extends Controller
         } else {
             $data['code'] = 1;
             $data['res'] = Auth::user()->toggleLike($reply);
+            $reply->updateLikeCount();
         }
 
         echo json_encode($data);
