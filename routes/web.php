@@ -32,6 +32,8 @@ Route::post('upload_image', 'TopicsController@uploadImage')->name('topics.upload
 Route::get('topics/{topic}/{slug?}', 'TopicsController@show')->name('topics.show');
 
 Route::resource('replies', 'RepliesController', ['only' => ['store', 'destroy']]);
+// 子话题回复
+Route::post('subreplies', 'RepliesController@subrepliestore')->name('subreplies.store');
 
 Route::resource('notifications', 'NotificationsController', ['only' => ['index']]);
 

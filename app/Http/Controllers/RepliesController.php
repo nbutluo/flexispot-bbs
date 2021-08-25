@@ -25,6 +25,16 @@ class RepliesController extends Controller
         return redirect()->to($reply->topic->link())->with('success', '评论创建成功！');
     }
 
+    public function subrepliestore(ReplyRequest $request, Reply $reply)
+    {
+        $reply->fill($request->all());
+        $reply->user_id = Auth::id();
+
+        $reply->save();
+
+        return redirect()->to($reply->topic->link())->with('success', '回复评论成功！');
+    }
+
     public function destroy(Reply $reply)
     {
         $this->authorize('destroy', $reply);

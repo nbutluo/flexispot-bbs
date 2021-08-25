@@ -11,7 +11,7 @@ class Reply extends Model
     use HasFactory;
     use Likeable;
 
-    protected $fillable = ['content'];
+    protected $fillable = ['content', 'parent_id', 'parent_user_id', 'user_id', 'topic_id'];
 
     public function topic()
     {
