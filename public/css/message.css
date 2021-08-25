@@ -10,6 +10,9 @@
 
 .main-content {
   margin: 63px 0 30px;
+}
+
+.main-content .message-list {
   border: 1px solid #1b1c1e;
 }
 
@@ -238,6 +241,10 @@
   .main-content {
     margin: 0 0 30px;
     border: 0;
+  }
+
+  .main-content .message-list {
+    border: none;
   }
 
   .main-content .every-column {

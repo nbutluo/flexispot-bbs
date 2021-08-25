@@ -4,23 +4,23 @@
 
 @section('content')
 <div class="main">
-    <div class="main-content" id="message-container">
-        <div class="every-column">
-            <img src="./assets/bell.png" alt="" class="bell-img">
-            <span class="message-span">Message</span>
-        </div>
-        @if ($notifications->count())
-        @foreach ($notifications as $notification)
-        @include('notifications.types._' . Str::snake(class_basename($notification->type)))
-        @endforeach
-        @else
-        <div class="every-column">没有消息通知</div>
-        @endif
+  <div class="main-content" id="message-container">
+    <div class="every-column">
+      <img src="{{ asset('/assets/bell.png') }}" alt="" class="bell-img">
+      <span class="message-span">Message</span>
     </div>
+    <div class="message-list">
+      @if ($notifications->count())
+      @foreach ($notifications as $notification)
+      @include('notifications.types._' . Str::snake(class_basename($notification->type)))
+      @endforeach
+      @else
+      <div class="every-column">没有消息通知</div>
+      @endif
+    </div>
+    <div class="main-paging">{!! $notifications->onEachSide(1)->links('pagination::page') !!}</div>
+  </div>
 
-    <div class="main-paging">
-        {!! $notifications->onEachSide(1)->links('pagination::page') !!}
-    </div>
 </div>
 @stop
 
@@ -36,17 +36,17 @@
 <link rel="stylesheet" href="{{ asset('css/nprogress.css') }}">
 
 <script>
-    $(document).ready(function() {
-        $(document).pjax('a', '#message-container');
-        //定义pjax有效时间，超过这个时间会整页刷新
-        $.pjax.defaults.timeout = 1200;
+  $(document).ready(function() {
+    $(document).pjax('a', '#message-container');
+    //定义pjax有效时间，超过这个时间会整页刷新
+    $.pjax.defaults.timeout = 1200;
 
-        $(document).on('pjax:start', function() {
-            NProgress.start();
-        });
-        $(document).on('pjax:end', function() {
-            NProgress.done();
-        });
+    $(document).on('pjax:start', function() {
+      NProgress.start();
     });
+    $(document).on('pjax:end', function() {
+      NProgress.done();
+    });
+  });
 </script>
 @endsection

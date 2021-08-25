@@ -9,7 +9,10 @@
   margin: 0 auto;
   &-content {
     margin: 63px 0 30px;
-    border: 1px solid #1b1c1e;
+    // border: 1px solid #1b1c1e;
+    .message-list {
+      border: 1px solid #1b1c1e;
+    }
     .every-column {
       margin: 0 30px;
       height: 110px;
@@ -208,6 +211,9 @@
     &-content {
       margin: 0 0 30px;
       border: 0;
+      .message-list {
+        border: none;
+      }
       .every-column {
         margin: 0 14px;
         height: 62px;
