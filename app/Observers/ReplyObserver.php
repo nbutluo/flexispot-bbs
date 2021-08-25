@@ -8,6 +8,7 @@ use App\Models\Reply;
 // saved,  deleting, deleted, restoring, restored
 
 use App\Notifications\TopicReplied;
+use App\Notifications\ReplyUpdated;
 
 class ReplyObserver
 {
@@ -16,6 +17,10 @@ class ReplyObserver
         $reply->topic->updateReplyCount();
         // 通知话题作者有新的评论
         $reply->topic->user->notify(new TopicReplied($reply));
+        // 通知这条回复的作者
+        if ($reply->parent_id) {
+            $reply->parent->notify(new ReplyUpdated($reply));
+        }
     }
 
     public function creating(Reply $reply)

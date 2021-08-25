@@ -98,4 +98,9 @@ class User extends Authenticatable implements MustVerifyEmailContract
     // {
     //     return $this->likes()->count();
     // }
+
+    // public function parent()
+    // {
+    //     return $this->hasOne();
+    // }
 }
