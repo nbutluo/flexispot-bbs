@@ -22,7 +22,7 @@
       <i class="far fa-edit"></i>
     </a>
   </span>
-  <form action="{{ route('topics.destroy', $topic->id) }}" method="post" style="display: inline-block;" onsubmit="return confirm('您确定要删除吗？');">
+  <form action="{{ route('topics.destroy', $topic->id) }}" method="post" style="display: inline-block;" onsubmit="return confirm('Confirm delete ?');">
     @csrf
     @method('DELETE')
     <button class="btn btn-item" type="submit"><i class="far fa-trash-alt"></i></button>

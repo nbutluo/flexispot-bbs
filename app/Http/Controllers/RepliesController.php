@@ -24,7 +24,7 @@ class RepliesController extends Controller
         $reply->topic_id = $request->topic_id;
         $reply->save();
 
-        return redirect()->to($reply->topic->link())->with('success', '评论创建成功！');
+        return redirect()->to($reply->topic->link())->with('success', 'Comment created successfully!');
     }
 
     public function subrepliestore(ReplyRequest $request, Reply $reply)
@@ -34,7 +34,7 @@ class RepliesController extends Controller
 
         $reply->save();
 
-        return redirect()->to($reply->topic->link())->with('success', '回复评论成功！');
+        return redirect()->to($reply->topic->link())->with('success', 'The comment reply was successful!');
     }
 
     public function destroy(Reply $reply)
