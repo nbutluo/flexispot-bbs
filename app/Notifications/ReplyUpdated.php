@@ -33,6 +33,7 @@ class ReplyUpdated extends Notification
         return [
             'reply_id' => $this->reply->id,
             'reply_content' => $this->reply->content,
+            'parent_content' => $this->reply->parentTopic->excerpt,
             'user_id' => $this->reply->user->id,
             'user_name' => $this->reply->user->name,
             'user_avatar' => $this->reply->user->avatar,

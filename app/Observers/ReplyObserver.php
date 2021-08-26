@@ -19,7 +19,7 @@ class ReplyObserver
         $reply->topic->user->notify(new TopicReplied($reply));
         // 通知这条回复的作者
         if ($reply->parent_id) {
-            $reply->parent->notify(new ReplyUpdated($reply));
+            $reply->parentUser->notify(new ReplyUpdated($reply));
         }
     }
 

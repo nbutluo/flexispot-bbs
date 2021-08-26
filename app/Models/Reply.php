@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Overtrue\LaravelLike\Traits\Likeable;
 use Auth;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Reply extends Model
 {
@@ -18,9 +19,14 @@ class Reply extends Model
         return $this->belongsTo(Topic::class);
     }
 
-    public function parent()
+    public function parentUser()
     {
         return $this->belongsTo(User::class, 'parent_user_id');
+    }
+
+    public function parentTopic()
+    {
+        return $this->belongsTo(Reply::class, 'parent_id');
     }
 
     public function user()

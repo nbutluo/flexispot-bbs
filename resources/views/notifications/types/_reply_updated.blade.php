@@ -8,7 +8,7 @@
   <div class="every-column-content">
     <div class="title">
       <a href="{{ route('users.show', $notification->data['user_id']) }}">{{ '@'.$notification->data['user_name'] }}</a>
-      <span>Reply you on</span>
+      <span>Reply you comment {{-- <div>$notification->data['parent_content']</div> --}} on topic</span>
       <a href="{{ $notification->data['topic_link'] }}" target="_blank">{{ $notification->data['topic_title'] }}</a>
     </div>
     <div class="content">{!! $notification->data['reply_content'] !!}</div>
