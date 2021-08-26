@@ -66,7 +66,7 @@ class TopicsController extends Controller
         $this->authorize('update', $topic);
         $topic->update($request->all());
 
-        return redirect()->to($topic->link())->with('success', '更新成功！');
+        return redirect()->to($topic->link())->with('success', 'Updated success!');
     }
 
     public function destroy(Topic $topic)
@@ -74,7 +74,7 @@ class TopicsController extends Controller
         $this->authorize('destroy', $topic);
         $topic->delete();
 
-        return redirect()->route('topics.index')->with('success', '成功删除！');
+        return redirect()->route('root')->with('success', 'Delete success!');
     }
 
     public function uploadImage(Request $request, ImageUploadHandler $uploader)
