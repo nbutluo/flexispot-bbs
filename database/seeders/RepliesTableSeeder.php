@@ -9,6 +9,9 @@ class RepliesTableSeeder extends Seeder
 {
     public function run()
     {
+        // 临时禁用观察者
+        Reply::unsetEventDispatcher();
+
         Reply::factory()->times(500)->create();
     }
 }

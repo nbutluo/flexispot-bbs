@@ -9,7 +9,7 @@ class AddExcerptToReplies extends Migration
     public function up()
     {
         Schema::table('replies', function (Blueprint $table) {
-            $table->string('excerpt')->after('like_count');
+            $table->string('excerpt')->after('like_count')->nullable();
         });
     }
 
