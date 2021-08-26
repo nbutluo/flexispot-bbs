@@ -32,4 +32,10 @@ class ReplyObserver
     {
         $reply->topic->updateReplyCount();
     }
+
+    public function saving(Reply $reply)
+    {
+        // 生成话题回复摘录
+        $reply->excerpt =  make_excerpt($reply->content, 100);
+    }
 }

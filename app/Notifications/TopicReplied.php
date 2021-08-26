@@ -34,7 +34,7 @@ class TopicReplied extends Notification implements ShouldQueue
         // 存入数据库里的数据
         return [
             'reply_id' => $this->reply->id,
-            'reply_content' => $this->reply->content,
+            'reply_content' => $this->reply->excerpt,
             'user_id' => $this->reply->user->id,
             'user_name' => $this->reply->user->name,
             'user_avatar' => $this->reply->user->avatar,
@@ -49,7 +49,7 @@ class TopicReplied extends Notification implements ShouldQueue
         $url = $this->reply->topic->link(['#reply' . $this->reply->id]);
 
         return (new MailMessage)
-                    ->line('你的话题有新回复！')
-                    ->action('查看回复', $url);
+            ->line('你的话题有新回复！')
+            ->action('查看回复', $url);
     }
 }
