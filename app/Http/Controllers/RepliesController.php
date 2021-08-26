@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ReplyRequest;
 use App\Notifications\ReplyUpdated;
+use App\Notifications\ReplyLiked;
 
 class RepliesController extends Controller
 {

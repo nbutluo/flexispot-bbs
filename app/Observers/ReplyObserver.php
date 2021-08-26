@@ -3,7 +3,7 @@
 namespace App\Observers;
 
 use App\Models\Reply;
-
+use App\Notifications\ReplyLiked;
 // creating, created, updating, updated, saving,
 // saved,  deleting, deleted, restoring, restored
 
@@ -37,5 +37,10 @@ class ReplyObserver
     {
         // 生成话题回复摘录
         $reply->excerpt =  make_excerpt($reply->content, 100);
+    }
+
+    public function saved(Reply $reply)
+    {
+        $reply->user->notify(new ReplyLiked($reply));
     }
 }
