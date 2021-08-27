@@ -154,7 +154,7 @@
 }
 
 .app .comments-list .comment-box .info img {
-  width: 100%;
+  max-width: 100%;
 }
 
 .app .comments-list .comment-box .btns {
