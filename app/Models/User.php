@@ -26,7 +26,7 @@ class User extends Authenticatable implements MustVerifyEmailContract
     public function notify($instance)
     {
         // 如果要通知的人是当前用户，就不必通知了！
-        if ($this->id == Auth::id()) {
+        if ($this->id == Auth::id() && method_exists($instance, 'toDatabase')) {
             return;
         }
 
