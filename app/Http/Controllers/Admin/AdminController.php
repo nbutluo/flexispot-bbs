@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\AdminRequest;
 use App\Models\Admin;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -30,18 +31,14 @@ class AdminController extends Controller
 
     public function store(AdminRequest $request)
     {
-        $res = Admin::where([
-            'username' => $request->username,
-            'password' => $request->password
-        ])->get();
+        $user = Admin::where('username', $request->username)->first();
 
-        //如果有就代表账号密码正确,写入session
-        if ($res->count()) {
+        if ($user && Hash::check($request->password, $user->password)) {
+            // 密码匹配
             $request->session()->put('admin.user', $request->username);
             return redirect()->route('admin.users.index')->with('success', '欢迎回来！');
         } else {
-            session()->flash('danger', '用户名或密码错误');
-            return redirect()->back()->withInput();
+            return redirect()->back()->with('error', '用户名或密码错误');
         }
     }
 

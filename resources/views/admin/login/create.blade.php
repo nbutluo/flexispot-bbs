@@ -15,6 +15,7 @@
   <link rel="stylesheet" type="text/css" href="/beagle/static/css/jqvmap.min.css" />
   <link rel="stylesheet" type="text/css" href="/beagle/static/css/bootstrap-datetimepicker.min.css" />
   <link rel="stylesheet" href="/beagle/static/css/app.css" type="text/css" />
+  <link href="{{ mix('css/ant-message.css') }}" rel="stylesheet">
 </head>
 
 <body class="be-splash-screen">
@@ -22,8 +23,7 @@
     <div class="be-content">
       <div class="main-content container-fluid">
         <div class="splash-container">
-          @include('shared._error')
-          @include('shared._messages')
+
           <div class="card card-border-color card-border-color-primary">
             <div class="card-header">
               <img class="logo-img" src="/beagle/static/images/logo-xx.png" alt="logo" width="102" height="27">
@@ -32,6 +32,9 @@
             <div class="card-body">
               <form method="POST" action="{{ route('admin.login') }}">
                 @csrf
+                @include('shared._error')
+                @include('shared._messages')
+
                 <div class="form-group">
                   <input class="form-control" name="username" value="{{ old('username') }}" type="text" placeholder="用户名" autocomplete="off">
                 </div>

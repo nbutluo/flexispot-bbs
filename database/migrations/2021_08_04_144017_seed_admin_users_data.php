@@ -11,13 +11,13 @@ class SeedAdminUsersData extends Migration
         $data = [
             [
                 'username' => 'flexispot',
-                'password' => "password",
+                'password' => bcrypt('password'),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'username' => 'admin',
-                'password' => "admin",
+                'password' => bcrypt('password'),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
