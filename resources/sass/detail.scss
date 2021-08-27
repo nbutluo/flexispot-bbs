@@ -160,6 +160,8 @@
         flex-shrink: 0;
         align-self: flex-end;
         user-select: none;
+        width: 250px;
+        text-align: right;
 
         .btn {
           color: #888;
@@ -528,6 +530,15 @@
           margin-bottom: 12px;
           margin-left: 0;
           padding: 4px;
+          .sub-comment {
+            .sub-info {
+              .add-form {
+                .comment-area {
+                  width: 72%;
+                }
+              }
+            }
+          }
         }
       }
     }

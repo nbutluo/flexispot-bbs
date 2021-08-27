@@ -164,6 +164,8 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  width: 250px;
+  text-align: right;
 }
 
 .app .comments-list .comment-box .btns .btn {
@@ -526,6 +528,10 @@
     margin-bottom: 12px;
     margin-left: 0;
     padding: 4px;
+  }
+
+  .app .comments-list .comment-box .sub-comments .sub-comment .sub-info .add-form .comment-area {
+    width: 72%;
   }
 
   .app .pagi-box {

@@ -32,7 +32,7 @@
     </span>
     <span class="btn" onclick="addComment(this)"><img src="/assets/share_btn.png" alt="">Reply</span>
     @can('destroy', $reply)
-    <form action="{{ route('replies.destroy', $reply->id) }}" style="display: inline-block;" onsubmit="return confirm('确定要删除此评论？');" method="post">
+    <form action="{{ route('replies.destroy', $reply->id) }}" style="display: inline-block;" onsubmit="return confirm('Be sure to delete this comment?');" method="post">
       @csrf
       @method('DELETE')
       <button class="btn btn-item" type="submit"><i class="far fa-trash-alt"></i></button>
