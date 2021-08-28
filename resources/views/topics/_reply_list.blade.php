@@ -126,7 +126,7 @@
         // console.log(response);
         // 判断是否登录
         if (response.code == 0) {
-          window.location.href = '/login';
+          window.location.href = `{{ route('login') }}`;
           return false;
         }
 
