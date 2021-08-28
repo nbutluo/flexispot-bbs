@@ -133,10 +133,10 @@
         // // 切换点赞
         if (response.res == 1) {
           console.log(_this);
-          $(_this).find('.reply-like-count').text(--num);
+          $(_this).find('.reply-like-count').text(num -= 1);
           $(_this).find('.reply-like-img').attr('src', '/assets/like.png');
         } else {
-          $(_this).find('.reply-like-count').text(++num);
+          $(_this).find('.reply-like-count').text(num += 1);
           $(_this).find('.reply-like-img').attr('src', '/assets/liked.png');
         }
       }

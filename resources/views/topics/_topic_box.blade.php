@@ -67,10 +67,10 @@
 
         // 切换点赞
         if (response.res == 1) {
-          $('.like-count').text(--num);
+          $('.like-count').text(num -= 1);
           $('.like-img').attr('src', '/assets/like.png')
         } else {
-          $('.like-count').text(++num);
+          $('.like-count').text(num += 1);
           $('.like-img').attr('src', '/assets/liked.png')
         }
       }
