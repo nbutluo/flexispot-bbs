@@ -254,6 +254,10 @@
   background-repeat: no-repeat;
 }
 
+.app .forum-content .right-panel .discuss-list .discuss-box .nums .num:nth-child(2) {
+  margin-right: 6px;
+}
+
 .app .forum-content .right-panel .discuss-list .discuss-box .nums .num:nth-child(2)::before {
   content: "";
   display: inline-block;
@@ -357,7 +361,7 @@
 .control-btns {
   display: flex;
   position: fixed;
-  top: 860px;
+  top: 820px;
   width: 94%;
   justify-content: space-between;
   align-items: center;
