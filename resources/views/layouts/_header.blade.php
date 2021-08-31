@@ -6,13 +6,17 @@
     </div>
     <div class="type">
         <div class="type-active">
-            <img src="/assets/home.png" alt="" /><span>Forum</span>
+            <span onclick="window.location.href=`{{ route('root') }}`"><a href="{{ route('root') }}">Forum</a></span>
         </div>
-        <div><img src="/assets/gift.png" alt="" /><span>Testting</span></div>
-        <div><img src="/assets/uplod.png" alt="" /><span>Shop</span></div>
+        <div>
+            <span><a href="https://www.flexispot.com/" target="_blank">Testting</a></span>
+        </div>
+        <div>
+            <span><a href="https://www.flexispot.com/freetrial_return" target="_blank">Shop</a></span>
+        </div>
     </div>
     @guest
-    <div class="login">
+    <div class=" login">
         <div class="login-not">
             <div class="new_post">
                 <a href="{{ route('topics.create') }}">
