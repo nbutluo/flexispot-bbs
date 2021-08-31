@@ -28,5 +28,5 @@
   {!! $collects->appends(Request::except('page'))->links('pagination::page')!!}
 </div>
 @else
-<span style="color: red;">暂无收藏</span>
+<span style="color: red;">{{ _('No favorite posts') }}</span>
 @endif

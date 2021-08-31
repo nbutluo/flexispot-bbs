@@ -47,5 +47,5 @@
   </ul>
 
 @else
-  <div class="empty-block">暂无数据 ~_~ </div>
+  <div class="empty-block">{{ _('Oh, no data yet') }} ~_~ </div>
 @endif

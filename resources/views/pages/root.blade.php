@@ -106,7 +106,7 @@
             </div>
 
             @else
-            <p style="color: #e3342f;"> 暂无数据</p>
+            <p style="color: #e3342f;"> {{ _('Oh, no data yet') }}</p>
             @endif
         </div>
     </div>

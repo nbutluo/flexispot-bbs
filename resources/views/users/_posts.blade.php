@@ -28,5 +28,5 @@
   {!! $posts->links('pagination::page') !!}
 </div>
 @else
-<span style="color: red;">暂无发帖数据</span>
+<span style="color: red;">{{_('No posts yet')}}</span>
 @endif

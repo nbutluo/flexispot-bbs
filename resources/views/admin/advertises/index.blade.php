@@ -53,7 +53,7 @@
             @endforeach
             @else
             <tr>
-              <td><span style="color: red;">暂无数据～～</span></td>
+              <td><span style="color: red;">{{ _('Oh, no data yet') }}～～</span></td>
             </tr>
             @endif
           </tbody>
