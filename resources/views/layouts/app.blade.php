@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="https://www.flexispot.fr/media/favicon/stores/1/cropped-flexispot-logo-32x32.png" />
 
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -31,11 +32,11 @@
   </div>
   @include('layouts._footer')
 
-
+{{---
   @if (app()->isLocal())
   @include('sudosu::user-selector')
   @endif
-
+  -}}
   {{-- <script src="{{ mix('js/app.js') }}"></script> --}}
   <script src="{{ asset('js/jquery.min.js') }}"></script>
   <script src="{{ asset('js/checkbrower.js') }}"></script>
