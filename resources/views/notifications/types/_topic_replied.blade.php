@@ -9,7 +9,7 @@
     <div class="title">
       <a href="{{ route('users.show', $notification->data['user_id']) }}">{{ '@'.$notification->data['user_name'] }}</a>
       <span>Commented on</span>
-      <a href="{{ $notification->data['topic_link'] }}" target="_blank">{{ $notification->data['topic_title'] }}</a>
+      <a href="{{ $notification->data['topic_link'] }}" class="topic-title" target="_blank">{{ $notification->data['topic_title'] }}</a>
     </div>
     <div class="content">{!! $notification->data['reply_content'] !!}</div>
   </div>

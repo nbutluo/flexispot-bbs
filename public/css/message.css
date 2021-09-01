@@ -253,6 +253,7 @@
     border-bottom: 1px solid #cccccc;
     display: flex;
     align-items: center;
+    padding: 10px;
   }
 
   .main-content .every-column .bell-img {
@@ -285,6 +286,19 @@
   .main-content .every-column-content .title {
     font-size: 14px;
     font-weight: 400;
+    position: relative;
+    left: 10px;
+  }
+
+  .main-content .every-column-content .title .topic-title {
+    display: inline-block;
+    display: inline-block;
+    width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+    top: 5px;
   }
 
   .main-content .every-column-content .content {
