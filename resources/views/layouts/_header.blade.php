@@ -67,7 +67,7 @@
             </div>
 
             <div class="news-bottom">
-                <form action="{{ route('logout') }}" method="POST" onsubmit="return confirm('您确定要退出吗？');">
+                <form action="{{ route('logout') }}" method="POST" onsubmit="return confirm('Are you sure to log out?');">
                     @csrf
                     <button type="submit">QUit</button>
                 </form>
