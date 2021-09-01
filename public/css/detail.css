@@ -464,11 +464,12 @@
 
   .app .head-box .post_title .share_btn {
     position: absolute;
-    right: 116px;
-    bottom: -32px;
+    right: 28px;
+    bottom: -46px;
   }
 
   .app .head-box .post_title .share_txt {
+    display: none;
     display: inline-block;
     position: absolute;
     right: 64px;
@@ -477,7 +478,8 @@
 
   .app .head-box .post_title .copy_box {
     left: 20px;
-    top: 40px;
+    top: 76px;
+    width: calc(100%-40px);
   }
 
   .app .head-box .tags {
@@ -490,7 +492,7 @@
   }
 
   .app .comments-list .comment-box .user-box {
-    text-align: left;
+    text-align: center;
     padding-bottom: 8px;
     margin-bottom: 8px;
     border-bottom: 1px solid #ededed;
@@ -533,7 +535,7 @@
   }
 
   .app .comments-list .comment-box .sub-comments .sub-comment .sub-info .add-form .comment-area {
-    width: 72%;
+    width: 78%;
   }
 
   .app .pagi-box {

@@ -15,7 +15,7 @@
       @include('notifications.types._' . Str::snake(class_basename($notification->type)))
       @endforeach
       @else
-      <div class="every-column">没有消息通知</div>
+      <div class="every-column">{{ _('No message notification') }}</div>
       @endif
     </div>
     <div class="main-paging">{!! $notifications->onEachSide(1)->links('pagination::page') !!}</div>

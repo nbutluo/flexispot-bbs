@@ -466,11 +466,12 @@
 
         .share_btn {
           position: absolute;
-          right: 116px;
-          bottom: -32px;
+          right: 28px;
+          bottom: -46px;
         }
 
         .share_txt {
+          display: none;
           display: inline-block;
           position: absolute;
           right: 64px;
@@ -479,7 +480,8 @@
 
         .copy_box {
           left: 20px;
-          top: 40px;
+          top: 76px;
+          width: calc(100%-40px);
         }
       }
 
@@ -494,7 +496,7 @@
         padding: 0 16px;
 
         .user-box {
-          text-align: left;
+          text-align: center;
           padding-bottom: 8px;
           margin-bottom: 8px;
           border-bottom: 1px solid #ededed;
@@ -536,7 +538,7 @@
             .sub-info {
               .add-form {
                 .comment-area {
-                  width: 72%;
+                  width: 78%;
                 }
               }
             }
