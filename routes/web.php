@@ -1,8 +1,8 @@
 <?php
 
-Route::redirect('/', '/flarum');
+Route::redirect('/', '/forum');
 
-Route::get('/flarum', 'PagesController@root')->name('root');
+Route::get('/forum', 'PagesController@root')->name('root');
 
 // 用户身份验证相关的路由
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -23,7 +23,7 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
  Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
  Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
-Route::prefix('flarum')->group(function () {
+Route::prefix('forum')->group(function () {
     Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
 
     Route::resource('topics', 'TopicsController', ['only' => ['index', 'create', 'store', 'update', 'edit', 'destroy']]);
