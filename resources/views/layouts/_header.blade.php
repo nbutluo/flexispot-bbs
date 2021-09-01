@@ -9,10 +9,10 @@
             <span onclick="window.location.href=`{{ route('root') }}`"><a href="{{ route('root') }}">Forum</a></span>
         </div>
         <div>
-            <span><a href="https://www.flexispot.com/" target="_blank">Testting</a></span>
+            <span><a href="https://www.flexispot.com/freetrial_return" target="_blank">Testting</a></span>
         </div>
         <div>
-            <span><a href="https://www.flexispot.com/freetrial_return" target="_blank">Shop</a></span>
+            <span><a href="https://www.flexispot.com/" target="_blank">Shop</a></span>
         </div>
     </div>
     @guest
