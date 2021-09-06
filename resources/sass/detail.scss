@@ -126,6 +126,10 @@
         flex-shrink: 1;
         width: 70%;
 
+        p {
+          margin-bottom: 14px;
+        }
+
         .date {
           font-size: 14px;
           font-family: Roboto;
@@ -155,6 +159,7 @@
 
         img {
           max-width: 100%;
+          height: auto;
         }
       }
 
@@ -466,7 +471,7 @@
 
         .share_btn {
           position: absolute;
-          right: 28px;
+          right: 14px;
           bottom: -46px;
         }
 
@@ -481,7 +486,7 @@
         .copy_box {
           left: 20px;
           top: 76px;
-          width: calc(100%-40px);
+          width: calc(100% - 40px);
         }
       }
 

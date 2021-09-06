@@ -128,6 +128,10 @@
   width: 70%;
 }
 
+.app .comments-list .comment-box .info p {
+  margin-bottom: 14px;
+}
+
 .app .comments-list .comment-box .info .date {
   font-size: 14px;
   font-family: Roboto;
@@ -157,6 +161,7 @@
 
 .app .comments-list .comment-box .info img {
   max-width: 100%;
+  height: auto;
 }
 
 .app .comments-list .comment-box .btns {
@@ -464,7 +469,7 @@
 
   .app .head-box .post_title .share_btn {
     position: absolute;
-    right: 28px;
+    right: 14px;
     bottom: -46px;
   }
 
@@ -479,7 +484,7 @@
   .app .head-box .post_title .copy_box {
     left: 20px;
     top: 76px;
-    width: calc(100%-40px);
+    width: calc(100% - 40px);
   }
 
   .app .head-box .tags {
