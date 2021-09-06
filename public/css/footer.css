@@ -55,6 +55,61 @@ a {
   margin-top: 16px;
 }
 
+.sprite-box {
+  font-size: 0;
+}
+
+.sprite-bg {
+  background-image: url(/assets/sprite-2x.webp);
+  background-size: auto 100px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin-right: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.facebook {
+  background-position: -184px -0.8px;
+}
+
+.facebook:hover {
+  background-position: -208px -0.5px;
+}
+
+.twitter {
+  background-position: -185px -58.1px;
+}
+
+.twitter:hover {
+  background-position: -208.5px -57.5px;
+}
+
+.linkedin {
+  background-position: -184px -29px;
+}
+
+.linkedin:hover {
+  background-position: -208px -29px;
+}
+
+.youtube {
+  width: 28px;
+  background-position: -207.5px -80px;
+}
+
+.youtube:hover {
+  background-position: -238px -80px;
+}
+
+.instagram {
+  background-position: -283px -32px;
+}
+
+.instagram:hover {
+  background-position: -283px -55.5px;
+}
+
 .footer-left-enter {
   display: flex;
   margin: 12px 0;
