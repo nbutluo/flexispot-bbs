@@ -6140,3 +6140,189 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
+@media (max-width: 768px) {
+  .header {
+    padding: 14px 12px;
+  }
+
+  .header .type {
+    display: none;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 56px;
+    right: 16px;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 0px 1px 8px 0px rgba(69, 69, 69, 0.22);
+    border-radius: 4px;
+  }
+
+  .header .type div {
+    padding: 12px 24px;
+  }
+
+  .header .type div img {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    margin-bottom: -2px;
+  }
+
+  .header .type-active {
+    color: #333;
+    border-bottom: none;
+  }
+
+  .header .login-not .plus-img {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url("/assets/grey_plus.png");
+  }
+
+  .header .login-not .new_post {
+    display: none;
+  }
+
+  .header .login-not .hamburg-menu {
+    display: flex;
+  }
+
+  .app {
+    width: 100%;
+    margin: 0px auto;
+    overflow: hidden;
+  }
+
+  .app .banner {
+    width: 100vw;
+  }
+
+  .app .forum-content {
+    margin: 24px 18px;
+  }
+
+  .app .forum-content .left-panel {
+    display: none;
+  }
+
+  .app .forum-content .right-panel {
+    width: 100%;
+  }
+
+  .app .forum-content .right-panel .tabs-box {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .app .forum-content .right-panel .tabs-box .all_tab {
+    display: inline-block;
+  }
+
+  .app .forum-content .right-panel .tabs-box .tab {
+    margin-right: 24px;
+  }
+
+  .app .forum-content .right-panel .tabs-box .cates_pc {
+    display: none;
+  }
+
+  .app .forum-content .right-panel .discuss-list .discuss-box {
+    padding: 12px 4px;
+  }
+
+  .app .forum-content .right-panel .discuss-list .discuss-box .info {
+    font-size: 12px;
+  }
+
+  .app .forum-content .right-panel .discuss-list .discuss-box .info .title {
+    font-size: 16px;
+  }
+
+  .app .forum-content .right-panel .discuss-list .discuss-box .ava {
+    display: none;
+  }
+
+  .app .forum-content .right-panel .discuss-list .discuss-box .nums {
+    display: flex;
+    flex-direction: column;
+    margin-left: 32px;
+    font-size: 14px;
+  }
+
+  .app .forum-content .right-panel .discuss-list .discuss-box .nums .num {
+    margin-right: 0;
+    margin-bottom: 4px;
+  }
+
+  .app .forum-content .right-panel .discuss-list .discuss-box .nums .num:nth-child(2)::before {
+    margin-right: 8px;
+  }
+
+  .app .forum-content .right-panel .pagi-box {
+    position: relative;
+    top: 28px;
+    width: 100%;
+    padding-bottom: 60px;
+  }
+
+  .app .forum-content .right-panel .pagi-box .num-btns {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+  }
+
+  .app .forum-content .right-panel .pagi-box .num-btns img {
+    width: 10px;
+    height: 20px;
+    margin-right: 18px;
+    cursor: pointer;
+  }
+
+  .app .forum-content .right-panel .pagi-box .num-btns .num {
+    padding: 7px 14px;
+    margin-right: 18px;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  .app .forum-content .right-panel .pagi-box .num-btns .num.active {
+    background: #1774dc;
+    color: #fff;
+  }
+
+  .app .category_box {
+    position: fixed;
+    background: rgba(7, 35, 66, 0.9);
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    display: none;
+  }
+
+  .app .category_box .category_list {
+    background: #fff;
+    margin-top: auto;
+    padding: 20px 0 0 16px;
+    color: #1b1c1e;
+    width: 100%;
+  }
+
+  .app .category_box .category_list .cate_title {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .app .category_box .category_list .cate_title span {
+    padding-left: 12px;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #555;
+  }
+}
+

@@ -19,7 +19,6 @@
   <link href="{{ mix('css/header.css') }}" rel="stylesheet">
   <link href="{{ mix('css/ant-message.css') }}" rel="stylesheet">
   <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-  <link href="{{ mix('css/index.css') }}" rel="stylesheet">
 
   @yield('styles')
 
