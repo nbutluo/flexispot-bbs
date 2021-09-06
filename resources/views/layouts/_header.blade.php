@@ -15,7 +15,7 @@
     </div>
     <div>
       <img src="{{ asset('/assets/uplod.png') }}" />
-      <span><a href="{{ route('topics.create') }}"> Topic</a></span>
+      <span><a href="https://www.flexispot.com/">Shop</a></span>
     </div>
   </div>
   @guest
