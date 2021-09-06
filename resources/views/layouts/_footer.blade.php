@@ -165,7 +165,7 @@
       <form class="footer-left-enter" method="post" action="https://www.flexispot.com/newsletter/subscriber/new/"
         id="newsletter-validate-detail">
         <div class="footer-left-enter-content" style="display: block; text-align: left">
-          <!--                <input type="text" placeholder="Enter your email address">-->
+          {{--  <input type="text" placeholder="Enter your email address">--}}
           <input name="email" type="email" placeholder="Enter your email address"
             data-validate="{required:true, 'validate-email':true}" data-uw-styling-context="true" aria-label="email" />
         </div>
@@ -176,16 +176,16 @@
     </div>
     <div class="mobile-link">
       <div class="footer__social">
-        <p>
-          <a href="https://www.facebook.com/flexispot/" target="_blank" class="facebook"
+        <p class="sprite-box">
+          <a href="https://www.facebook.com/flexispot/" target="_blank" class="facebook sprite-bg"
             style="color: rgb(255, 255, 255)" data-uw-styling-context="true">facebook</a>
-          <a href="https://twitter.com/FlexiSpot" target="_blank" class="twitter" style="color: rgb(255, 255, 255)"
-            data-uw-styling-context="true">twitter</a>
-          <a href="https://www.linkedin.com/company/flexispot/" target="_blank" class="linkedin"
+          <a href="https://twitter.com/FlexiSpot" target="_blank" class="twitter sprite-bg"
+            style="color: rgb(255, 255, 255)" data-uw-styling-context="true">twitter</a>
+          <a href="https://www.linkedin.com/company/flexispot/" target="_blank" class="linkedin sprite-bg"
             style="color: rgb(255, 255, 255)" data-uw-styling-context="true">linkedin</a>
-          <a href="https://www.youtube.com/channel/UC48U2tYs29-EpFaxpFMxPPQ" target="_blank" class="youtube"
+          <a href="https://www.youtube.com/channel/UC48U2tYs29-EpFaxpFMxPPQ" target="_blank" class="youtube sprite-bg"
             style="color: rgb(255, 255, 255)" data-uw-styling-context="true">youtube</a>
-          <a href="https://www.instagram.com/flexispot_official/" target="_blank" class="instagram"
+          <a href="https://www.instagram.com/flexispot_official/" target="_blank" class="instagram sprite-bg"
             style="color: rgb(255, 255, 255)" data-uw-styling-context="true">instagram</a>
         </p>
       </div>
