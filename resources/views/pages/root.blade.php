@@ -118,28 +118,7 @@
 
 <div class="category_box">
   <div class="category_cover"></div>
-  <div class="category_list">
-    <p class="cate_title"><a href="{{ route('root') }}"> All Categories</a></p>
-    <p class="cate_title"><a href="{{ route('categories.show',1) }}">News & Announcements</a></p>
-    <p class="cate_title">Deals & Giveaways</p>
-    <p class="cate_title">
-      General & Producr Discussion
-      <span>Serie 1</span>
-      <span>Serie 1</span>
-      <span>Serie 1</span>
-      <span>Serie 1</span>
-    </p>
-    <p class="cate_title">Questions & Answers</p>
-    <p class="cate_title">Producr Rexiews</p>
-    <p class="cate_title">
-      Ideas & Suggestions
-      <span>Standing desks</span>
-      <span>Desk bikes</span>
-      <span>Desk converters</span>
-      <span>Services</span>
-      <span>Others</span>
-    </p>
-  </div>
+  @include('pages._mobile_categories')
 </div>
 
 @endsection
