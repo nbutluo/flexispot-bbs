@@ -8,3 +8,9 @@ function toggleMenu() {
     menu_box.style.display = "none";
   }
 }
+
+function handleLogin(e) {
+  if (e.keyCode === 13) {
+    document.forms["login-form"].submit();
+  }
+}

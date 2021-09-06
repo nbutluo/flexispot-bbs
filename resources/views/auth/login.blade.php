@@ -22,7 +22,8 @@
 
       <div class="form-item">
         <label for="" class="title">{{ _('Email') }}</label>
-        <input type="email" class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autofocus />
+        <input type="email" class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"
+          required autofocus />
         @error('email')
         <span class="invalid-feedback" role="alert">
           <strong>{{ $message }}</strong>
@@ -32,7 +33,8 @@
 
       <div class="form-item">
         <label for="" class="title">{{ __('Password') }}</label>
-        <input type="password" class="@error('password') is-invalid @enderror" name="password" required />
+        <input type="password" class="@error('password') is-invalid @enderror" name="password" required
+          onkeydown="handleLogin(event)" />
         @error('password')
         <span class="invalid-feedback" role="alert">
           <strong>{{ $message }}</strong>
