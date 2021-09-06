@@ -16,6 +16,7 @@
   height: 30px;
   display: flex;
   justify-content: space-between;
+  z-index: 9;
 }
 
 .header .type div {
