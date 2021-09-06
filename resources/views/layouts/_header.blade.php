@@ -83,4 +83,6 @@
 </div>
 @endguest
 </div>
+@auth
 <script src="{{ asset('js/header.js') }}"></script>
+@endauth
