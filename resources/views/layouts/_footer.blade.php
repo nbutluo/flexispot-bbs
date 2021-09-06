@@ -7,8 +7,7 @@
       <p class="footer-left-title" data-uw-styling-context="true">
         Sign up and Save $10 on your first order
       </p>
-      <form class="footer-left-enter" novalidate="novalidate" method="post"
-        action="https://www.flexispot.com/newsletter/subscriber/new/" id="newsletter-validate-detail">
+      <form class="footer-left-enter" method="post" action="https://www.flexispot.com/newsletter/subscriber/new/">
         <div class="footer-left-enter-content" style="display: block">
           <input name="email" type="email" id="newsletter" placeholder="Enter your email address"
             data-validate="{required:true, 'validate-email':true}" data-uw-styling-context="true" aria-label="email" />
@@ -163,11 +162,11 @@
       Sign up and Save $10 on your first order
     </p>
     <div class="footer-left-enter">
-      <form class="footer-left-enter" novalidate="novalidate" method="post"
-        action="https://www.flexispot.com/newsletter/subscriber/new/" id="newsletter-validate-detail">
+      <form class="footer-left-enter" method="post" action="https://www.flexispot.com/newsletter/subscriber/new/"
+        id="newsletter-validate-detail">
         <div class="footer-left-enter-content" style="display: block; text-align: left">
           <!--                <input type="text" placeholder="Enter your email address">-->
-          <input name="email" type="email" id="newsletter" placeholder="Enter your email address"
+          <input name="email" type="email" placeholder="Enter your email address"
             data-validate="{required:true, 'validate-email':true}" data-uw-styling-context="true" aria-label="email" />
         </div>
         <button type="submit" class="footer-left-btn" data-uw-styling-context="true">

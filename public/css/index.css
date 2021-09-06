@@ -168,6 +168,7 @@
 .app .forum-content .right-panel .discuss-list .discuss-box .info {
   flex-shrink: 1;
   width: 60%;
+  cursor: pointer;
 }
 
 .app .forum-content .right-panel .discuss-list .discuss-box .info .title {
@@ -200,9 +201,6 @@
   padding: 3px 6px;
   margin-left: 6px;
   display: inline-block;
-}
-
-.app .forum-content .right-panel .discuss-list .discuss-box .info .DGtype a {
   color: #fff;
 }
 
@@ -212,9 +210,6 @@
   padding: 3px 6px;
   margin-left: 6px;
   display: inline-block;
-}
-
-.app .forum-content .right-panel .discuss-list .discuss-box .info .QAtype a {
   color: #fff;
 }
 

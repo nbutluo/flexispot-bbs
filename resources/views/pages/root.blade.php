@@ -44,7 +44,7 @@
 
   <div class="right-panel">
     <div class="tabs-box">
-      <!-- <span class="tab active_tab all_tab">All categories</span> -->
+      {{--  <span class="tab active_tab all_tab">All categories</span>--}}
       <a href="{{ Request::url() }}"><span class="tab {{ active_tab_class (if_query('tab',null))}}">Latest</span></a>
       <a href="?tab=top"><span class="tab {{ active_tab_class (if_query('tab','top'))}}">Top</span></a>
     </div>
@@ -55,15 +55,14 @@
 
       @foreach ($topics as $topic)
       <div class="discuss-box">
-        <div class="info">
-          <a href="{{ route('topics.show',$topic->id) }}" target="_blank">
-            <div class="title">{{ $topic->title }}</div>
-          </a>
+        <div class="info" onclick="window.location.href=`{{ route('topics.show',$topic->id) }}`">
+
+          <div class="title">{{ $topic->title }}</div>
+
           <p>
             <span class="date"> Created on {{ $topic->created_at->formatLocalized('%B %d') }}</span>
             <span class="{{active_categories_class($topic->category->id)}}">
-              <a href="{{ route('categories.show',$topic->category_id) }}"
-                target="_blank">{{ $topic->category->name }}</a>
+              {{ $topic->category->name }}
             </span>
           </p>
         </div>
@@ -115,8 +114,34 @@
     </div>
   </div>
 
-
 </div>
+
+<div class="category_box">
+  <div class="category_cover"></div>
+  <div class="category_list">
+    <p class="cate_title"><a href="{{ route('root') }}"> All Categories</a></p>
+    <p class="cate_title"><a href="{{ route('categories.show',1) }}">News & Announcements</a></p>
+    <p class="cate_title">Deals & Giveaways</p>
+    <p class="cate_title">
+      General & Producr Discussion
+      <span>Serie 1</span>
+      <span>Serie 1</span>
+      <span>Serie 1</span>
+      <span>Serie 1</span>
+    </p>
+    <p class="cate_title">Questions & Answers</p>
+    <p class="cate_title">Producr Rexiews</p>
+    <p class="cate_title">
+      Ideas & Suggestions
+      <span>Standing desks</span>
+      <span>Desk bikes</span>
+      <span>Desk converters</span>
+      <span>Services</span>
+      <span>Others</span>
+    </p>
+  </div>
+</div>
+
 @endsection
 
 @section('control-btns')

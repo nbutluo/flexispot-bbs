@@ -161,6 +161,7 @@
           .info {
             flex-shrink: 1;
             width: 60%;
+            cursor: pointer;
 
             .title {
               margin-bottom: 12px;
@@ -192,9 +193,7 @@
               padding: 3px 6px;
               margin-left: 6px;
               display: inline-block;
-              a {
-                color: #fff;
-              }
+              color: #fff;
             }
             .QAtype {
               background: #72b4fe;
@@ -202,9 +201,7 @@
               padding: 3px 6px;
               margin-left: 6px;
               display: inline-block;
-              a {
-                color: #fff;
-              }
+              color: #fff;
             }
           }
 
