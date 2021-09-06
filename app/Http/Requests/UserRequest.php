@@ -2,8 +2,8 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
 use Auth;
+use Illuminate\Foundation\Http\FormRequest;
 
 class UserRequest extends FormRequest
 {
@@ -15,8 +15,8 @@ class UserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|between:3,25|regex:/^[A-Za-z0-9\-\_]+$/|unique:users,name,' . Auth::id(),
-            'email' => 'required|email|unique:users,email,' . Auth::id(),
+            'name' => 'required|between:3,25|regex:/^[A-Za-z0-9\-\_]+$/|unique:users,name,'.Auth::id(),
+            'email' => 'required|email|unique:users,email,'.Auth::id(),
             'introduction' => 'max:80',
             // 'avatar' => 'mimes:jpeg,bmp,png,gif|dimensions:min_width=208,min_height=208',
             // 'avatar' => 'mimes:jpeg,bmp,png,gif',
@@ -26,12 +26,12 @@ class UserRequest extends FormRequest
     public function messages()
     {
         return [
-            'avatar.mimes' => '头像必须是 jpeg, bmp, png, gif 格式的图片',
-            'name.unique' => '用户名已被占用，请重新填写',
-            'name.regex' => '用户名只支持英文、数字、横杠和下划线。',
-            'name.between' => '用户名必须介于 3 - 25 个字符之间。',
-            'name.required' => '用户名不能为空。',
-            'email.unique' => '邮箱已被占用，请检查',
+            'avatar.mimes' => 'The avatar must be a picture in jpeg, bmp, png, gif format',
+            'name.unique' => 'Username has been taken, please fill in again',
+            'name.regex' => 'Usernames only support English, numbers, horizontal bars and underscores.',
+            'name.between' => 'Username must be between 3-25 characters.。',
+            'name.required' => 'Username can not be empty.',
+            'email.unique' => 'The mailbox is already occupied, please check',
         ];
     }
 }
