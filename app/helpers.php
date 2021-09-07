@@ -13,6 +13,7 @@ function category_nav_active($category_id)
 function make_excerpt($value, $length = 200)
 {
     $excerpt = trim(preg_replace('/\r\n|\r|\n+/', ' ', strip_tags($value)));
+
     return Str::limit($excerpt, $length);
 }
 
@@ -40,7 +41,7 @@ function active_categories_class($category_id)
     return ($category_id % 2) == 0 ? 'DGtype' : 'QAtype';
 }
 
-function active_tab_class($condition, $activeClass = 'active_tab', $inactiveClass = '')
+function active_tab_class($condition, $activeClass = 'active-category-tab', $inactiveClass = '')
 {
     return app('active')->getClassIf($condition, $activeClass, $inactiveClass);
 }
@@ -53,5 +54,6 @@ function active_category_tab($condition, $activeClass = 'active-category-tab', $
 function is_json($string)
 {
     json_decode($string);
-    return (json_last_error() == JSON_ERROR_NONE);
+
+    return json_last_error() == JSON_ERROR_NONE;
 }

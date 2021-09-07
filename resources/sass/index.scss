@@ -111,6 +111,10 @@
         border-bottom: 1px solid #ededed;
         position: relative;
 
+        .active-category-tab {
+          color: #1774dc;
+        }
+
         .tab {
           margin-right: 30px;
         }

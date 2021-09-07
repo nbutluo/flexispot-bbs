@@ -119,6 +119,10 @@
   position: relative;
 }
 
+.app .forum-content .right-panel .tabs-box .active-category-tab {
+  color: #1774dc;
+}
+
 .app .forum-content .right-panel .tabs-box .tab {
   margin-right: 30px;
 }
