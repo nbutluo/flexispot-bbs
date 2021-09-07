@@ -1,9 +1,11 @@
 @extends('layouts.app')
 <meta property="og:type" content="article" />
+<meta name="twitter:creator" content="{{ '@'.$topic->user->name }}" />
 <meta property="og:title" content="{{ $topic->title }}" />
 <meta property="og:description" content="{{ $topic->excerpt }}" />
 <meta property="og:url" content="{{ route('topics.show',$topic->id) }}" />
 <meta property="og:image" content="{{ $topic->topic_cover }}" />
+<meta name="image" property="og:image" content="{{ $topic->topic_cover }}">
 
 @section('title', $topic->title)
 @section('description', $topic->excerpt)

@@ -136,9 +136,11 @@ class Topic extends Model
 
         if ($match) {
             $this->cover = $match[1];
-        } else {
-            $this->cover = 'https://www.flexispot.fr/media/magefan_blog/how_a_sedentary_lifestyle_affects_your_health.jpg';
         }
+
+        // else {
+        //     $this->cover = 'https://www.flexispot.fr/media/magefan_blog/how_a_sedentary_lifestyle_affects_your_health.jpg';
+        // }
 
         return $this->cover;
     }

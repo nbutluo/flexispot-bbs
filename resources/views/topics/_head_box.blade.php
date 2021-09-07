@@ -9,8 +9,9 @@
     <span class="icons">
       <a class="addthis_button_twitter" href="#"> <img src="/assets/bird.png"></a>
       <a class="addthis_button_facebook" href="#"><img src="/assets/face.png"> </a>
-      <a class="linkedin_share" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ Request::url() }}&amp;title={{ $topic->title }}">
-      <img src="/assets/ins@2x.png"></a>
+      <a class="linkedin_share" target="_blank"
+        href="https://www.linkedin.com/shareArticle?mini=true&url={{ Request::url() }}&title={{ $topic->title }}&source=&summary={{ $topic->excerpt }}">
+        <img src="/assets/ins@2x.png"></a>
       <img src="/assets/x.png" onclick="closeAlert()" alt="">
     </span>
   </div>
