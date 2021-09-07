@@ -60,7 +60,7 @@
           <div class="title">{{ $topic->title }}</div>
 
           <p>
-            <span class="date"> Created on {{ $topic->created_at->format('M m, Y') }}</span>
+            <span class="date"> Created on {{ $topic->created_at->format('M d, Y') }}</span>
             <span class="{{active_categories_class($topic->category->id)}}">
               {{ $topic->category->name }}
             </span>
