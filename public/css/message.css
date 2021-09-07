@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+.app {
+  margin: 100px auto;
+}
+
 .main {
   width: 70%;
   margin: 0 auto;
