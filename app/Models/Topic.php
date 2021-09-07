@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
+use Auth;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Overtrue\LaravelFavorite\Traits\Favoriteable;
 use Overtrue\LaravelLike\Traits\Likeable;
-use Auth;
 
 class Topic extends Model
 {
@@ -14,7 +14,7 @@ class Topic extends Model
     use Likeable;
 
     protected $fillable = [
-        'title', 'body', 'category_id', 'excerpt', 'slug', 'view_count'
+        'title', 'body', 'category_id', 'excerpt', 'slug', 'view_count',
     ];
 
     public function category()
@@ -127,5 +127,19 @@ class Topic extends Model
     {
         $this->collect_count = $this->favoriters()->count();
         $this->save();
+    }
+
+    public function getTopicCoverAttribute()
+    {
+        $pattern = '/<img .*?src=[\"|\']+(.*?)[\"|\']+.*?>/';
+        preg_match($pattern, $this->body, $match);
+
+        if ($match) {
+            $this->cover = $match[1];
+        } else {
+            $this->cover = 'https://www.flexispot.fr/media/magefan_blog/how_a_sedentary_lifestyle_affects_your_health.jpg';
+        }
+
+        return $this->cover;
     }
 }
