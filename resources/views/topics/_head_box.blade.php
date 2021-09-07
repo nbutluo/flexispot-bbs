@@ -11,7 +11,7 @@
       <a class="addthis_button_facebook" href="#"><img src="/assets/face.png"> </a>
       <a class="linkedin_share" target="_blank"
         href="https://www.linkedin.com/shareArticle?mini=true&url={{ Request::url() }}&title={{ $topic->title }}&source=&summary={{ $topic->excerpt }}">
-        <img src="/assets/ins@2x.png"></a>
+        <img src="/assets/linkedin.png"></a>
       <img src="/assets/x.png" onclick="closeAlert()" alt="">
     </span>
   </div>
