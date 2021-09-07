@@ -13,7 +13,7 @@
 
   <title>@yield('title', 'FlexiSpot Forum') </title>
   <meta name="description" content="@yield('description', 'FlexispotBBS')" />
-
+  @yield('metas')
   <!-- Styles -->
   <link href="{{ mix('css/footer.css') }}" rel="stylesheet">
   <link href="{{ mix('css/header.css') }}" rel="stylesheet">
