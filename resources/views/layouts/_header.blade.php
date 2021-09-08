@@ -15,7 +15,13 @@
     </div>
     <div>
       <img src="{{ asset('/assets/uplod.png') }}" />
-      <span><a href="https://www.flexispot.com/">Shop</a></span>
+      <span>
+        @if (is_mobile())
+        <a href="{{ route('topics.create') }}">Topic</a>
+        @else
+        <a href="https://www.flexispot.com/">Shop</a>
+        @endif
+      </span>
     </div>
   </div>
   @guest
