@@ -14,7 +14,7 @@ class TopicRequest extends Request
             case 'PATCH':
 
                 return [
-                    'title' => 'required|min:2',
+                    'title' => 'required|min:2|max:100',
                     'body' => 'required|min:3',
                     'category_id' => 'required|numeric',
                 ];
@@ -31,6 +31,7 @@ class TopicRequest extends Request
     {
         return [
             'title.required' => 'The title can not be blank',
+            'title.max' => 'The title cannot exceed 100 characters',
             'category_id.required' => 'Please select the post category',
             'body.required' => 'The content can not be blank',
             'body.min' => 'The content cannot be less than three characters',
