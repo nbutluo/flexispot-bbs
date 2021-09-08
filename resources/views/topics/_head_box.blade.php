@@ -5,7 +5,7 @@
   </span>
   <div class="copy_box">
     <span class="title">post #1</span>
-    <span class="link">{{ Request::url() }}</span>
+    <input type="text" class="link" value="{{ Request::url() }}" />
     <span class="icons">
       <a class="addthis_button_twitter" href="#"> <img src="/assets/bird.png"></a>
       <a class="addthis_button_facebook" href="#"><img src="/assets/face.png"> </a>

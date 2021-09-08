@@ -37,9 +37,11 @@
       position: absolute;
       left: 324px;
       font-size: 14px;
-      padding: 12px 8px;
+      padding: 20px 14px;
+      border-radius: 4px;
       background: #fff;
       box-shadow: 0px 1px 10px 0px rgba(69, 69, 69, 0.16);
+      overflow: hidden;
       display: none;
       flex-direction: column;
 
@@ -53,23 +55,27 @@
         padding: 8px 12px;
         color: #666;
         line-height: 24px;
+        margin-bottom: 8px;
+        min-width: 310px;
+        font-size: 15px;
       }
 
       .icons {
         display: flex;
         align-items: center;
+        margin-top: 8px;
       }
 
       img {
-        width: 22px;
-        height: 22px;
-        margin-right: 8px;
+        width: 28px;
+        height: 28px;
+        margin-right: 12px;
         cursor: pointer;
 
         &:last-child {
           float: right;
-          width: 16px;
-          height: 16px;
+          width: 20px;
+          height: 20px;
           margin-left: auto;
         }
       }
@@ -351,14 +357,17 @@
       .title {
         font-size: 18px;
         flex: 1;
+        max-width: 800px;
+        margin-right: 50px;
         a {
           color: #000;
         }
       }
 
       .num {
-        margin-right: 72px;
+        margin-right: 48px;
         color: #888;
+        min-width: 32px;
 
         &:last-child {
           margin-right: 0;
