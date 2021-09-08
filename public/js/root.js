@@ -66,13 +66,9 @@ var modal = document.querySelector(".category_box"),
   all_tab = document.querySelector(".all_tab"),
   cates = document.querySelector(".cates_pc");
 
-all_tab.addEventListener("click", () => {
-  if (testMobile()) {
-    modal.style.display = "flex";
-  } else {
-    cates.style.display = "flex";
-  }
-});
+function toggleModal() {
+  modal.style.display = "flex";
+}
 
 modal.addEventListener("click", () => {
   modal.style.display = "none";
