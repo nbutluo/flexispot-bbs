@@ -44,7 +44,7 @@
 
   <div class="right-panel">
     <div class="tabs-box">
-      <span class="tab active_tab all_tab" onclick="toggleModal()">All categories</span>
+      <span class="tab all_tab" onclick="toggleModal()">All categories</span>
       <a href="{{ Request::url() }}"><span class="tab {{ active_tab_class (if_query('tab',null))}}">Latest</span></a>
       <a href="?tab=top"><span class="tab {{ active_tab_class (if_query('tab','top'))}}">Top</span></a>
     </div>

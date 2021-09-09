@@ -14,3 +14,19 @@ function handleLogin(e) {
     document.forms["login-form"].submit();
   }
 }
+
+function handleCol(el, height) {
+  if (
+    el.nextElementSibling.style.height &&
+    el.nextElementSibling.style.height !== "0px"
+  ) {
+    el.lastElementChild.lastElementChild.setAttribute(
+      "d",
+      "M512 256L512 768M256 512L768 512"
+    );
+    el.nextElementSibling.style.height = "0px";
+  } else {
+    el.lastElementChild.lastElementChild.setAttribute("d", "M256 512L768 512");
+    el.nextElementSibling.style.height = height || "120px";
+  }
+}

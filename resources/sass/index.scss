@@ -119,15 +119,16 @@
           margin-right: 30px;
         }
 
+        .active_tab,
         .all_tab {
-          display: none;
-        }
-
-        .active_tab {
           background: #2e89ef;
           border-radius: 6px;
           color: #fff;
           padding: 4px 8px;
+        }
+
+        .all_tab {
+          display: none;
         }
 
         .cates_pc {
@@ -311,11 +312,42 @@
           display: flex;
           align-items: center;
 
-          img {
-            width: 10px;
-            height: 20px;
+          .left-btn {
+            display: inline-block;
+            border: 10px solid transparent;
+            border-right: 10px solid #1774dc;
             margin-right: 18px;
             cursor: pointer;
+
+            &.disabled {
+              border-right: 10px solid #888;
+              pointer-events: none;
+            }
+          }
+
+          .right-btn {
+            display: inline-block;
+            border: 10px solid transparent;
+            border-left: 10px solid #1774dc;
+            margin-right: 18px;
+            cursor: pointer;
+
+            &.disabled {
+              border-left: 10px solid #888;
+              pointer-events: none;
+            }
+          }
+
+          .pagi-num {
+            padding: 7px 14px;
+            margin-right: 12px;
+            border-radius: 2px;
+            cursor: pointer;
+
+            &.active {
+              background: #1774dc;
+              color: #fff;
+            }
           }
 
           .num {
@@ -454,6 +486,13 @@
 
           .all_tab {
             display: inline-block;
+          }
+
+          .active_tab {
+            display: inline-block;
+            background-color: transparent;
+            color: #2e89ef;
+            transform: scale(1.1);
           }
 
           .tab {
