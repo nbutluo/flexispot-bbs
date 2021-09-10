@@ -18,10 +18,10 @@
 
     @if (if_query('tab', 'top'))
     <span class="pagi-num" onclick="undatePagi('',this);"
-      data-url="{{ Request::url()  }}?tab=top&page={{ $page }}">{{ $page }}</span>
+          data-url="{{ Request::url()  }}?tab=top&page={{ $page }}">{{ $page }}</span>
     @else
     <span class="pagi-num" onclick="undatePagi('',this);"
-      data-url="{{ Request::url()  }}?page={{ $page }}">{{ $page }}</span>
+          data-url="{{ Request::url()  }}?page={{ $page }}">{{ $page }}</span>
     @endif
 
 
@@ -164,9 +164,9 @@ function toggleModal() {
 }
 
 
-modal.addEventListener("click", () => {
-  modal.style.display = "none";
-});
+// modal.addEventListener("click", () => {
+//   modal.style.display = "none";
+// });
 
 </script>
 @endsection

@@ -30,3 +30,12 @@ function handleCol(el, height) {
     el.nextElementSibling.style.height = height || "120px";
   }
 }
+
+//  打开复制弹窗
+var open_box = document.querySelector(".copy_box");
+function openAlert(e) {
+  open_box.style.display = "flex";
+}
+function closeAlert(e) {
+  open_box.style.display = "none";
+}
