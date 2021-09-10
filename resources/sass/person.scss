@@ -156,9 +156,11 @@
     }
   }
   .pagi-box {
+    position: relative;
+    top: 28px;
     width: 100%;
     padding-bottom: 60px;
-    padding-top: 40px;
+
     .num-btns {
       position: absolute;
       left: 50%;
@@ -166,11 +168,42 @@
       display: flex;
       align-items: center;
 
-      img {
-        width: 10px;
-        height: 20px;
+      .left-btn {
+        display: inline-block;
+        border: 10px solid transparent;
+        border-right: 10px solid #1774dc;
         margin-right: 18px;
         cursor: pointer;
+
+        &.disabled {
+          border-right: 10px solid #888;
+          pointer-events: none;
+        }
+      }
+
+      .right-btn {
+        display: inline-block;
+        border: 10px solid transparent;
+        border-left: 10px solid #1774dc;
+        margin-right: 18px;
+        cursor: pointer;
+
+        &.disabled {
+          border-left: 10px solid #888;
+          pointer-events: none;
+        }
+      }
+
+      .pagi-num {
+        padding: 7px 14px;
+        margin-right: 12px;
+        border-radius: 2px;
+        cursor: pointer;
+
+        &.active {
+          background: #1774dc;
+          color: #fff;
+        }
       }
 
       .num {
@@ -178,7 +211,6 @@
         margin-right: 18px;
         border-radius: 2px;
         cursor: pointer;
-        color: #000;
 
         &.active {
           background: #1774dc;
