@@ -54,7 +54,7 @@
 }
 
 .main-content .every-column-content {
-  height: 45px;
+  height: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -65,6 +65,10 @@
   font-family: Roboto;
   font-weight: 400;
   color: #1774dc;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 1000px;
 }
 
 .main-content .every-column-content .title a {
