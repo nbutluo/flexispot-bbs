@@ -113,11 +113,42 @@
   align-items: center;
 }
 
-.main-paging .num-btns img {
-  width: 10px;
-  height: 20px;
+.main-paging .num-btns .left-btn {
+  display: inline-block;
+  border: 10px solid transparent;
+  border-right: 10px solid #1774dc;
   margin-right: 18px;
   cursor: pointer;
+}
+
+.main-paging .num-btns .left-btn.disabled {
+  border-right: 10px solid #888;
+  pointer-events: none;
+}
+
+.main-paging .num-btns .right-btn {
+  display: inline-block;
+  border: 10px solid transparent;
+  border-left: 10px solid #1774dc;
+  margin-right: 18px;
+  cursor: pointer;
+}
+
+.main-paging .num-btns .right-btn.disabled {
+  border-left: 10px solid #888;
+  pointer-events: none;
+}
+
+.main-paging .num-btns .pagi-num {
+  padding: 7px 14px;
+  margin-right: 12px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.main-paging .num-btns .pagi-num.active {
+  background: #1774dc;
+  color: #fff;
 }
 
 .main-paging .num-btns .num {

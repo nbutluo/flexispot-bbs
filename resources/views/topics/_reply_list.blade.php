@@ -1,7 +1,8 @@
 @foreach ($replies as $index => $reply)
 <div class="comment-box">
   <div class="user-box">
-    <a href="{{ route('users.show',$reply->user_id ) }}" target="_blank"><img src="{{ $reply->user->avatar }}" alt="{{ $reply->user->name }}"></a>
+    <a href="{{ route('users.show',$reply->user_id ) }}" target="_blank"><img src="{{ $reply->user->avatar }}"
+           alt="{{ $reply->user->name }}"></a>
     <span class="name">
       <a href="{{ route('users.show', [$reply->user_id]) }}" title="{{ $reply->user->name }}">
         {{ $reply->user->name }}
@@ -32,7 +33,8 @@
     </span>
     <span class="btn" onclick="addComment(this)"><img src="/assets/share_btn.png" alt="">Reply</span>
     @can('destroy', $reply)
-    <form action="{{ route('replies.destroy', $reply->id) }}" style="display: inline-block;" onsubmit="return confirm('Be sure to delete this comment?');" method="post">
+    <form action="{{ route('replies.destroy', $reply->id) }}" style="display: inline-block;"
+          onsubmit="return confirm('Be sure to delete this comment?');" method="post">
       @csrf
       @method('DELETE')
       <button class="btn btn-item" type="submit"><i class="far fa-trash-alt"></i></button>
@@ -132,7 +134,7 @@
 
         // // 切换点赞
         if (response.res == 1) {
-          console.log(_this);
+          // console.log(_this);
           $(_this).find('.reply-like-count').text(num -= 1);
           $(_this).find('.reply-like-img').attr('src', '/assets/like.png');
         } else {

@@ -22,7 +22,8 @@
       <i class="far fa-edit"></i>
     </a>
   </span>
-  <form action="{{ route('topics.destroy', $topic->id) }}" method="post" style="display: inline-block;" onsubmit="return confirm('Confirm delete ?');">
+  <form action="{{ route('topics.destroy', $topic->id) }}" method="post" style="display: inline-block;"
+        onsubmit="return confirm('Confirm delete ?');">
     @csrf
     @method('DELETE')
     <button class="btn btn-item" type="submit"><i class="far fa-trash-alt"></i></button>
@@ -41,7 +42,8 @@
     @guest
     <img src="/assets/collect.png" class="collect-img">
     @else
-    <img src="{{$topic->hasCollected() ? '/assets/yellow_collect.png' : '/assets/collect.png'}}" class="collect-img" onclick="toggleCollect(this)">
+    <img src="{{$topic->hasCollected() ? '/assets/yellow_collect.png' : '/assets/collect.png'}}" class="collect-img"
+         onclick="toggleCollect(this)">
     @endguest
   </span>
 </div>

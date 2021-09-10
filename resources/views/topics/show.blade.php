@@ -50,3 +50,33 @@
 
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-612c9b63a0743429"></script>
+<script src="https://cloud.yofoto.cn/Themes/jquery-1.11.1.min.js"></script>
+
+<script type="text/javascript" src="{{ asset('js/module.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/hotkeys.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/uploader.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/simditor.js') }}"></script>
+
+<script>
+  $(function(){
+
+    $('.reply-topic').click(function() {
+      $('.reply-topic-title').text("{{ $topic->title }}")
+    });
+
+    Simditor.locale = 'en-US';
+    var editor = new Simditor({
+      textarea: $('#editor'),
+      upload: {
+        url: "{{ route('topics.upload_image') }}",
+        params: {
+          _token: '{{ csrf_token() }}'
+        },
+        fileKey: 'upload_file',
+        connectionCount: 3,
+        leaveConfirm: '文件上传中，关闭此页面将取消上传。'
+      },
+      pasteImage: true,
+    });
+  })
+</script>
