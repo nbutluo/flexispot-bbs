@@ -18,7 +18,7 @@
     @if ($announcements->is_show)
     <div class="card">
       <p class="title">Community Announcements</p>
-      <a href="{{ $announcements->link }}" target="_blank">
+      <a data-pjax href="{{ $announcements->link }}" target="_blank">
         <div class="content">
           {{ $announcements->content }}
         </div>
@@ -32,7 +32,8 @@
         @if (count($advertises))
 
         @foreach ($advertises as $advertise)
-        <a href="{{ $advertise->link }}" target="_blank"> <img src="{{ $advertise->cover }}" alt="" class="discuss"></a>
+        <a data-pjax href="{{ $advertise->link }}" target="_blank"> <img src="{{ $advertise->cover }}" alt=""
+               class="discuss"></a>
         @endforeach
         @else
         <img src="https://picsum.photos/334/278" alt="" class="discuss">
@@ -45,8 +46,9 @@
   <div class="right-panel">
     <div class="tabs-box">
       <span class="tab all_tab" onclick="toggleModal()">All categories</span>
-      <a href="{{ Request::url() }}"><span class="tab {{ active_tab_class (if_query('tab',null))}}">Latest</span></a>
-      <a href="?tab=top"><span class="tab {{ active_tab_class (if_query('tab','top'))}}">Top</span></a>
+      <a data-pjax href="{{ Request::url() }}"><span
+              class="tab {{ active_tab_class (if_query('tab',null))}}">Latest</span></a>
+      <a data-pjax href="?tab=top"><span class="tab {{ active_tab_class (if_query('tab','top'))}}">Top</span></a>
     </div>
 
     <div class="discuss-list">
@@ -57,7 +59,7 @@
       <div class="discuss-box">
         <div class="info" onclick="window.location.href=`{{ route('topics.show',$topic->id) }}`">
 
-          <div class="title">{{ $topic->title }}</div>
+          <div class="title"><a data-pjax href="{{ route('topics.show',$topic->id) }}">{{ $topic->title }}</a></div>
 
           <p>
             <span class="date"> Created on {{ $topic->created_at->format('M d, Y') }}</span>
@@ -67,9 +69,9 @@
           </p>
         </div>
         <div class="ava">
-          <a href="{{ route('users.show',$topic->user_id) }}" target="_blank"></a>
+          <a data-pjax href="{{ route('users.show',$topic->user_id) }}" target="_blank"></a>
           <img src="{{ asset($topic->user->avatar) }}" alt="{{ $topic->user->name }}" onmouseover="showFloat(this)"
-            onmouseout="hideFloat(this)" onclick="location.href=`{{ route('users.show',$topic->user_id) }}` ">
+               onmouseout="hideFloat(this)" onclick="location.href=`{{ route('users.show',$topic->user_id) }}` ">
           <div class="float-window" style="display: none;">
             <div class="head-row">
               <img src="{{ asset($topic->user->avatar) }}" alt="{{ $topic->user->name }}">
@@ -126,51 +128,24 @@
 @section('control-btns')
 <div class="control-btns">
   <img src="{{ asset('assets/arrow.png') }}" alt="" onClick="goTop()" />
-  <a href="{{ route('topics.create') }}" target="_blank">
+  <a data-pjax href="{{ route('topics.create') }}" target="_blank">
     <img src="{{ asset('assets/plus.png') }}" alt="" />
   </a>
 </div>
 @endsection
 
-@section('scripts')
-<script src="{{ asset('js/root.js')}}"></script>
-
 <script src="{{ asset('js/jquery.min.js') }}"></script>
-<script src="{{ asset('js/jquery.pjax.js') }}"></script>
-<script src="{{ asset('js/nprogress.js') }}"></script>
-
 <script>
-  (function($) {
-        var LearnKu = {
-            init: function() {
-                var self = this;
+  $(document).ready(function() {
+    $(document).pjax('[data-pjax] a, a[data-pjax]', '#pjax-container');
+    //定义pjax有效时间，超过这个时间会整页刷新
+    $.pjax.defaults.timeout = 1200;
 
-                // Pjax 页面准备就绪的事件
-                $(document).on('pjax:end', function() {
-                    // 每一次 Pjax 请求完成后执行
-                    NProgress.done();
-                    self.siteBootUp();
-                });
-
-                // 第一次正常页面加载完成后执行
-                self.siteBootUp();
-            },
-
-            siteBootUp: function() {
-                var self = this;
-                $(document).pjax('a', '#pjax-container');
-                //定义pjax有效时间，超过这个时间会整页刷新
-                $.pjax.defaults.timeout = 1200;
-                $(document).on('pjax:start', function() {
-                    NProgress.start();
-                });
-            },
-        };
-        window.LearnKu = LearnKu;
-    })(jQuery);
-
-    $(document).ready(function() {
-        LearnKu.init();
+    $(document).on('pjax:start', function() {
+      NProgress.start();
     });
+    $(document).on('pjax:end', function() {
+      NProgress.done();
+    });
+  });
 </script>
-@endsection

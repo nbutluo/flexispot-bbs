@@ -27,14 +27,7 @@
 @section('styles')
 <link rel="stylesheet" href="{{ mix('css/message.css') }}">
 @endsection
-
-
-@section('scripts')
 <script src="{{ asset('js/jquery.min.js') }}"></script>
-<script src="{{ asset('js/jquery.pjax.js') }}"></script>
-<script src="{{ asset('js/nprogress.js') }}"></script>
-<link rel="stylesheet" href="{{ asset('css/nprogress.css') }}">
-
 <script>
   $(document).ready(function() {
     $(document).pjax('a', '#message-container');
@@ -49,4 +42,3 @@
     });
   });
 </script>
-@endsection
