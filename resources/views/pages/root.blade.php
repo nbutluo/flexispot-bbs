@@ -7,7 +7,7 @@
 
 @section('content')
 <div class="banner-box">
-  <img src="{{ asset('assets/banner.png') }}" alt="" class="banner">
+  <img src="{{ asset('assets/luntan_banner.jpg') }}" alt="" class="banner">
 </div>
 
 <div class="forum-content" id="pjax-container">
