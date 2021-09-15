@@ -27,7 +27,7 @@ class Category extends Model
                 $categories[$key]['_disabled'] = $category['id'] == $value['id'] || (new HdArr)->isChild($categories, $value['id'], $category['id'], 'id');
             }
         }
-        return (new HdArr)->tree($categories, 'name',  'id');
+        return (new HdArr)->tree($categories, 'name', 'id');
     }
 
     // 判断是否含有子分类
@@ -41,7 +41,7 @@ class Category extends Model
     // 获得多级目录列表（多维数组）
     public function getCategoryLevel()
     {
-        $categories = $this->get()->toArray();
+        $categories = $this->where('is_show', true)->get()->toArray();
 
         return (new HdArr)->channelLevel($categories, 0, "&nbsp;", 'id');
     }
