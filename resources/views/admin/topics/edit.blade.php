@@ -1,5 +1,9 @@
 @extends('admin.layouts.index')
 @section('title',$topic->title.'话题编辑')
+@section('styles')
+<link rel="stylesheet" type="text/css" href="{{ asset('css/simditor.css') }}">
+<script src="https://cloud.yofoto.cn/Themes/jquery-1.11.1.min.js"></script>
+@endsection
 @section('content')
 <div class="row">
   <div class="col-md-12">
@@ -11,7 +15,8 @@
         </span>
       </div>
       <div class="card-body">
-        <form method="POST" action="{{ route('admin.topics.update',$topic->id) }}" enctype="multipart/form-data" accept-charset="UTF-8" onsubmit="return confirm('确认提交吗？')">
+        <form method="POST" action="{{ route('admin.topics.update',$topic->id) }}" enctype="multipart/form-data"
+              accept-charset="UTF-8" onsubmit="return confirm('确认提交吗？')">
           @csrf
           @method('PATCH')
           @include('admin.shared._error')
@@ -46,14 +51,15 @@
           <div class="form-group row">
             <label class="col-12 col-sm-3 col-form-label text-sm-right">话题内容</label>
             <div class="col-12 col-sm-8 col-lg-6">
-              <textarea class="form-control" name="body">{!! old('body',$topic->body) !!}</textarea>
+              <div><textarea name="body" id="editor">{!! old('body',$topic->body) !!}</textarea></div>
             </div>
           </div>
 
           <div class="form-group row">
             <label class="col-12 col-sm-3 col-form-label text-sm-right">查看数</label>
             <div class="col-12 col-sm-8 col-lg-6">
-              <input class="form-control" name="view_count" type="text" placeholder="请输入" value="{{ old('view_count',$topic->view_count)}}">
+              <input class="form-control" name="view_count" type="text" placeholder="请输入"
+                     value="{{ old('view_count',$topic->view_count)}}">
             </div>
           </div>
 
@@ -80,4 +86,28 @@
     </div>
   </div>
 </div>
+@endsection
+
+@section('script')
+<script type="text/javascript" src="{{ asset('js/module.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/hotkeys.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/uploader.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/simditor.js') }}"></script>
+<script>
+  $(function(){
+    var editor = new Simditor({
+      textarea: $('#editor'),
+      upload: {
+        url: "{{ route('topics.upload_image') }}",
+        params: {
+          _token: '{{ csrf_token() }}'
+        },
+        fileKey: 'upload_file',
+        connectionCount: 3,
+        leaveConfirm: '文件上传中，关闭此页面将取消上传。'
+      },
+      pasteImage: true,
+    });
+  })
+</script>
 @endsection
