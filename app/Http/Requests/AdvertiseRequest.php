@@ -14,7 +14,7 @@ class AdvertiseRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|min:2|max:30',
+            'title' => 'nullable|min:2|max:30',
             'link' => 'url|nullable',
         ];
     }
@@ -22,7 +22,6 @@ class AdvertiseRequest extends FormRequest
     public function messages()
     {
         return [
-            'title.required' => '标题不能为空',
             'title.min' => '标题字数不能少于2个',
             'title.max' => '标题字数不能超过30个',
             'link.url' => '请输入正确的 URl 链接',

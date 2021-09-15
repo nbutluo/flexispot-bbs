@@ -104,6 +104,10 @@
   margin-bottom: 20px;
 }
 
+.app .forum-content .left-panel .card .content .item:last-child {
+  margin-bottom: 0;
+}
+
 .app .forum-content .left-panel .card .content .item .discuss {
   width: 100%;
 }

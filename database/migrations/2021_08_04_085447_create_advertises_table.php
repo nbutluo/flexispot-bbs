@@ -10,7 +10,7 @@ class CreateAdvertisesTable extends Migration
     {
         Schema::create('advertises', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('title')->nullable();
             $table->string('link')->nullable();
             $table->string('cover');
             $table->boolean('is_show')->default(true);
