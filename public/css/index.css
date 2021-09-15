@@ -100,10 +100,12 @@
   cursor: pointer;
 }
 
-.app .forum-content .left-panel .card .content .discuss {
+.app .forum-content .left-panel .card .content .item {
   margin-bottom: 20px;
+}
+
+.app .forum-content .left-panel .card .content .item .discuss {
   width: 100%;
-  max-width: 334px;
 }
 
 .app .forum-content .right-panel {
@@ -179,7 +181,6 @@
 .app .forum-content .right-panel .discuss-list .discuss-box .info .title {
   margin-bottom: 12px;
   font-size: 18px;
-  font-family: Roboto Slab;
   font-weight: 400;
   color: #1b1c1e;
   max-width: 480px;

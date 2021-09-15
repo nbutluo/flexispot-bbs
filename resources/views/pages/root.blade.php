@@ -32,8 +32,12 @@
         @if (count($advertises))
 
         @foreach ($advertises as $advertise)
-        <a data-pjax href="{{ $advertise->link }}" target="_blank"> <img src="{{ $advertise->cover }}" alt=""
-               class="discuss"></a>
+        <div class="item">
+          <a data-pjax href="{{ $advertise->link }}" target="_blank">
+            <img src="{{ $advertise->cover }}" class="discuss">
+          </a>
+          <p>{{ $advertise->title ? $advertise->title : ''}}</p>
+        </div>
         @endforeach
         @else
         <img src="https://picsum.photos/334/278" alt="" class="discuss">

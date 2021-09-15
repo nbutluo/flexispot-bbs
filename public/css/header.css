@@ -29,7 +29,6 @@
 
 .header .type-active {
   font-size: 18px;
-  font-family: Roboto;
   font-weight: 400;
   color: #1774dc;
   border-bottom: 2px solid #1774dc;
@@ -176,7 +175,6 @@
 }
 
 .header .login #news .news-title-line {
-  font-family: Roboto;
   font-weight: 300;
   color: #333333;
   cursor: pointer;
@@ -201,7 +199,6 @@
   background: #f3654f;
   border-radius: 4px;
   border: 0;
-  font-family: Roboto;
   font-weight: 500;
   color: #ffffff;
   cursor: pointer;
