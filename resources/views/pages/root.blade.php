@@ -92,7 +92,7 @@
               </span>
             </div>
             <p class="row">
-              <span>Member since: </span><span>{{ $topic->user->name }}</span>
+              <span>Member since: </span><span>{{ $topic->user->created_at->format('Y-m-d') }}</span>
             </p>
             <p class="row">
               <span>Posts:</span>
@@ -103,8 +103,8 @@
                     <span>Likes received: </span>
                     <span>36</span>
                 </p>
-                <p class="last-row">This user's public profile is hidden.</p>
-             --}}
+            --}}
+            <p class="last-row">This user's public profile is hidden.</p>
           </div>
         </div>
         <div class="nums">
