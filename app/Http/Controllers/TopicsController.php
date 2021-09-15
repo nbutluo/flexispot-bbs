@@ -33,7 +33,7 @@ class TopicsController extends Controller
 
     public function create(Topic $topic)
     {
-        $categories = Category::all();
+        $categories = Category::where('is_show', true)->get();
         return view('topics.create_and_edit', compact('topic', 'categories'));
     }
 
