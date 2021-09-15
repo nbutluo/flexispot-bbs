@@ -16,16 +16,15 @@ class AnnouncementRequest extends FormRequest
     {
         return [
             'content' => 'required|min:2',
-            'link' => 'required|url',
+            'link' => 'url|nullable',
         ];
     }
 
     public function messages()
     {
         return [
-            'content.required' => '标题不能为空',
-            'content.min' => '标题字数不能少于2个',
-            'link.required' => '链接地址不能为空',
+            'content.required' => '内容不能为空',
+            'content.min' => '字数不能少于2个',
             'link.url' => '请输入合法的 URl 链接',
         ];
     }

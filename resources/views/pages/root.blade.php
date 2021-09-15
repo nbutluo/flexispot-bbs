@@ -18,11 +18,13 @@
     @if ($announcements->is_show)
     <div class="card">
       <p class="title">Community Announcements</p>
-      <a data-pjax href="{{ $announcements->link }}" target="_blank">
-        <div class="content">
-          {{ $announcements->content }}
-        </div>
-      </a>
+      <div class="content">
+        @if ($announcements->link)
+        <a data-pjax href="{{ $announcements->link }}" target="_blank"> {{ $announcements->content }}</a>
+        @else
+        {{ $announcements->content }}
+        @endif
+      </div>
     </div>
     @endif
 
@@ -33,9 +35,14 @@
 
         @foreach ($advertises as $advertise)
         <div class="item">
+          @if ($advertise->link)
           <a data-pjax href="{{ $advertise->link }}" target="_blank">
             <img src="{{ $advertise->cover }}" class="discuss">
           </a>
+          @else
+          <img src="{{ $advertise->cover }}" class="discuss">
+          @endif
+
           <p>{{ $advertise->title ? $advertise->title : ''}}</p>
         </div>
         @endforeach
