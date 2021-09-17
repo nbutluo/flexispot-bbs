@@ -7,7 +7,9 @@
 
 @section('content')
 <div class="banner-box">
-  <img src="{{ asset('assets/luntan_banner.jpg') }}" alt="" class="banner">
+  <a href="http://www.flexispot.com/standiversary" target="_blank">
+    <img src="{{ asset('assets/luntan_banner.jpg') }}" class="banner">
+  </a>
 </div>
 
 <div class="forum-content" id="pjax-container">
