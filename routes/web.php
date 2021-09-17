@@ -18,10 +18,10 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
- // Email 认证相关路由
- Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
- Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
- Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+// Email 认证相关路由
+Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
+Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
+Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
 Route::prefix('forum')->group(function () {
     Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
@@ -49,6 +49,7 @@ Route::get('topic/collect/{topic}', 'TopicsController@toggleCollect')->name('top
 // 话题点赞
 Route::get('reply/like/{reply}', 'RepliesController@toggleLike')->name('reply.togglelike');
 
+// 后台首页
 Route::get('admin', 'Admin\AdminController@index')->name('admin.index');
 
 Route::prefix('admin')->group(function () {
@@ -60,8 +61,8 @@ Route::prefix('admin')->group(function () {
         Route::resource('advertises', 'Admin\AdvertisesController', ['except' => ['show', 'create', 'store', 'destroy']]);
         Route::resource('announcements', 'AnnouncementController', ['except' => ['show', 'create', 'store', 'destroy']]);
 
-        Route::get('login', 'Admin\AdminController@create')->name('login');
-        Route::post('login', 'Admin\AdminController@store')->name('login');
+        Route::get('login', 'Admin\AdminController@create')->name('login.create');
+        Route::post('login', 'Admin\AdminController@store')->name('login.store');
         Route::delete('logout', 'Admin\AdminController@logout')->name('logout');
     });
 });

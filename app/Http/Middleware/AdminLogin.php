@@ -10,7 +10,7 @@ class AdminLogin
     public function handle(Request $request, Closure $next)
     {
         if (!session('admin.user')) {
-            return redirect()->route('admin.login');
+            return redirect()->route('admin.login.create');
         }
 
         return $next($request);

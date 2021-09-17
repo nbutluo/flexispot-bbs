@@ -30,13 +30,14 @@
               <span class="splash-description">Flexispot BBS 后台管理</span>
             </div>
             <div class="card-body">
-              <form method="POST" action="{{ route('admin.login') }}">
+              <form method="POST" action="{{ route('admin.login.store') }}">
                 @csrf
                 @include('shared._error')
                 @include('shared._messages')
 
                 <div class="form-group">
-                  <input class="form-control" name="username" value="{{ old('username') }}" type="text" placeholder="用户名" autocomplete="off">
+                  <input class="form-control" name="username" value="{{ old('username') }}" type="text"
+                         placeholder="用户名" autocomplete="off">
                 </div>
                 <div class="form-group">
                   <input class="form-control" name="password" type="password" placeholder="密码">

@@ -10,23 +10,25 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('verify.admin.login', ['except'=>['store','create']]);
+    }
+
+    // 将用户列表作为后台首页
     public function index(Request $request)
     {
-        if ($request->session()->has('admin.user')) {
-            return redirect()->route('admin.users.index');
-        } else {
-            return redirect()->route('admin.login');
-        }
+        return redirect()->route('admin.users.index');
     }
+
 
     public function create(Request $request)
     {
-        // 如果未登录，则跳转到登录页面
         if ($request->session()->has('admin.user')) {
             return redirect()->route('admin.users.index')->with('warning', '您已登录，无须操作');
-        } else {
-            return view('admin.login.create');
         }
+        // 如果未登录，则跳转到登录页面
+        return view('admin.login.create');
     }
 
     public function store(AdminRequest $request)
@@ -37,9 +39,9 @@ class AdminController extends Controller
             // 密码匹配
             $request->session()->put('admin.user', $request->username);
             return redirect()->route('admin.users.index')->with('success', '欢迎回来！');
-        } else {
-            return redirect()->back()->with('error', '用户名或密码错误');
         }
+
+        return redirect()->back()->with('error', '用户名或密码错误');
     }
 
     public function logout(Request $request)
@@ -49,6 +51,7 @@ class AdminController extends Controller
             //移除session
             $request->session()->pull('admin.user', session('admin.user'));
         }
-        return redirect()->route('admin.login')->with('success', '成功退出');;
+
+        return redirect()->route('admin.login.create')->with('success', '成功退出');
     }
 }
