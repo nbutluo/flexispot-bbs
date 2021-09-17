@@ -11,6 +11,8 @@ class RepliesController extends Controller
 {
     public function __construct()
     {
+        // 后台操作replies 禁止使用 Observer
+        Reply::unsetEventDispatcher();
         return $this->middleware('verify.admin.login');
     }
 

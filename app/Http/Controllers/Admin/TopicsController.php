@@ -12,6 +12,8 @@ class TopicsController extends Controller
 {
     public function __construct()
     {
+        // 后台操作topic 禁止使用 Observer
+        Topic::unsetEventDispatcher();
         return $this->middleware('verify.admin.login');
     }
 
