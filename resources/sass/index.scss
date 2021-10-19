@@ -1,12 +1,14 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 .app {
-  // background: #efe;
-  width: calc(100% - 540px);
-  margin: 20px auto;
+  background: #e6eaef;
+  overflow: hidden;
+  // width: calc(100% - 540px);
+  // margin: 20px auto;
   a {
     color: #1b1c1e;
   }
@@ -18,7 +20,12 @@
 
   .forum-content {
     display: flex;
-    margin: 56px 0;
+    margin: 36px auto;
+    width: 72%;
+
+    .bg-white {
+      background-color: white;
+    }
 
     .left-panel {
       width: 332px;
@@ -26,13 +33,14 @@
 
       .card {
         margin-bottom: 40px;
-        border: 1px solid #d4d4d4;
+        background-color: white;
+        box-shadow: 0px 1px 10px 0px rgba(69, 69, 69, 0.08);
+        border-radius: 4px;
         border-radius: 4px;
         color: #555;
 
         .title {
           font-size: 20px;
-          font-family: Roboto Slab;
           border-bottom: 1px solid #ececec;
           padding: 18px 0;
           text-align: center;
@@ -105,13 +113,18 @@
     }
 
     .right-panel {
+      background: #fff;
+      box-shadow: 0px 1px 10px 0px rgba(69, 69, 69, 0.08);
+      border-radius: 4px;
       width: calc(100% - 364px);
+      padding-bottom: 16px;
+      margin-bottom: 36px;
 
       .tabs-box {
         font-size: 22px;
         font-weight: 400;
         color: #1b1c1e;
-        padding-bottom: 14px;
+        padding: 16px 52px;
         border-bottom: 1px solid #ededed;
         position: relative;
 
@@ -120,15 +133,24 @@
         }
 
         .tab {
+          padding: 7px 20px;
           margin-right: 30px;
+          font-size: 22px;
+          color: #888;
+          background: #f2f2f2;
+          border-radius: 18px;
+          cursor: pointer;
         }
 
-        .active_tab,
         .all_tab {
-          background: #2e89ef;
-          border-radius: 6px;
+          display: none;
+          margin-right: 16px;
+          padding: 6px 14px;
           color: #fff;
-          padding: 4px 8px;
+        }
+
+        .active_tab {
+          color: #2e89ef;
         }
 
         .all_tab {
@@ -159,11 +181,17 @@
       }
 
       .discuss-list {
+        .no-data-yet {
+          color: #e3342f;
+          padding: 20px 0 0 55px;
+          font-size: 18px;
+        }
+
         .discuss-box {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 28px 16px;
+          padding: 10px 56px;
           border-bottom: 1px solid #ededed;
           position: relative;
 
@@ -177,13 +205,17 @@
               font-size: 18px;
               font-weight: 400;
               color: #1b1c1e;
-              max-width: 480px;
+              max-width: 400px;
+              margin-right: 16px;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
             }
 
             .date {
               font-size: 14px;
               color: #858585;
-              font-family: Avenir;
+              font-style: italic;
             }
 
             .tag {
@@ -332,7 +364,6 @@
             display: inline-block;
             border: 10px solid transparent;
             border-left: 10px solid #1774dc;
-            margin-right: 18px;
             cursor: pointer;
 
             &.disabled {
@@ -475,6 +506,7 @@
 
     .forum-content {
       margin: 24px 18px;
+      width: calc(100% - 36px);
 
       .left-panel {
         display: none;
@@ -486,20 +518,26 @@
         .tabs-box {
           font-size: 16px;
           font-weight: 500;
+          padding: 14px 10px;
 
           .all_tab {
-            display: inline-block;
+            background: #2e89ef;
+            border-radius: 6px;
+            color: #fff;
+            padding: 4px 8px;
           }
 
           .active_tab {
             display: inline-block;
-            background-color: transparent;
             color: #2e89ef;
-            transform: scale(1.1);
           }
 
           .tab {
-            margin-right: 24px;
+            margin-right: 10px;
+            font-size: 16px;
+            padding: 6px 16px;
+            display: inline-block;
+            margin-top: 8px;
           }
 
           .cates_pc {
@@ -509,13 +547,14 @@
 
         .discuss-list {
           .discuss-box {
-            padding: 12px 4px;
+            padding: 12px 8px;
 
             .info {
               font-size: 12px;
 
               .title {
                 font-size: 16px;
+                max-width: 236px;
               }
             }
 
@@ -526,7 +565,6 @@
             .nums {
               display: flex;
               flex-direction: column;
-              margin-left: 32px;
               font-size: 14px;
 
               .num {

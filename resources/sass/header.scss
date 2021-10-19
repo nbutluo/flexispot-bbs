@@ -9,6 +9,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #fff;
 
   .type {
     width: 380px;
@@ -42,18 +43,22 @@
     display: flex;
     align-items: center;
     position: relative;
+
     &-search {
       display: flex;
       align-items: center;
+
       img {
         margin: 0 8px 0 0;
         width: 17px;
         height: 17px;
       }
     }
+
     &-yes {
       display: flex;
       align-items: center;
+
       .message {
         width: 27px;
         height: 18px;
@@ -74,6 +79,7 @@
         margin: 0 11px;
         font-size: 14px;
       }
+
       img {
         width: 57px;
         height: 57px;
@@ -81,6 +87,7 @@
         cursor: pointer;
       }
     }
+
     .plus-img {
       display: inline-block;
       width: 16px;
@@ -90,6 +97,7 @@
       cursor: pointer;
       margin-bottom: -3px;
     }
+
     &-not {
       display: flex;
       align-items: center;
@@ -140,6 +148,7 @@
         }
       }
     }
+
     #news {
       display: none;
       position: absolute;
@@ -155,6 +164,7 @@
       font-weight: 300;
       color: #333333;
       z-index: 9;
+
       .news-title {
         width: 137px;
         height: 108px;
@@ -162,10 +172,12 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+
         &-line {
           font-weight: 300;
           color: #333333;
           cursor: pointer;
+
           img {
             margin: 0 10px 0 14px;
             width: 12px;
@@ -173,11 +185,13 @@
           }
         }
       }
+
       .news-bottom {
         display: flex;
         align-items: center;
         justify-content: center;
         height: 42px;
+
         button {
           width: 77px;
           height: 25px;

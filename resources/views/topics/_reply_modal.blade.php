@@ -1,9 +1,9 @@
 <div class="title-box" onclick="resetModal()">
   <div>
     <img src="/assets/share_btn.png" alt="">
-    <span class="reply-topic-title" style="color: #1774dc;">AAAAAAAAAAAAA</span>
+    <span class="reply-topic-title" style="color: #1774dc;line-break: anywhere;">AAAAAAAAAAAAA</span>
   </div>
-  <div>
+  <div style="width:80px;text-align:right;">
     <img src="/assets/-.png" alt="" style="margin-bottom:7px;" onclick="foldModal(event)">
     <img src="/assets/x.png" alt="" onclick="hideModal()">
   </div>
