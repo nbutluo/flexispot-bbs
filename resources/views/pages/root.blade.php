@@ -83,11 +83,11 @@
         </div>
         <div class="ava">
           <a data-pjax href="{{ route('users.show',$topic->user_id) }}" target="_blank"></a>
-          <img src="{{ asset($topic->user->avatar) }}" alt="{{ $topic->user->name }}" onmouseover="showFloat(this)"
+          <img src="{{ $topic->user->avatar }}" alt="{{ $topic->user->name }}" onmouseover="showFloat(this)"
                onmouseout="hideFloat(this)" onclick="location.href=`{{ route('users.show',$topic->user_id) }}` ">
           <div class="float-window" style="display: none;">
             <div class="head-row">
-              <img src="{{ asset($topic->user->avatar) }}" alt="{{ $topic->user->name }}">
+              <img src="{{ $topic->user->avatar }}" alt="{{ $topic->user->name }}">
               <span>
                 <span>{{ $topic->user->name }}</span>
                 {{--<span>Lv.6</span>--}}

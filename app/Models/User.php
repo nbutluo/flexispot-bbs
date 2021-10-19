@@ -103,4 +103,9 @@ class User extends Authenticatable implements MustVerifyEmailContract
     // {
     //     return $this->hasOne();
     // }
+
+    public function getDefaultAvatarAttribute()
+    {
+        return \Avatar::create($this->name)->toBase64();
+    }
 }

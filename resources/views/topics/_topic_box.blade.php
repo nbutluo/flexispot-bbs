@@ -1,6 +1,6 @@
 <div class="user-box">
   <a href="{{ route('users.show',$topic->user_id) }}" target="_blank">
-    <img src="{{ asset($topic->user->avatar) }}" alt="">
+    <img src="{{ $topic->user->avatar }}" alt="">
   </a>
   <span class="name author-name">{{ $topic->user->name }}</span>
 </div>
