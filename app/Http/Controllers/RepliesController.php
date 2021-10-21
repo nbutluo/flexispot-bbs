@@ -31,10 +31,9 @@ class RepliesController extends Controller
     {
         $reply->fill($request->all());
         $reply->user_id = Auth::id();
-
         $reply->save();
 
-        return redirect()->to($reply->topic->link())->with('success', 'The comment reply was successful!');
+        return redirect()->back()->with('success', 'The comment reply was successful!');
     }
 
     public function destroy(Reply $reply)

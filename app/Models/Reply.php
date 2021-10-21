@@ -51,4 +51,9 @@ class Reply extends Model
         $this->like_count = $this->likers()->count();
         $this->save();
     }
+
+    public function subcomments()
+    {
+        return $this->hasMany(Reply::class, 'parent_id');
+    }
 }

@@ -224,7 +224,7 @@ body {
 
       .sub-comments {
         flex-basis: 100%;
-        background: #edfaed;
+        background: #f7fafe;
         margin-left: 100px;
         margin-top: 14px;
         border-radius: 6px;
@@ -234,6 +234,10 @@ body {
           width: 30px;
           height: 30px;
           margin-right: 6px;
+        }
+
+        .avatar {
+          border-radius: 50%;
         }
 
         .sub-comment {
@@ -264,6 +268,7 @@ body {
 
               .date {
                 color: #858585;
+                font-size: 13px;
               }
 
               .icons img {
@@ -271,6 +276,18 @@ body {
                 width: 18px;
                 height: 18px;
                 margin-right: 14px;
+              }
+
+              .subcomment-like-count {
+                color: #888;
+              }
+
+              .btn {
+                color: #888;
+                margin-right: 15px;
+                cursor: pointer;
+                border: none;
+                font-size: 15px;
               }
             }
           }

@@ -51,10 +51,13 @@
 @section('reply_script')
 <script>
   var num = Number($('.like-count').text());
-  // console.log(num);
-
+  var starLoading = false;
   // 话题点赞
   $('.like-btn').click(function() {
+
+    if(starLoading) return ;
+    starLoading = true;
+
     $.ajax({
       type: "get",
       url: "{{ route('topic.togglelike',$topic->id) }}",
@@ -75,6 +78,9 @@
           $('.like-count').text(num += 1);
           $('.like-img').attr('src', '/assets/liked.png')
         }
+      },
+      complete: () => {
+        starLoading = false;
       }
     });
   })

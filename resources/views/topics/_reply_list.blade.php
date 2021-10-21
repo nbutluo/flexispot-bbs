@@ -21,8 +21,6 @@
   </div>
 
   <div class="btns">
-    <span class="btn" style="color: #fff; cursor: auto;">编辑</span>
-    <span class="btn" style="color: #fff; cursor: auto;">删除</span>
     <span class="btn reply-like-btn" replyId="{{ $reply->id }}" data-val="{{ $reply->id }}">
       @guest
       <img src="/assets/like.png" class="reply-like-img">
@@ -54,54 +52,9 @@
     </form>
   </div>
 
-  {{--
-    <div class="sub-comments">
-        <div class="sub-comment">
-            <img src="/assets/avatar.png" alt="" class="left">
-            <div class="right">
-                <div class="comment">
-                    <span class="name">Care</span>
-                    <p class="content">AAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
-                </div>
-                <div class="sub-info">
-                    <span class="date">Jun 2, 2021 8:32 pm</span>
-                    <div class="icons">
-                        <span class="btn">删除</span>
-                        <span onclick="addComment(this)"><img src="/assets/message.png" alt=""></span>
-                        <span onclick="toggleLike(this)"><img src="/assets/liked.png" alt="">
-                        </span>
-                    </div>
-                    <div class="add-form">
-                        <textarea name="" id="" cols="86" rows="2" class="comment-area"></textarea>
-                        <span class="save-btn">SAVE</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="sub-comment">
-            <img src="/assets/avatar.png" alt="" class="left">
-            <div class="right">
-                <div class="comment">
-                    <span class="name">Care</span>
-                    <p class="content">AAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
-                </div>
-                <div class="sub-info">
-                    <span class="date">Jun 2, 2021 8:32 pm</span>
-                    <div class="icons">
-                        <span class="btn">删除</span>
-                        <span onclick="addComment(this)"><img src="/assets/message.png" alt=""></span>
-                        <span onclick="toggleLike(this)"><img src="/assets/liked.png" alt="">
-                        </span>
-                    </div>
-                    <div class="add-form">
-                        <textarea name="aa" id="" cols="86" rows="2" class="comment-area"></textarea>
-                        <span class="save-btn">SAVE</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-  --}}
+  @includeWhen(count($subcomments=$reply->subcomments) > 1,'topics._sub_comment' )
+  @yield('subcomment-script')
+
 </div>
 @endforeach
 <!-- 分页 -->
@@ -114,11 +67,16 @@
 
 @section('reply-list-scripts')
 <script>
+  var starLoading = false;
+
   $('.reply-like-btn').on('click', function() {
 
     const _this = this
     var num = Number($(_this).find('.reply-like-count').text());
     var replyId = $(_this).attr('replyId');
+
+    if(starLoading) return ;
+    starLoading = true;
 
     $.ajax({
       type: "get",
@@ -141,6 +99,9 @@
           $(_this).find('.reply-like-count').text(num += 1);
           $(_this).find('.reply-like-img').attr('src', '/assets/liked.png');
         }
+      },
+      complete: () => {
+        starLoading = false;
       }
     });
   });

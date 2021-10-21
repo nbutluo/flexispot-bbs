@@ -230,7 +230,7 @@ body {
 
 .app .comments-list .comment-box .sub-comments {
   flex-basis: 100%;
-  background: #edfaed;
+  background: #f7fafe;
   margin-left: 100px;
   margin-top: 14px;
   border-radius: 6px;
@@ -241,6 +241,10 @@ body {
   width: 30px;
   height: 30px;
   margin-right: 6px;
+}
+
+.app .comments-list .comment-box .sub-comments .avatar {
+  border-radius: 50%;
 }
 
 .app .comments-list .comment-box .sub-comments .sub-comment {
@@ -274,6 +278,7 @@ body {
 
 .app .comments-list .comment-box .sub-comments .sub-comment .right .sub-info .date {
   color: #858585;
+  font-size: 13px;
 }
 
 .app .comments-list .comment-box .sub-comments .sub-comment .right .sub-info .icons img {
@@ -281,6 +286,18 @@ body {
   width: 18px;
   height: 18px;
   margin-right: 14px;
+}
+
+.app .comments-list .comment-box .sub-comments .sub-comment .right .sub-info .subcomment-like-count {
+  color: #888;
+}
+
+.app .comments-list .comment-box .sub-comments .sub-comment .right .sub-info .btn {
+  color: #888;
+  margin-right: 15px;
+  cursor: pointer;
+  border: none;
+  font-size: 15px;
 }
 
 .app .pagi-box {
