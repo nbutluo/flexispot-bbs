@@ -52,8 +52,19 @@ class Reply extends Model
         $this->save();
     }
 
+    /*
+        评论的子评论
+    */
     public function subcomments()
     {
         return $this->hasMany(Reply::class, 'parent_id');
+    }
+
+    /*
+        子评论的父级用户
+    */
+    public function subCommentParentuser()
+    {
+        return $this->belongsTo(User::class, 'parent_user_id');
     }
 }

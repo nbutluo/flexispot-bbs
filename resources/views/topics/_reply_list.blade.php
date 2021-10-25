@@ -47,17 +47,17 @@
       <input type="hidden" name="topic_id" value="{{ $topic->id }}">
       <input type="hidden" name="parent_id" value="{{ $reply->id }}">
       <input type="hidden" name="parent_user_id" value="{{ $reply->user_id }}">
-      <textarea name="content" cols="86" rows="2" class="comment-area"></textarea>
+      <textarea name="content" cols="86" rows="2" class="comment-area"
+                placeholder="Reply to @ {{ $reply->user->name }}"></textarea>
       <span class="save-btn" onclick="this.parentElement.submit()">SAVE</span>
     </form>
   </div>
 
-  @includeWhen(count($subcomments=$reply->subcomments) > 1,'topics._sub_comment' )
+  @includeWhen(count($subcomments=$reply->subcomments) >= 1,'topics._sub_comment' )
   @yield('subcomment-script')
 
 </div>
 @endforeach
-<!-- 分页 -->
 <!-- TODO::分页数据分配 -->
 @if ($replies->total()>5)
 <div class="pagi-box">

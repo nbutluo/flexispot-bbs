@@ -9,6 +9,7 @@ use App\Notifications\ReplyLiked;
 
 use App\Notifications\TopicReplied;
 use App\Notifications\ReplyUpdated;
+use App\Notifications\SubCommentRepied;
 
 class ReplyObserver
 {
@@ -17,9 +18,9 @@ class ReplyObserver
         $reply->topic->updateReplyCount();
         // 通知话题作者有新的评论
         $reply->topic->user->notify(new TopicReplied($reply));
-        // 通知这条回复的作者
+        // 有子评论时，也同时需要通知这条回复所属父级作者
         if ($reply->parent_id) {
-            $reply->parentUser->notify(new ReplyUpdated($reply));
+            $reply->parentUser->notify(new SubCommentRepied($reply));
         }
     }
 

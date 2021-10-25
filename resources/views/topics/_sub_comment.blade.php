@@ -38,7 +38,8 @@
             <input type="hidden" name="topic_id" value="{{ $topic->id }}">
             <input type="hidden" name="parent_id" value="{{ $reply->id }}">
             <input type="hidden" name="parent_user_id" value="{{ $subcomment->user_id }}">
-            <textarea name="content" cols="80" rows="2" class="comment-area"></textarea>
+            <textarea name="content" cols="80" rows="2" class="comment-area"
+                      placeholder="Reply to @ {{ $subcomment->user->name }}"></textarea>
             <span class="save-btn" onclick="this.parentElement.submit()">SAVE</span>
           </form>
         </div>
