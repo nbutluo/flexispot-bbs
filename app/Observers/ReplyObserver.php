@@ -32,6 +32,8 @@ class ReplyObserver
     public function deleted(Reply $reply)
     {
         $reply->topic->updateReplyCount();
+        // 父级评论删除时其所有的子级评论删除
+        \DB::table('replies')->where('parent_id', $reply->id)->delete();
     }
 
     public function saving(Reply $reply)
