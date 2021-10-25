@@ -297,7 +297,9 @@ body {
   margin-right: 15px;
   cursor: pointer;
   border: none;
-  font-size: 15px;
+  font-size: 16px;
+  position: relative;
+  bottom: 3px;
 }
 
 .app .pagi-box {

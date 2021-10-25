@@ -46,6 +46,7 @@
   <script src="{{ asset('js/common.js') }}"></script>
   <script src="{{ asset('js/jquery.pjax.js') }}"></script>
   <script src="{{ asset('js/nprogress.js') }}"></script>
+  <script src="{{ asset('js/sweetalert2@11.js') }}"></script>
   <!-- Scripts -->
   @yield('scripts')
 

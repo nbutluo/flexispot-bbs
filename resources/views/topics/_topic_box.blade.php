@@ -22,11 +22,10 @@
       <i class="far fa-edit"></i>
     </a>
   </span>
-  <form action="{{ route('topics.destroy', $topic->id) }}" method="post" style="display: inline-block;"
-        onsubmit="return confirm('Confirm delete ?');">
+  <form action="{{ route('topics.destroy', $topic->id) }}" method="post" style="display: inline-block;">
     @csrf
     @method('DELETE')
-    <button class="btn btn-item" type="submit"><i class="far fa-trash-alt"></i></button>
+    <span class="btn btn-item topic-delete-btn"><i class="far fa-trash-alt"></i></span>
   </form>
   @endcan
   <span class="btn like-btn">
@@ -66,8 +65,7 @@
         console.log(response);
         // 判断是否登录
         if (response.code == 0) {
-          window.location.href = `{{ route('login') }}`;
-          return false;
+          <x-not-login />
         }
 
         // 切换点赞
@@ -95,12 +93,25 @@
       success: function(response) {
         // 判断是否登录
         if (response.code == 0) {
-          console.log(response.code == 0)
-          window.location.href = `{{ route('login') }}`;
-          return false;
+          <x-not-login />
         }
       }
     });
   });
+
+  $('.topic-delete-btn').click(function(){
+      Swal.fire({
+        title: 'Are you sure Delete?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.parentElement.submit()
+        }
+      })
+  })
 </script>
 @endsection

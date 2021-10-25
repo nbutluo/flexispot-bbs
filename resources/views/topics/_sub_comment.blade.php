@@ -13,11 +13,10 @@
         <span class="date">{{ $subcomment->created_at->toDayDateTimeString() }}</span>
         <div class="icons">
           @can('destroy',$subcomment)
-          <form action="{{ route('replies.destroy', $subcomment->id) }}" style="display: inline-block;"
-                onsubmit="return confirm('Be sure to delete this comment?');" method="post">
+          <form action="{{ route('replies.destroy', $subcomment->id) }}" style="display: inline-block;" method="post">
             @csrf
             @method('DELETE')
-            <button class="btn btn-item" type="submit"><i class="far fa-trash-alt"></i></button>
+            <span class="btn btn-item" onclick="delReply(this)"><i class="far fa-trash-alt"></i></span>
           </form>
           @endcan
           <span onclick="addComment(this)"><img src="/assets/message.png"></span>
@@ -68,8 +67,7 @@
       success: (response) => {
         // 判断是否登录
         if (response.code == 0) {
-          window.location.href = `{{ route('login') }}`;
-          return false;
+            <x-not-login />
         }
 
        // 切换点赞
@@ -86,6 +84,21 @@
         starLoading = false;
       }
     });
+  }
+
+  function delReply(el) {
+    Swal.fire({
+        title: 'Are you sure Delete?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          el.parentElement.submit()
+        }
+      })
   }
 
 </script>

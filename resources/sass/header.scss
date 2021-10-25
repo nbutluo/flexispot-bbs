@@ -202,6 +202,14 @@
           color: #ffffff;
           cursor: pointer;
         }
+        .btn-quit {
+          background: #f3654f;
+          border-radius: 4px;
+          font-weight: 500;
+          color: #ffffff;
+          cursor: pointer;
+          padding: 3px 25px;
+        }
       }
     }
   }
@@ -255,4 +263,8 @@
       max-width: 100%;
     }
   }
+}
+
+.click-register-btn {
+  color: #2196f3;
 }

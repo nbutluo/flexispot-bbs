@@ -31,11 +31,10 @@
     </span>
     <span class="btn" onclick="addComment(this)"><img src="/assets/share_btn.png" alt="">Reply</span>
     @can('destroy', $reply)
-    <form action="{{ route('replies.destroy', $reply->id) }}" style="display: inline-block;"
-          onsubmit="return confirm('Be sure to delete this comment?');" method="post">
+    <form action="{{ route('replies.destroy', $reply->id) }}" style="display: inline-block;" method="post">
       @csrf
       @method('DELETE')
-      <button class="btn btn-item" type="submit"><i class="far fa-trash-alt"></i></button>
+      <span class="btn btn-item" onclick="delReply(this)"><i class="far fa-trash-alt"></i></span>
     </form>
     @endcan
   </div>
@@ -83,13 +82,10 @@
       url: "/reply/like/" + replyId,
       dataType: "json",
       success: (response) => {
-        // console.log(response);
         // 判断是否登录
         if (response.code == 0) {
-          window.location.href = `{{ route('login') }}`;
-          return false;
+          <x-not-login />
         }
-
         // // 切换点赞
         if (response.res == 1) {
           // console.log(_this);
@@ -105,5 +101,20 @@
       }
     });
   });
+
+  function delReply(el) {
+    Swal.fire({
+        title: 'Are you sure Delete?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          el.parentElement.submit()
+        }
+      })
+  }
 </script>
 @endsection

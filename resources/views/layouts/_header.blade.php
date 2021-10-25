@@ -55,7 +55,8 @@
 
     <div class="login-yes">
       <a data-pjax href="{{ route('notifications.index') }}"
-         class="{{ Auth::user()->notification_count > 0 ? 'message-red' : 'message' }}">{{ Auth::user()->notification_count }}</a>
+         class="{{ Auth::user()->notification_count > 0 ? 'message-red' : 'message' }}">{{
+        Auth::user()->notification_count }}</a>
       <img src="{{ Auth::user()->avatar }}" alt="{{ Auth::user()->name }}" id="avatars">
     </div>
 
@@ -86,9 +87,9 @@
       </div>
 
       <div class="news-bottom">
-        <form action="{{ route('logout') }}" method="POST" onsubmit="return confirm('Are you sure to log out?');">
+        <form action="{{ route('logout') }}" method="POST">
           @csrf
-          <button type="submit">QUit</button>
+          <span class="btn-quit">Quit</span>
         </form>
       </div>
 
@@ -99,3 +100,17 @@
 @auth
 <script src="{{ asset('js/header.js') }}"></script>
 @endauth
+<script>
+  $('.btn-quit').click(function(){
+    Swal.fire({
+        title: 'Are you sure logout?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, logout!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+          this.parentElement.submit();
+        }
+    })
+  });
+</script>
