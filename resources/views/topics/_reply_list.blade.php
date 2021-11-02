@@ -52,8 +52,8 @@
     </form>
   </div>
 
-  @includeWhen(count($subcomments = $reply->subcomments()->with(['user','subcomments'])->get())>=1,'topics._sub_comment'
-  )
+  @includeWhen(count($subcomments =
+  $reply->subcomments()->with(['user','subcomments'])->get())>=1,'topics._sub_comment')
   @yield('subcomment-script')
 
 </div>
