@@ -12,7 +12,7 @@
     </div>
     <div>
       <img src="{{ asset('/assets/gift.png') }}" />
-      <span><a data-pjax href="https://www.flexispot.com/freetrial_return">Testting</a></span>
+      <span><a data-pjax href="https://www.flexispot.com/freetrial_return">Testing</a></span>
     </div>
     <div>
       <img src="{{ asset('/assets/uplod.png') }}" />
@@ -101,16 +101,16 @@
 <script src="{{ asset('js/header.js') }}"></script>
 @endauth
 <script>
-  $('.btn-quit').click(function(){
+  $('.btn-quit').click(function() {
     Swal.fire({
-        title: 'Are you sure logout?',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonText: 'Yes, logout!'
+      title: 'Are you sure logout?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, logout!'
     }).then((result) => {
-        if (result.isConfirmed) {
-          this.parentElement.submit();
-        }
+      if (result.isConfirmed) {
+        this.parentElement.submit();
+      }
     })
   });
 </script>
