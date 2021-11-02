@@ -52,7 +52,8 @@
     </form>
   </div>
 
-  @includeWhen(count($subcomments=$reply->subcomments) >= 1,'topics._sub_comment' )
+  @includeWhen(count($subcomments = $reply->subcomments()->with(['user','subcomments'])->get())>=1,'topics._sub_comment'
+  )
   @yield('subcomment-script')
 
 </div>
@@ -74,7 +75,7 @@
     var num = Number($(_this).find('.reply-like-count').text());
     var replyId = $(_this).attr('replyId');
 
-    if(starLoading) return ;
+    if (starLoading) return;
     starLoading = true;
 
     $.ajax({
@@ -84,7 +85,7 @@
       success: (response) => {
         // 判断是否登录
         if (response.code == 0) {
-          <x-not-login />
+          <x-not-login/>
         }
         // // 切换点赞
         if (response.res == 1) {
@@ -104,17 +105,17 @@
 
   function delReply(el) {
     Swal.fire({
-        title: 'Are you sure Delete?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          el.parentElement.submit()
-        }
-      })
+      title: 'Are you sure to Delete?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        el.parentElement.submit()
+      }
+    })
   }
 </script>
 @endsection

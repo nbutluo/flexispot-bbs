@@ -52,12 +52,13 @@
 
 <script>
   var starLoading = false;
+
   function subLikeBtn(el) {
-    var subcommentId  = el.getAttribute('subcommentId');
+    var subcommentId = el.getAttribute('subcommentId');
     var src = el.getAttribute('src');;
     var count = el.nextElementSibling.textContent;
     // return false;
-    if(starLoading) return ;
+    if (starLoading) return;
     starLoading = true;
 
     $.ajax({
@@ -67,17 +68,17 @@
       success: (response) => {
         // 判断是否登录
         if (response.code == 0) {
-            <x-not-login />
+          <x-not-login/>
         }
 
-       // 切换点赞
+        // 切换点赞
         if (response.res == 1) {
           el.src = '/assets/like.png';
-          el.nextElementSibling.textContent = String(parseInt(count)-1)
+          el.nextElementSibling.textContent = String(parseInt(count) - 1)
 
         } else {
           el.src = '/assets/liked.png';
-          el.nextElementSibling.textContent = String(parseInt(count)+ 1)
+          el.nextElementSibling.textContent = String(parseInt(count) + 1)
         }
       },
       complete: () => {
@@ -88,19 +89,18 @@
 
   function delReply(el) {
     Swal.fire({
-        title: 'Are you sure Delete?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          el.parentElement.submit()
-        }
-      })
+      title: 'Are you sure to Delete?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        el.parentElement.submit()
+      }
+    })
   }
-
 </script>
 
 @endsection

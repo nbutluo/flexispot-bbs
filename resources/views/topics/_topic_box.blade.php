@@ -54,7 +54,7 @@
   // 话题点赞
   $('.like-btn').click(function() {
 
-    if(starLoading) return ;
+    if (starLoading) return;
     starLoading = true;
 
     $.ajax({
@@ -65,7 +65,7 @@
         console.log(response);
         // 判断是否登录
         if (response.code == 0) {
-          <x-not-login />
+          <x-not-login/>
         }
 
         // 切换点赞
@@ -93,25 +93,25 @@
       success: function(response) {
         // 判断是否登录
         if (response.code == 0) {
-          <x-not-login />
+          <x-not-login/>
         }
       }
     });
   });
 
-  $('.topic-delete-btn').click(function(){
-      Swal.fire({
-        title: 'Are you sure Delete?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          this.parentElement.submit()
-        }
-      })
+  $('.topic-delete-btn').click(function() {
+    Swal.fire({
+      title: 'Are you sure to Delete?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.parentElement.submit()
+      }
+    })
   })
 </script>
 @endsection
