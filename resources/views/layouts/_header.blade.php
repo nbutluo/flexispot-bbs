@@ -12,7 +12,7 @@
     </div>
     <div>
       <img src="{{ asset('/assets/gift.png') }}" />
-      <span><a data-pjax href="https://www.flexispot.com/freetrial_return">Testing</a></span>
+      <span><a data-pjax href="https://www.flexispot.com/testing-list">Testing</a></span>
     </div>
     <div>
       <img src="{{ asset('/assets/uplod.png') }}" />
