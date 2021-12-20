@@ -13,7 +13,7 @@ class TopicsController extends Controller
     public function __construct()
     {
         // 后台操作topic 禁止使用 Observer
-        Topic::unsetEventDispatcher();
+        // Topic::unsetEventDispatcher();
         return $this->middleware('verify.admin.login');
     }
 
@@ -33,6 +33,9 @@ class TopicsController extends Controller
 
     public function update(TopicRequest $request, Topic $topic)
     {
+        // 后台操作topic 禁止使用 Observer
+        Topic::unsetEventDispatcher();
+
         $topic->fill($request->all());
         $topic->save();
 
