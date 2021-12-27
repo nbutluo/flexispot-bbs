@@ -16,6 +16,7 @@
             <tr>
               <th style="width:5%;">ID</th>
               <th>名称</th>
+              <th>图标</th>
               <th>描述</th>
               <th>显示/隐藏</th>
               <th style="text-align: center;">管理</th>
@@ -31,7 +32,11 @@
                   {!! $category['_name'] !!}
                 </a>
               </td>
-
+              <td>
+                @if (isset($category['icon']))
+                <img width="35" height="35" src="{{ env('APP_URL').$category['icon'] }}">
+                @endif
+              </td>
               <td>{{ $category['description'] }}</td>
               <td>
                 @if ($category['is_show'])
