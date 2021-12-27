@@ -19,6 +19,7 @@ class PagesController extends Controller
 
         $topics = $topic->withTab($request->tab)
             ->with('user', 'category')  // 预加载防止 N+1 问题
+            ->orderBy('top','desc')
             ->paginate();
 
         return view('pages.root', compact('announcements', 'advertises', 'topics', 'categories'));
