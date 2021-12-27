@@ -124,7 +124,7 @@
       </div>
 
       @else
-      <p class="no-data-yet"> {{ _('Oh, no data yet') }}</p>
+      <p class="no-data-yet"> {{ __('Oh, no data yet') }}</p>
       @endif
     </div>
   </div>
