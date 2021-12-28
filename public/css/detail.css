@@ -28,10 +28,10 @@ body {
 .app .head-box .post_title .share_btn {
   cursor: pointer;
   display: inline-block;
-  width: 20px;
-  height: 19px;
+  width: 42px;
+  height: 31px;
   background-image: url("/assets/copy_link.png");
-  background-size: contain;
+  /* background-size: contain; */
   background-repeat: no-repeat;
   margin-left: 12px;
 }
