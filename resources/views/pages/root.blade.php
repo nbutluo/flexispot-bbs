@@ -67,8 +67,9 @@
     <div class="discuss-list">
 
       @if (count($topics))
-
+      
       @foreach ($topics as $topic)
+      @if ($topic->category->is_show)
       <div class="discuss-box">
         <div class="info" onclick="window.location.href=`{{ route('topics.show',$topic->id) }}`">
 
@@ -113,6 +114,7 @@
           <span class="num">{{ $topic->view_count }}</span><span class="num">{{ $topic->reply_count }}</span>
         </div>
       </div>
+      @endif
       @endforeach
 
       <div class="pagi-box">
