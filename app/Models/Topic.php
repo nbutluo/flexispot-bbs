@@ -48,13 +48,13 @@ class Topic extends Model
 
     public function scopeTopReplied($query)
     {
-        return $query->orderBy('reply_count', 'desc')->orderBy('top', 'desc')->orderBy('view_count', 'desc');
+        return $query->orderBy('top', 'desc')->orderBy('reply_count', 'desc')->orderBy('view_count', 'desc');
     }
 
     public function scopeRecent($query)
     {
         // 按照创建时间排序,默认排序
-        return $query->orderBy('created_at', 'desc');
+        return $query->orderBy('top', 'desc')->orderBy('created_at', 'desc');
     }
 
     public function link($params = [])
@@ -78,6 +78,7 @@ class Topic extends Model
     {
         $suggest_topics = Topic::where('category_id', $this->category_id)
             ->whereNotIn('id', [$this->id])
+            ->orderBy('top', 'desc')
             ->orderBy('reply_count', 'desc')
             ->orderBy('view_count', 'desc')
             ->orderBy('created_at', 'desc')
@@ -89,7 +90,8 @@ class Topic extends Model
 
     public function top()
     {
-        $top_topics = Topic::orderBy('reply_count', 'desc')
+        $top_topics = Topic::orderBy('top', 'desc')
+            ->orderBy('reply_count', 'desc')
             ->orderBy('view_count', 'desc')
             ->orderBy('created_at', 'desc')
             ->paginate();
