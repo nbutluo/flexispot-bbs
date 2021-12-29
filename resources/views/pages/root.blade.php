@@ -72,9 +72,13 @@
       @foreach ($topics as $topic)
       @if ($topic->category->is_show)
       <div class="discuss-box">
+      <div class="top">
+            @if ($topic->top==1)<img src="{{ env('APP_URL').'assets/top.png' }}"> @endif
+      </div>
         <div class="info" onclick="window.location.href=`{{ route('topics.show',$topic->id) }}`">
-
-          <div class="title">@if ($topic->top==1)<img src="{{ env('APP_URL').'assets/top.png' }}"> @endif<a data-pjax href="{{ route('topics.show',$topic->id) }}">{{ $topic->title }}</a></div>
+          <div class="title">
+            <a data-pjax href="{{ route('topics.show',$topic->id) }}">{{ $topic->title }}</a>
+          </div>
 
           <p>
             <span class="date"> Created on {{ $topic->created_at->format('M d, Y') }}</span>

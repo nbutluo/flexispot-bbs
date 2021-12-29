@@ -1,8 +1,10 @@
 <?php
 
+
 Route::redirect('/', '/forum');
 
 Route::get('/forum', 'PagesController@root')->name('root');
+Route::get('/test', 'TestController@index');
 
 // 用户身份验证相关的路由
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
