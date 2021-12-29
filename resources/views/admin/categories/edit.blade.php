@@ -1,4 +1,6 @@
 @extends('admin.layouts.index')
+
+
 @section('title','编辑分类')
 @section('content')
 <div class="row">
@@ -34,6 +36,27 @@
             <label class="col-12 col-sm-3 col-form-label text-sm-right">分类名称</label>
             <div class="col-12 col-sm-8 col-lg-6">
               <input class="form-control" type="text" name="name" value="{{ old('name',$category->name)}}">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-12 col-sm-3 col-form-label text-sm-right">分类图标</label>
+            <div class="col-12 col-sm-8 col-lg-6">
+              <input class="form-control" type="text" name="icon" value="{{ old('icon',$category->icon)}}">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-12 col-sm-3 col-form-label text-sm-right">上传图标</label>
+            <div class="col-12 col-sm-8 col-lg-6">
+              <input class="form-control" type="file" name="fileicon" value="{{ old('icon',$category->icon)}}">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-12 col-sm-3 col-form-label text-sm-right">分类底色</label>
+            <div class="col-12 col-sm-8 col-lg-6">
+              <input class="form-control" type="text" name="color" value="{{ old('color',$category->color)}}">
             </div>
           </div>
 

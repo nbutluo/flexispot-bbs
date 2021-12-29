@@ -1,11 +1,13 @@
 <?php
 
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CategoriesController extends Controller
 {
@@ -36,6 +38,12 @@ class CategoriesController extends Controller
     public function store(CategoryRequest $request, Category $category)
     {
         $category->fill($request->all());
+        $r = $request->all();
+        if (isset($r['fileicon'])) {
+            $icon = Storage::put('/public/assets', $r['fileicon']);
+            $icon = str_replace('public','storage',$icon);
+            $category->fill(['icon'=>$icon]);
+        }
         $category->save();
 
         return redirect()->route('admin.categories.index')->with('success', '分类新增成功');
@@ -45,15 +53,21 @@ class CategoriesController extends Controller
     public function edit(Category $category)
     {
         $categories = $category->getAllCategories($category);
-        // dda($categories);
+         //dda($categories);
         return view('admin.categories.edit', compact('category', 'categories'));
     }
 
     public function update(CategoryRequest $request, Category $category)
     {
         $category->fill($request->all());
+        $r = $request->all();
+        if (isset($r['fileicon'])) {
+            $icon = Storage::put('/public/assets', $r['fileicon']);
+            $icon = str_replace('public','storage',$icon);
+            $category->fill(['icon'=>$icon]);
+        }
         $category->save();
-
+        //dda($category);
         return redirect()->route('admin.categories.index')->with('success', '修改成功');
     }
 

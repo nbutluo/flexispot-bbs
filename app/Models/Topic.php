@@ -14,7 +14,7 @@ class Topic extends Model
     use Likeable;
 
     protected $fillable = [
-        'title', 'body', 'category_id', 'excerpt', 'slug', 'view_count',
+        'title', 'body', 'category_id', 'excerpt', 'slug', 'view_count','top'
     ];
 
     public function category()
@@ -48,7 +48,7 @@ class Topic extends Model
 
     public function scopeTopReplied($query)
     {
-        return $query->orderBy('reply_count', 'desc')->orderBy('view_count', 'desc');
+        return $query->orderBy('reply_count', 'desc')->orderBy('top', 'desc')->orderBy('view_count', 'desc');
     }
 
     public function scopeRecent($query)

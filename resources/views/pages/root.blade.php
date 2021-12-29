@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="{{ asset('css/nprogress.css') }}">
 @endsection
 
+
 @section('content')
 <div class="banner-box">
   <a href="http://www.flexispot.com/standiversary" target="_blank">
@@ -67,16 +68,21 @@
     <div class="discuss-list">
 
       @if (count($topics))
-
+      
       @foreach ($topics as $topic)
+      @if ($topic->category->is_show)
       <div class="discuss-box">
+      <div class="top">
+            @if ($topic->top==1)<img src="{{ env('APP_URL').'assets/top.png' }}"> @endif
+      </div>
         <div class="info" onclick="window.location.href=`{{ route('topics.show',$topic->id) }}`">
-
-          <div class="title"><a data-pjax href="{{ route('topics.show',$topic->id) }}">{{ $topic->title }}</a></div>
+          <div class="title">
+            <a data-pjax href="{{ route('topics.show',$topic->id) }}">{{ $topic->title }}</a>
+          </div>
 
           <p>
             <span class="date"> Created on {{ $topic->created_at->format('M d, Y') }}</span>
-            <span class="{{active_categories_class($topic->category->id)}}">
+            <span style="background:{{ $topic->category->color }};border-radius:12px;padding:3px 6px;margin-left:6px;display:inline-block;color:#fff;">
               {{ $topic->category->name }}
             </span>
           </p>
@@ -113,6 +119,7 @@
           <span class="num">{{ $topic->view_count }}</span><span class="num">{{ $topic->reply_count }}</span>
         </div>
       </div>
+      @endif
       @endforeach
 
       <div class="pagi-box">
@@ -124,7 +131,7 @@
       </div>
 
       @else
-      <p class="no-data-yet"> {{ _('Oh, no data yet') }}</p>
+      <p class="no-data-yet"> {{ __('Oh, no data yet') }}</p>
       @endif
     </div>
   </div>

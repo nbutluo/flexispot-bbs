@@ -1,5 +1,7 @@
 <?php
 
+
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,7 +14,7 @@ class Category extends Model
 
     public $timestamps = false;
 
-    protected $fillable = ['name', 'description', 'is_show', 'pid'];
+    protected $fillable = ['name', 'description', 'is_show', 'pid','icon','color'];
 
     public function getAllCategories($category = null)
     {

@@ -49,6 +49,20 @@
           </div>
 
           <div class="form-group row">
+            <label class="col-12 col-sm-3 col-form-label text-sm-right">置顶</label>
+            <div class="col-12 col-sm-8 col-lg-6">
+              <select class="form-control" name="top">
+                <option value="1"@if($topic->top==1) selected @endif>
+                  是
+                </option>
+                <option value="0"@if($topic->top==0) selected @endif>
+                  否
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
             <label class="col-12 col-sm-3 col-form-label text-sm-right">话题内容</label>
             <div class="col-12 col-sm-8 col-lg-6">
               <div><textarea name="body" id="editor">{!! old('body',$topic->body) !!}</textarea></div>

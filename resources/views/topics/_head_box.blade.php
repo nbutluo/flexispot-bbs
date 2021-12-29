@@ -20,5 +20,5 @@
   <a href="{{ route('categories.show',$topic->category) }}">
     <span class="tag">{{ $topic->category->name }}</span>
   </a>
-  <span class="tag" style="background-color: #F65442;">Topic</span>
+  <!-- <span class="tag" style="background-color: #F65442;">Topic</span> -->
 </p>

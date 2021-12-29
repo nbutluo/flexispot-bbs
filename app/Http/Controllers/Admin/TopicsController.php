@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
@@ -19,7 +20,7 @@ class TopicsController extends Controller
 
     public function index()
     {
-        $topics = Topic::paginate(10);
+        $topics = Topic::orderBy('top','desc')->paginate(10);
 
         return view('admin.topics.index', compact('topics'));
     }
@@ -27,7 +28,7 @@ class TopicsController extends Controller
     public function edit(Topic $topic)
     {
         $categories = Category::all();
-
+        
         return view('admin.topics.edit', compact('topic', 'categories'));
     }
 

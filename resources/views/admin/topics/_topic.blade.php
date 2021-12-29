@@ -1,5 +1,6 @@
 <td>{{ $topic->id }}</td>
 <td>
+  @if ($topic->top==1)<img src="{{ env('APP_URL').'assets/top.png' }}"> @endif
   <a href="{{ route('topics.show',$topic->id) }}" target="_blank" rel="noopener noreferrer">
     {{ $topic->title }}
   </a>
