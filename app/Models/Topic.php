@@ -48,7 +48,7 @@ class Topic extends Model
 
     public function scopeTopReplied($query)
     {
-        return $query->orderBy('reply_count', 'desc')->orderBy('top', 'desc')->orderBy('view_count', 'desc');
+        return $query->orderBy('top', 'desc')->orderBy('reply_count', 'desc')->orderBy('top', 'desc')->orderBy('view_count', 'desc');
     }
 
     public function scopeRecent($query)
