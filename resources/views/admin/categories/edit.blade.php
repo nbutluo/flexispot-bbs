@@ -1,5 +1,6 @@
 @extends('admin.layouts.index')
 
+
 @section('title','编辑分类')
 @section('content')
 <div class="row">
@@ -52,6 +53,12 @@
             </div>
           </div>
 
+          <div class="form-group row">
+            <label class="col-12 col-sm-3 col-form-label text-sm-right">分类底色</label>
+            <div class="col-12 col-sm-8 col-lg-6">
+              <input class="form-control" type="text" name="color" value="{{ old('color',$category->color)}}">
+            </div>
+          </div>
 
           <div class="form-group row">
             <label class="col-12 col-sm-3 col-form-label text-sm-right">描述</label>

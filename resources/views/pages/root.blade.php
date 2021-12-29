@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="{{ asset('css/nprogress.css') }}">
 @endsection
 
+
 @section('content')
 <div class="banner-box">
   <a href="http://www.flexispot.com/standiversary" target="_blank">
@@ -77,7 +78,7 @@
 
           <p>
             <span class="date"> Created on {{ $topic->created_at->format('M d, Y') }}</span>
-            <span class="{{active_categories_class($topic->category->id)}}">
+            <span style="background:{{ $topic->category->color }};border-radius:12px;padding:3px 6px;margin-left:6px;display:inline-block;color:#fff;">
               {{ $topic->category->name }}
             </span>
           </p>
