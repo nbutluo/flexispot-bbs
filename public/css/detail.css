@@ -185,6 +185,7 @@ body {
   user-select: none;
   width: 250px;
   text-align: right;
+  font-size: 14px;
 }
 
 .app .comments-list .comment-box .btns .btn {
@@ -457,7 +458,7 @@ body {
 }
 
 .app .topic-list .topic .title {
-  font-size: 14px;
+  font-size: 16px;
   flex: 1;
   max-width: 800px;
   margin-right: 50px;
@@ -471,6 +472,7 @@ body {
   margin-right: 48px;
   color: #888;
   min-width: 32px;
+  font-size: 14px;
 }
 
 .app .topic-list .topic .num:last-child {
