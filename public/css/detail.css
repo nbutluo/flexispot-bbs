@@ -18,7 +18,7 @@ body {
 }
 
 .app .head-box .post_title {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 400;
   color: #1b1c1e;
   line-height: 68px;
@@ -99,6 +99,7 @@ body {
   color: #fff;
   margin-right: 24px;
   margin-top: 10px;
+  font-size: 12px;
 }
 
 .app .comments-list .comment-box {
@@ -116,7 +117,7 @@ body {
 }
 
 .app .comments-list .comment-box .user-box img {
-  width: 56px;
+  width: 44px;
   border-radius: 50%;
 }
 
@@ -145,7 +146,7 @@ body {
 }
 
 .app .comments-list .comment-box .info .date {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   color: #858585;
   display: inline-block;
@@ -160,7 +161,7 @@ body {
 }
 
 .app .comments-list .comment-box .info .content {
-  font-size: 18px;
+  font-size: 16px;
   color: #1b1c1e;
   line-height: 24px;
 }
@@ -179,9 +180,9 @@ body {
   flex-shrink: 0;
   align-self: flex-end;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   width: 250px;
   text-align: right;
 }
@@ -260,12 +261,26 @@ body {
   margin-bottom: 8px;
 }
 
-.app .comments-list .comment-box .sub-comments .sub-comment .right .comment .name {
+.app
+  .comments-list
+  .comment-box
+  .sub-comments
+  .sub-comment
+  .right
+  .comment
+  .name {
   color: #1774dc;
   margin-right: 6px;
 }
 
-.app .comments-list .comment-box .sub-comments .sub-comment .right .comment .content {
+.app
+  .comments-list
+  .comment-box
+  .sub-comments
+  .sub-comment
+  .right
+  .comment
+  .content {
   display: inline-block;
   word-break: break-all;
 }
@@ -276,23 +291,52 @@ body {
   flex-wrap: wrap;
 }
 
-.app .comments-list .comment-box .sub-comments .sub-comment .right .sub-info .date {
+.app
+  .comments-list
+  .comment-box
+  .sub-comments
+  .sub-comment
+  .right
+  .sub-info
+  .date {
   color: #858585;
   font-size: 13px;
 }
 
-.app .comments-list .comment-box .sub-comments .sub-comment .right .sub-info .icons img {
+.app
+  .comments-list
+  .comment-box
+  .sub-comments
+  .sub-comment
+  .right
+  .sub-info
+  .icons
+  img {
   cursor: pointer;
   width: 18px;
   height: 18px;
   margin-right: 14px;
 }
 
-.app .comments-list .comment-box .sub-comments .sub-comment .right .sub-info .subcomment-like-count {
+.app
+  .comments-list
+  .comment-box
+  .sub-comments
+  .sub-comment
+  .right
+  .sub-info
+  .subcomment-like-count {
   color: #888;
 }
 
-.app .comments-list .comment-box .sub-comments .sub-comment .right .sub-info .btn {
+.app
+  .comments-list
+  .comment-box
+  .sub-comments
+  .sub-comment
+  .right
+  .sub-info
+  .btn {
   color: #888;
   margin-right: 15px;
   cursor: pointer;
@@ -389,7 +433,7 @@ body {
 }
 
 .app .topic-list .section_title {
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 68px;
 }
@@ -401,7 +445,7 @@ body {
 }
 
 .app .topic-list .topic.blue_topic {
-  background: #F2F2F2;
+  background: #f2f2f2;
   color: #666666;
   border: none;
 }
@@ -409,10 +453,11 @@ body {
 .app .topic-list .topic.blue_topic .num {
   color: #666666;
   margin-right: 42px;
+  font-size: 14px;
 }
 
 .app .topic-list .topic .title {
-  font-size: 18px;
+  font-size: 14px;
   flex: 1;
   max-width: 800px;
   margin-right: 50px;
@@ -435,6 +480,7 @@ body {
 .app .topic-list .more-topic {
   margin-top: 24px;
   padding-left: 16px;
+  font-size: 18px;
 }
 
 .app .topic-list .more-topic .more-link {
@@ -522,7 +568,7 @@ body {
   }
 
   .app .head-box .post_title {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 500;
     padding-left: 14px;
     line-height: 32px;
@@ -600,7 +646,14 @@ body {
     padding: 4px;
   }
 
-  .app .comments-list .comment-box .sub-comments .sub-comment .sub-info .add-form .comment-area {
+  .app
+    .comments-list
+    .comment-box
+    .sub-comments
+    .sub-comment
+    .sub-info
+    .add-form
+    .comment-area {
     width: 78%;
   }
 
@@ -643,4 +696,3 @@ body {
     display: none;
   }
 }
-

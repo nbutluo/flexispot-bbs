@@ -29,7 +29,7 @@
 }
 
 .header .type-active {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   color: #1774dc;
   border-bottom: 2px solid #1774dc;
@@ -267,4 +267,3 @@
 .click-register-btn {
   color: #2196f3;
 }
-

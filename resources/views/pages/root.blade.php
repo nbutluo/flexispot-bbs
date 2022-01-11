@@ -68,13 +68,13 @@
     <div class="discuss-list">
 
       @if (count($topics))
-      
+
       @foreach ($topics as $topic)
       @if ($topic->category->is_show)
       <div class="discuss-box">
-      <div class="top">
-            @if ($topic->top==1)<img src="{{ env('APP_URL').'assets/top.png' }}"> @endif
-      </div>
+        <div class="top">
+          @if ($topic->top==1)<img src="{{ env('APP_URL').'assets/top.png' }}"> @endif
+        </div>
         <div class="info" onclick="window.location.href=`{{ route('topics.show',$topic->id) }}`">
           <div class="title">
             <a data-pjax href="{{ route('topics.show',$topic->id) }}">{{ $topic->title }}</a>
@@ -82,7 +82,8 @@
 
           <p>
             <span class="date"> Created on {{ $topic->created_at->format('M d, Y') }}</span>
-            <span style="background:{{ $topic->category->color }};border-radius:12px;padding:3px 6px;margin-left:6px;display:inline-block;color:#fff;">
+            <span
+                  style="background:{{ $topic->category->color }};border-radius:12px;padding:3px 6px;margin-left:6px;display:inline-block;color:#fff;font-size: 12px;">
               {{ $topic->category->name }}
             </span>
           </p>
