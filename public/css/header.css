@@ -109,9 +109,7 @@
 
 .header .login-not .login-box {
   margin: 0 0 0 8px;
-  width: 70px;
   height: 28px;
-  background: #1774dc;
   border-radius: 4px;
   color: #fff;
   text-align: center;
@@ -127,7 +125,8 @@
   height: 14px;
   margin: 0 4px -2px 0;
   background-image: url("/assets/user.png");
-  background-size: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .header .login-not .hamburg-menu {
@@ -266,4 +265,15 @@
 
 .click-register-btn {
   color: #2196f3;
+}
+
+@media (max-width: 780px) {
+  .header .login-not .login-box {
+    width: 20px;
+    position: relative;
+    top: 5px;
+  }
+  .login-user {
+    display: none;
+  }
 }

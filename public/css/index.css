@@ -259,7 +259,7 @@
 
 .app .forum-content .right-panel .discuss-list .discuss-box .ava {
   width: 56px;
-  margin-right: 16px;
+  margin-right: 26px;
   cursor: pointer;
   position: relative;
   padding-left: 150px;
@@ -681,6 +681,7 @@
     top: 0;
     bottom: 0;
     display: none;
+    z-index: 10;
   }
 
   .app .category_box .category_list {

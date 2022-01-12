@@ -37,7 +37,8 @@
       </div>
       --}}
       <div class="login-box">
-        <a data-pjax href="{{ route('login') }}"><span style="color: #fff">Log in</span></a>
+        <a data-pjax href="{{ route('login') }}"><span style="font-weight: bold;color: #333333"
+                class="login-user">Login</span></a>
       </div>
       <span class="hamburg-menu" onclick="toggleMenu()">
         <span></span><span></span><span></span>
