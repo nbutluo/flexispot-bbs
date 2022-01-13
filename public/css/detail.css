@@ -128,6 +128,7 @@ body {
 .app .comments-list .comment-box .user-box .name {
   color: #858585;
   font-size: 12px;
+  margin-left: 5px;
 }
 
 .app .comments-list .comment-box .user-box .name a {
@@ -135,10 +136,10 @@ body {
 }
 
 .app .comments-list .comment-box .info {
-  max-width: 668px;
+  max-width: 1336px;
   margin-right: 48px;
   flex-shrink: 1;
-  width: 70%;
+  width: 85%;
 }
 
 .app .comments-list .comment-box .info p {
@@ -164,6 +165,7 @@ body {
   font-size: 16px;
   color: #1b1c1e;
   line-height: 24px;
+  width: 80%;
 }
 
 .app .comments-list .comment-box .info .content .text {
@@ -186,6 +188,7 @@ body {
   width: 250px;
   text-align: right;
   font-size: 14px;
+  width: 100%;
 }
 
 .app .comments-list .comment-box .btns .btn {
@@ -607,25 +610,42 @@ body {
 
     justify-content: flex-start;
     padding: 0 16px;
+    width: 120%;
   }
 
   .app .comments-list .comment-box .user-box {
     text-align: center;
     padding-bottom: 8px;
     margin-bottom: 8px;
-    border-bottom: 1px solid #ededed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
   }
 
   .app .comments-list .comment-box .info {
+    margin-left: 48px;
     margin-right: 0;
+    width: 70%;
+    position: relative;
+    top: -24px;
+  }
+  .app .comments-list .comment-box.topic-box .info {
+    width: 85%;
+    margin-left: 0;
   }
 
   .app .comments-list .comment-box .info .date {
+    position: relative;
     margin-bottom: 14px;
   }
-
-  .app .comments-list .comment-box .info .content {
-    margin-bottom: 20px;
+  .app .comments-list .topic-box:first-child .info .date > span:last-child {
+    display: none;
+  }
+  .app .comments-list .topic-box:first-child .info .date > span:first-child {
+    position: absolute;
+    right: 0;
+    top: -40px;
   }
 
   .app .comments-list .comment-box .info .content .text {
@@ -636,6 +656,7 @@ body {
     position: relative;
     left: 0;
     margin-bottom: 16px;
+    padding-right: 48px;
   }
 
   .app .comments-list .comment-box .btns .btn {
@@ -652,6 +673,13 @@ body {
     margin-bottom: 12px;
     margin-left: 0;
     padding: 4px;
+  }
+  .app .comments-list .comment-box .info .date .order {
+    position: relative;
+    top: -24px;
+  }
+  .app .comments-list .comment-box .user-box .name a {
+    color: #333;
   }
 
   .app
