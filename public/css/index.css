@@ -284,13 +284,7 @@
   margin-right: 16px;
 }
 
-.app
-  .forum-content
-  .right-panel
-  .discuss-list
-  .discuss-box
-  .nums
-  .num:nth-child(1)::before {
+.app .forum-content .right-panel .discuss-list .discuss-box .nums .num:nth-child(1)::before {
   content: "";
   display: inline-block;
   width: 20px;
@@ -301,23 +295,11 @@
   background-repeat: no-repeat;
 }
 
-.app
-  .forum-content
-  .right-panel
-  .discuss-list
-  .discuss-box
-  .nums
-  .num:nth-child(2) {
+.app .forum-content .right-panel .discuss-list .discuss-box .nums .num:nth-child(2) {
   margin-right: 6px;
 }
 
-.app
-  .forum-content
-  .right-panel
-  .discuss-list
-  .discuss-box
-  .nums
-  .num:nth-child(2)::before {
+.app .forum-content .right-panel .discuss-list .discuss-box .nums .num:nth-child(2)::before {
   content: "";
   display: inline-block;
   width: 20px;
@@ -341,27 +323,14 @@
   border-radius: 4px 4px 0px 4px;
 }
 
-.app
-  .forum-content
-  .right-panel
-  .discuss-list
-  .discuss-box
-  .float-window
-  .head-row {
+.app .forum-content .right-panel .discuss-list .discuss-box .float-window .head-row {
   display: flex;
   align-items: center;
   background: #e8e8e8;
   padding: 12px 20px;
 }
 
-.app
-  .forum-content
-  .right-panel
-  .discuss-list
-  .discuss-box
-  .float-window
-  .head-row
-  img {
+.app .forum-content .right-panel .discuss-list .discuss-box .float-window .head-row img {
   width: 50px;
   height: 50px;
 }
@@ -370,24 +339,11 @@
   padding: 16px 20px;
 }
 
-.app
-  .forum-content
-  .right-panel
-  .discuss-list
-  .discuss-box
-  .float-window
-  .row
-  span:nth-child(2) {
+.app .forum-content .right-panel .discuss-list .discuss-box .float-window .row span:nth-child(2) {
   color: #1774dc;
 }
 
-.app
-  .forum-content
-  .right-panel
-  .discuss-list
-  .discuss-box
-  .float-window
-  .last-row {
+.app .forum-content .right-panel .discuss-list .discuss-box .float-window .last-row {
   margin-top: 8px;
   padding-left: 12px;
   color: #b6b6b6;
@@ -630,13 +586,7 @@
     margin-bottom: 4px;
   }
 
-  .app
-    .forum-content
-    .right-panel
-    .discuss-list
-    .discuss-box
-    .nums
-    .num:nth-child(2)::before {
+  .app .forum-content .right-panel .discuss-list .discuss-box .nums .num:nth-child(2)::before {
     margin-right: 8px;
   }
 
@@ -705,3 +655,4 @@
     color: #555;
   }
 }
+

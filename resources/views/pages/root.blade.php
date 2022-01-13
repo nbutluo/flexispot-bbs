@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('styles')
-<link href="{{ asset('css/index.css') }}" rel="stylesheet">
+<link href="{{ mix('css/index.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('css/nprogress.css') }}">
 @endsection
 

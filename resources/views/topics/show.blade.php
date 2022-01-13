@@ -14,7 +14,7 @@
 @section('description', $topic->excerpt)
 
 @section('styles')
-<link rel="stylesheet" href="{{ asset('css/detail.css') }}">
+<link rel="stylesheet" href="{{ mix('css/detail.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/simditor.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/new.css') }}">
 <script src="https://cloud.yofoto.cn/Themes/jquery-1.11.1.min.js"></script>

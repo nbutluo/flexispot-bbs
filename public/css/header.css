@@ -273,7 +273,9 @@
     position: relative;
     top: 5px;
   }
+
   .login-user {
     display: none;
   }
 }
+

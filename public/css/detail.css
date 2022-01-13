@@ -265,26 +265,12 @@ body {
   margin-bottom: 8px;
 }
 
-.app
-  .comments-list
-  .comment-box
-  .sub-comments
-  .sub-comment
-  .right
-  .comment
-  .name {
+.app .comments-list .comment-box .sub-comments .sub-comment .right .comment .name {
   color: #1774dc;
   margin-right: 6px;
 }
 
-.app
-  .comments-list
-  .comment-box
-  .sub-comments
-  .sub-comment
-  .right
-  .comment
-  .content {
+.app .comments-list .comment-box .sub-comments .sub-comment .right .comment .content {
   display: inline-block;
   word-break: break-all;
 }
@@ -295,52 +281,23 @@ body {
   flex-wrap: wrap;
 }
 
-.app
-  .comments-list
-  .comment-box
-  .sub-comments
-  .sub-comment
-  .right
-  .sub-info
-  .date {
+.app .comments-list .comment-box .sub-comments .sub-comment .right .sub-info .date {
   color: #858585;
   font-size: 13px;
 }
 
-.app
-  .comments-list
-  .comment-box
-  .sub-comments
-  .sub-comment
-  .right
-  .sub-info
-  .icons
-  img {
+.app .comments-list .comment-box .sub-comments .sub-comment .right .sub-info .icons img {
   cursor: pointer;
   width: 18px;
   height: 18px;
   margin-right: 14px;
 }
 
-.app
-  .comments-list
-  .comment-box
-  .sub-comments
-  .sub-comment
-  .right
-  .sub-info
-  .subcomment-like-count {
+.app .comments-list .comment-box .sub-comments .sub-comment .right .sub-info .subcomment-like-count {
   color: #888;
 }
 
-.app
-  .comments-list
-  .comment-box
-  .sub-comments
-  .sub-comment
-  .right
-  .sub-info
-  .btn {
+.app .comments-list .comment-box .sub-comments .sub-comment .right .sub-info .btn {
   color: #888;
   margin-right: 15px;
   cursor: pointer;
@@ -605,9 +562,6 @@ body {
 
   .app .comments-list .comment-box {
     -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-
     justify-content: flex-start;
     padding: 0 16px;
     width: 120%;
@@ -630,6 +584,7 @@ body {
     position: relative;
     top: -24px;
   }
+
   .app .comments-list .comment-box.topic-box .info {
     width: 85%;
     margin-left: 0;
@@ -639,9 +594,11 @@ body {
     position: relative;
     margin-bottom: 14px;
   }
+
   .app .comments-list .topic-box:first-child .info .date > span:last-child {
     display: none;
   }
+
   .app .comments-list .topic-box:first-child .info .date > span:first-child {
     position: absolute;
     right: 0;
@@ -674,22 +631,17 @@ body {
     margin-left: 0;
     padding: 4px;
   }
+
   .app .comments-list .comment-box .info .date .order {
     position: relative;
     top: -24px;
   }
+
   .app .comments-list .comment-box .user-box .name a {
     color: #333;
   }
 
-  .app
-    .comments-list
-    .comment-box
-    .sub-comments
-    .sub-comment
-    .sub-info
-    .add-form
-    .comment-area {
+  .app .comments-list .comment-box .sub-comments .sub-comment .sub-info .add-form .comment-area {
     width: 78%;
   }
 
@@ -739,3 +691,4 @@ body {
     display: none;
   } */
 }
+

@@ -19,10 +19,10 @@
   <meta name="description" content="@yield('description', 'FlexispotBBS')" />
   @yield('metas')
   <!-- Styles -->
-  <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/header.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/ant-message.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <link href="{{ mix('css/footer.css') }}" rel="stylesheet">
+  <link href="{{ mix('css/header.css') }}" rel="stylesheet">
+  <link href="{{ mix('css/ant-message.css') }}" rel="stylesheet">
+  <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
   @yield('styles')
 

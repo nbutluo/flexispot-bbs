@@ -10,209 +10,207 @@
   justify-content: space-between;
   align-items: center;
   background: #fff;
+}
 
-  .type {
-    width: 380px;
-    height: 30px;
-    display: flex;
-    justify-content: space-between;
-    z-index: 9;
+.header .type {
+  width: 380px;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 9;
+}
 
-    div {
-      cursor: pointer;
+.header .type div {
+  cursor: pointer;
+}
 
-      img {
-        display: none;
-      }
-    }
+.header .type div img {
+  display: none;
+}
 
-    &-active {
-      font-size: 18px;
-      font-weight: 400;
-      color: #1774dc;
-      border-bottom: 2px solid #1774dc;
+.header .type-active {
+  font-size: 16px;
+  font-weight: 400;
+  color: #1774dc;
+  border-bottom: 2px solid #1774dc;
+}
 
-      span {
-        height: 25px;
-      }
-    }
-  }
+.header .type-active span {
+  height: 25px;
+}
 
-  .login {
-    height: 57px;
-    display: flex;
-    align-items: center;
-    position: relative;
+.header .login {
+  height: 57px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
 
-    &-search {
-      display: flex;
-      align-items: center;
+.header .login-search {
+  display: flex;
+  align-items: center;
+}
 
-      img {
-        margin: 0 8px 0 0;
-        width: 17px;
-        height: 17px;
-      }
-    }
+.header .login-search img {
+  margin: 0 8px 0 0;
+  width: 17px;
+  height: 17px;
+}
 
-    &-yes {
-      display: flex;
-      align-items: center;
+.header .login-yes {
+  display: flex;
+  align-items: center;
+}
 
-      .message {
-        width: 27px;
-        height: 18px;
-        background: #cccccc;
-        border-radius: 9px;
-        text-align: center;
-        color: #fff;
-        margin: 0 11px;
-        font-size: 14px;
-      }
-      .message-red {
-        width: 27px;
-        height: 18px;
-        background-color: #f3654f;
-        border-radius: 9px;
-        text-align: center;
-        color: #fff;
-        margin: 0 11px;
-        font-size: 14px;
-      }
+.header .login-yes .message {
+  width: 27px;
+  height: 18px;
+  background: #cccccc;
+  border-radius: 9px;
+  text-align: center;
+  color: #fff;
+  margin: 0 11px;
+  font-size: 14px;
+}
 
-      img {
-        width: 57px;
-        height: 57px;
-        border-radius: 50%;
-        cursor: pointer;
-      }
-    }
+.header .login-yes .message-red {
+  width: 27px;
+  height: 18px;
+  background-color: #f3654f;
+  border-radius: 9px;
+  text-align: center;
+  color: #fff;
+  margin: 0 11px;
+  font-size: 14px;
+}
 
-    .plus-img {
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-      background-image: url("/assets/grey_plus.png");
-      background-size: contain;
-      cursor: pointer;
-      margin-bottom: -3px;
-    }
+.header .login-yes img {
+  width: 57px;
+  height: 57px;
+  border-radius: 50%;
+  cursor: pointer;
+}
 
-    &-not {
-      display: flex;
-      align-items: center;
-      color: #8c8c8c;
+.header .login .plus-img {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/assets/grey_plus.png");
+  background-size: contain;
+  cursor: pointer;
+  margin-bottom: -3px;
+}
 
-      .login-box {
-        margin: 0 0 0 8px;
-        width: 70px;
-        height: 28px;
-        background: #1774dc;
-        border-radius: 4px;
-        color: #fff;
-        text-align: center;
-        line-height: 28px;
-        font-size: 14px;
-        position: relative;
+.header .login-not {
+  display: flex;
+  align-items: center;
+  color: #8c8c8c;
+}
 
-        &::before {
-          content: "";
-          display: inline-block;
-          width: 12px;
-          height: 14px;
-          margin: 0 4px -2px 0;
-          background-image: url("/assets/user.png");
-          background-size: contain;
-        }
-      }
+.header .login-not .login-box {
+  margin: 0 0 0 8px;
+  height: 28px;
+  border-radius: 4px;
+  color: #fff;
+  text-align: center;
+  line-height: 28px;
+  font-size: 14px;
+  position: relative;
+}
 
-      .hamburg-menu {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-        width: 18px;
-        margin-left: 8px;
-        margin-bottom: -4px;
+.header .login-not .login-box::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 14px;
+  margin: 0 4px -2px 0;
+  background-image: url("/assets/user.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
-        span {
-          display: inline-block;
-          width: 18px;
-          border-bottom: 3px solid #999999;
-          margin-bottom: 4px;
-        }
+.header .login-not .hamburg-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 18px;
+  margin-left: 8px;
+  margin-bottom: -4px;
+}
 
-        &.active {
-          span {
-            border-bottom: 3px solid #1774dc;
-          }
-        }
-      }
-    }
+.header .login-not .hamburg-menu span {
+  display: inline-block;
+  width: 18px;
+  border-bottom: 3px solid #999999;
+  margin-bottom: 4px;
+}
 
-    #news {
-      display: none;
-      position: absolute;
-      // display: block;
-      top: 64px;
-      right: 0;
-      width: 137px;
-      height: 151px;
-      background: #ffffff;
-      box-shadow: 0px 1px 8px 0px rgba(69, 69, 69, 0.22);
-      border-radius: 4px;
-      font-size: 14px;
-      font-weight: 300;
-      color: #333333;
-      z-index: 9;
+.header .login-not .hamburg-menu.active span {
+  border-bottom: 3px solid #1774dc;
+}
 
-      .news-title {
-        width: 137px;
-        height: 108px;
-        border-bottom: 1px solid #454545;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+.header .login #news {
+  display: none;
+  position: absolute;
+  top: 64px;
+  right: 0;
+  width: 137px;
+  height: 151px;
+  background: #ffffff;
+  box-shadow: 0px 1px 8px 0px rgba(69, 69, 69, 0.22);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #333333;
+  z-index: 9;
+}
 
-        &-line {
-          font-weight: 300;
-          color: #333333;
-          cursor: pointer;
+.header .login #news .news-title {
+  width: 137px;
+  height: 108px;
+  border-bottom: 1px solid #454545;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 
-          img {
-            margin: 0 10px 0 14px;
-            width: 12px;
-            height: 12px;
-          }
-        }
-      }
+.header .login #news .news-title-line {
+  font-weight: 300;
+  color: #333333;
+  cursor: pointer;
+}
 
-      .news-bottom {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 42px;
+.header .login #news .news-title-line img {
+  margin: 0 10px 0 14px;
+  width: 12px;
+  height: 12px;
+}
 
-        button {
-          width: 77px;
-          height: 25px;
-          background: #f3654f;
-          border-radius: 4px;
-          border: 0;
-          font-weight: 500;
-          color: #ffffff;
-          cursor: pointer;
-        }
-        .btn-quit {
-          background: #f3654f;
-          border-radius: 4px;
-          font-weight: 500;
-          color: #ffffff;
-          cursor: pointer;
-          padding: 3px 25px;
-        }
-      }
-    }
-  }
+.header .login #news .news-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+}
+
+.header .login #news .news-bottom button {
+  width: 77px;
+  height: 25px;
+  background: #f3654f;
+  border-radius: 4px;
+  border: 0;
+  font-weight: 500;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.header .login #news .news-bottom .btn-quit {
+  background: #f3654f;
+  border-radius: 4px;
+  font-weight: 500;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 3px 25px;
 }
 
 .email-box {
@@ -220,18 +218,20 @@
   border: 1px solid #dfdfdf;
   border-radius: 4px;
   width: 80%;
-
-  .verify-email-message {
-    margin: 16px 20px;
-    padding: 10px 18px;
-    border-radius: 6px;
-  }
 }
+
+.email-box .verify-email-message {
+  margin: 16px 20px;
+  padding: 10px 18px;
+  border-radius: 6px;
+}
+
 .email-box .title {
   padding: 12px 18px;
   background: #f7f7f7;
   border-bottom: 1px solid #dfdfdf;
 }
+
 .email-box .status {
   margin: 16px 20px;
   padding: 20px 18px;
@@ -240,9 +240,11 @@
   border-radius: 6px;
   color: #0f5132;
 }
+
 .email-box .info {
   margin: 16px 20px;
 }
+
 .info button {
   color: #0d6efd;
   text-decoration: underline;
@@ -257,14 +259,21 @@
   color: #1774dc !important;
 }
 
-.simditor {
-  .simditor-body {
-    img {
-      max-width: 100%;
-    }
-  }
+.simditor .simditor-body img {
+  max-width: 100%;
 }
 
 .click-register-btn {
   color: #2196f3;
+}
+
+@media (max-width: 780px) {
+  .header .login-not .login-box {
+    width: 20px;
+    position: relative;
+    top: 5px;
+  }
+  .login-user {
+    display: none;
+  }
 }
