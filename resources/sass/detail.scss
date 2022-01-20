@@ -105,13 +105,14 @@ body {
 .app .comments-list .comment-box {
   display: flex;
   flex-wrap: wrap;
+  padding-top: 12px;
   padding-bottom: 36px;
   margin-bottom: 8px;
   border-bottom: 1px solid #ededed;
 }
 
 .app .comments-list .comment-box .user-box {
-  width: 72px;
+  width: 65px;
   margin-right: 24px;
   text-align: center;
 }
@@ -139,7 +140,7 @@ body {
   max-width: 1336px;
   margin-right: 48px;
   flex-shrink: 1;
-  width: 85%;
+  width: 70%;
 }
 
 .app .comments-list .comment-box .info p {
@@ -165,7 +166,6 @@ body {
   font-size: 16px;
   color: #1b1c1e;
   line-height: 24px;
-  width: 80%;
 }
 
 .app .comments-list .comment-box .info .content .text {
@@ -653,6 +653,8 @@ body {
   }
 
   .app .comments-list .comment-box .btns {
+    display: flex;
+    align-items: center;
     position: relative;
     left: 0;
     margin-bottom: 16px;
